@@ -16,7 +16,7 @@ export function CaseProvider({ children }: { children: ReactNode }) {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    loadAllCases()
+    loadAllCases(import.meta.env.BASE_URL.replace(/\/$/, ''))
       .then((data) => setCases(data))
       .catch((e: unknown) => setError(e instanceof Error ? e.message : 'データの読み込みに失敗しました'))
       .finally(() => setLoading(false))
