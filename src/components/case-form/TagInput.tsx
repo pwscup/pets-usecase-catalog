@@ -14,8 +14,7 @@ export default function TagInput() {
   }
 
   return (
-    <fieldset className="space-y-2">
-      <legend className="text-lg font-semibold">タグ</legend>
+    <div className="space-y-2">
       <div>
         <label htmlFor="tags" className="block text-sm font-medium">タグ（カンマ区切り）</label>
         <input
@@ -27,6 +26,6 @@ export default function TagInput() {
           className="mt-1 block w-full rounded border border-gray-300 px-3 py-2"
         />
       </div>
-    </fieldset>
+    </div>
   )
 }

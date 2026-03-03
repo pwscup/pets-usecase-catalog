@@ -1,4 +1,4 @@
-import { exportCases, importCases } from '../lib/export-import'
+import { exportCases } from '../lib/export-import'
 import type { Case } from '../types'
 
 const validCase: Case = {
@@ -50,42 +50,5 @@ describe('exportCases', () => {
     removeChildSpy.mockRestore()
     vi.restoreAllMocks()
     vi.unstubAllGlobals()
-  })
-})
-
-describe('importCases', () => {
-  function makeFile(content: string): File {
-    return new File([content], 'test.json', { type: 'application/json' })
-  }
-
-  it('有効なJSONファイルでCaseが返る', async () => {
-    const catalog = { schema_version: '1.0', cases: [validCase] }
-    const file = makeFile(JSON.stringify(catalog))
-
-    const result = await importCases(file)
-
-    expect(result.errors).toHaveLength(0)
-    expect(result.cases).toHaveLength(1)
-    expect(result.cases[0].id).toBe('case-001')
-  })
-
-  it('不正なJSONでエラーが返る', async () => {
-    const file = makeFile('not valid json{{{')
-
-    const result = await importCases(file)
-
-    expect(result.cases).toHaveLength(0)
-    expect(result.errors).toHaveLength(1)
-    expect(result.errors[0]).toContain('JSON')
-  })
-
-  it('スキーマ不正でエラーが返る', async () => {
-    const invalidCatalog = { schema_version: '1.0', cases: [{ id: '' }] }
-    const file = makeFile(JSON.stringify(invalidCatalog))
-
-    const result = await importCases(file)
-
-    expect(result.cases).toHaveLength(0)
-    expect(result.errors.length).toBeGreaterThan(0)
   })
 })

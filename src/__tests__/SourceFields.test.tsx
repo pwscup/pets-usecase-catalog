@@ -14,7 +14,7 @@ describe('SourceFields', () => {
     const user = userEvent.setup()
     render(<CaseForm onSubmit={() => {}} submitLabel="作成" />)
 
-    await user.click(screen.getByRole('button', { name: '出典を追加' }))
+    await user.click(screen.getByRole('button', { name: '+ 出典を追加' }))
 
     expect(screen.getByText('出典 1')).toBeInTheDocument()
     expect(screen.getByText('出典 2')).toBeInTheDocument()
@@ -30,7 +30,7 @@ describe('SourceFields', () => {
     const user = userEvent.setup()
     render(<CaseForm onSubmit={() => {}} submitLabel="作成" />)
 
-    await user.click(screen.getByRole('button', { name: '出典を追加' }))
+    await user.click(screen.getByRole('button', { name: '+ 出典を追加' }))
 
     const deleteButtons = screen.getAllByText('削除')
     expect(deleteButtons).toHaveLength(2)

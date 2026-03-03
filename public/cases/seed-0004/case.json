@@ -1,0 +1,36 @@
+{
+  "id": "seed-0004",
+  "title": "Fintech連携ツールテスト用データ提供の承認プロセスを合成データで短縮",
+  "region": "国外",
+  "domain": "金融",
+  "organization": "Nationwide",
+  "usecase_category": [
+    "組織間データ共有"
+  ],
+  "summary": "Fintech連携のテスト時、実データを第三者に提供するには煩雑な準備・承認プロセスが必要で最大6カ月を要していた。Nationwideは合成データをテスト用データとして活用し、承認プロセスを大幅に簡略化した。",
+  "value_proposition": "データ準備・承認期間を最大6カ月から3日に短縮。",
+  "synthetic_generation_method": "統計情報と複雑な関係を学習し、元情報を含まない合成データセットを作成（手法名は調査中）",
+  "safety_evaluation_method": "調査中",
+  "utility_evaluation_method": "調査中",
+  "tags": [
+    "sub:保険",
+    "insurance",
+    "fintech",
+    "test-data",
+    "approval-leadtime",
+    "region:overseas",
+    "source:JRI"
+  ],
+  "sources": [
+    {
+      "source_type": "pdf",
+      "title": "合成データに関する論考（JRI）",
+      "url": "https://www.jri.co.jp/MediaLibrary/file/column/opinion/pdf/14266.pdf",
+      "note": "Nationwideの短縮効果と生成の説明に言及"
+    }
+  ],
+  "figures": [],
+  "status": "seed",
+  "created_at": "2026-02-26T00:00:00+09:00",
+  "updated_at": "2026-02-26T00:00:00+09:00"
+}

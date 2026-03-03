@@ -83,7 +83,8 @@ export interface Case {
   region: Region;
   domain: string;
   organization: string;
-  usecase_category: string;
+  usecase_category: string[];
+  image?: string;
   summary: string;
   value_proposition: string;
   synthetic_generation_method: string;

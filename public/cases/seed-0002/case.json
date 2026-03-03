@@ -1,0 +1,34 @@
+{
+  "id": "seed-0002",
+  "title": "金融サービス向けAI研究開発促進のための合成データ生成研究",
+  "region": "国外",
+  "domain": "金融",
+  "organization": "J.P. Morgan",
+  "usecase_category": [
+    "R&D"
+  ],
+  "summary": "金融分野のAI開発では、学習用の大量データが必要だが、機密性の高い取引データの利用には制約がある。J.P. Morganはリアルな合成金融データを生成するアルゴリズムを研究開発し、AIモデルの訓練データ不足を解消する取り組みを行った。",
+  "value_proposition": "調査中",
+  "synthetic_generation_method": "調査中",
+  "safety_evaluation_method": "調査中",
+  "utility_evaluation_method": "調査中",
+  "tags": [
+    "finance",
+    "rnd",
+    "synthetic-data",
+    "region:overseas",
+    "source:JRI"
+  ],
+  "sources": [
+    {
+      "source_type": "pdf",
+      "title": "合成データに関する論考（JRI）",
+      "url": "https://www.jri.co.jp/MediaLibrary/file/column/opinion/pdf/14266.pdf",
+      "note": "J.P. Morganの取組として言及"
+    }
+  ],
+  "figures": [],
+  "status": "seed",
+  "created_at": "2026-02-26T00:00:00+09:00",
+  "updated_at": "2026-02-26T00:00:00+09:00"
+}

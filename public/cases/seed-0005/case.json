@@ -1,0 +1,35 @@
+{
+  "id": "seed-0005",
+  "title": "人工金融データを用いた外部コンペで知見獲得（参加者1,658名）",
+  "region": "国内",
+  "domain": "金融",
+  "organization": "金融データ活用推進協会（FDUA）",
+  "usecase_category": [
+    "外部分析者活用"
+  ],
+  "summary": "金融データの分析には専門知識が必要だが、社外の分析者に実データを提供するのは困難だった。FDUAは人工的に作成した金融データを用いて外部コンペを開催し、1,658名の分析者から新たな知見を獲得した。",
+  "value_proposition": "延べ1,658名の外部分析者が参加し、社内では得られなかったデータ分析の新知見を獲得。",
+  "synthetic_generation_method": "調査中",
+  "safety_evaluation_method": "調査中",
+  "utility_evaluation_method": "調査中",
+  "tags": [
+    "note:人工的に作成とのみ",
+    "finance",
+    "competition",
+    "external-analysts",
+    "region:domestic",
+    "source:JRI"
+  ],
+  "sources": [
+    {
+      "source_type": "pdf",
+      "title": "合成データに関する論考（JRI）",
+      "url": "https://www.jri.co.jp/MediaLibrary/file/column/opinion/pdf/14266.pdf",
+      "note": "FDUAの外部コンペに言及"
+    }
+  ],
+  "figures": [],
+  "status": "seed",
+  "created_at": "2026-02-26T00:00:00+09:00",
+  "updated_at": "2026-02-26T00:00:00+09:00"
+}
