@@ -29,7 +29,7 @@ export function countByField(
       for (const v of value) {
         counts.set(v, (counts.get(v) ?? 0) + 1)
       }
-    } else {
+    } else if (value) {
       counts.set(value, (counts.get(value) ?? 0) + 1)
     }
   }
