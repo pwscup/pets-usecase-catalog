@@ -29,7 +29,64 @@
       "note": "COVID-19分析の記載＋ベンダ一覧の記載"
     }
   ],
-  "figures": [],
+  "figures": [
+    {
+      "type": "data_flow",
+      "title": "COVID-19分析における合成データ活用フロー",
+      "data": {
+        "nodes": [
+          {
+            "id": "src",
+            "label": "COVID-19 診療データ（実データ）",
+            "category": "source"
+          },
+          {
+            "id": "issue",
+            "label": "患者プライバシー保護が必要",
+            "category": "constraint"
+          },
+          {
+            "id": "gen",
+            "label": "KDE + 差分プライバシーで生成",
+            "category": "process"
+          },
+          {
+            "id": "use",
+            "label": "COVID-19 データ分析",
+            "category": "application"
+          },
+          {
+            "id": "val",
+            "label": "実データとほぼ同等の結果確認",
+            "category": "outcome"
+          }
+        ],
+        "edges": [
+          {
+            "from": "src",
+            "to": "issue",
+            "label": "制約"
+          },
+          {
+            "from": "issue",
+            "to": "gen",
+            "label": "代替手段"
+          },
+          {
+            "from": "gen",
+            "to": "use",
+            "label": "分析データ提供"
+          },
+          {
+            "from": "use",
+            "to": "val",
+            "label": "成果"
+          }
+        ]
+      },
+      "note": ""
+    }
+  ],
   "status": "seed",
   "created_at": "2026-02-26T00:00:00+09:00",
   "updated_at": "2026-02-26T00:00:00+09:00"

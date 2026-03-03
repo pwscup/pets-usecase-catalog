@@ -28,7 +28,64 @@
       "note": "GEOTRAの提供形態に言及"
     }
   ],
-  "figures": [],
+  "figures": [
+    {
+      "type": "data_flow",
+      "title": "人流合成データのプラットフォーム提供フロー",
+      "data": {
+        "nodes": [
+          {
+            "id": "src",
+            "label": "人流データ（移動軌跡）",
+            "category": "source"
+          },
+          {
+            "id": "issue",
+            "label": "プライバシー上外部提供困難",
+            "category": "constraint"
+          },
+          {
+            "id": "gen",
+            "label": "人流合成データ生成",
+            "category": "process"
+          },
+          {
+            "id": "use",
+            "label": "第三者向け分析プラットフォーム",
+            "category": "application"
+          },
+          {
+            "id": "val",
+            "label": "トリップ単位データの外部提供実現",
+            "category": "outcome"
+          }
+        ],
+        "edges": [
+          {
+            "from": "src",
+            "to": "issue",
+            "label": "制約"
+          },
+          {
+            "from": "issue",
+            "to": "gen",
+            "label": "代替手段"
+          },
+          {
+            "from": "gen",
+            "to": "use",
+            "label": "プラットフォーム搭載"
+          },
+          {
+            "from": "use",
+            "to": "val",
+            "label": "成果"
+          }
+        ]
+      },
+      "note": ""
+    }
+  ],
   "status": "seed",
   "created_at": "2026-02-26T00:00:00+09:00",
   "updated_at": "2026-02-26T00:00:00+09:00"

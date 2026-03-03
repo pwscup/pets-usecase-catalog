@@ -29,7 +29,64 @@
       "note": "Nationwideの短縮効果と生成の説明に言及"
     }
   ],
-  "figures": [],
+  "figures": [
+    {
+      "type": "data_flow",
+      "title": "Fintech連携テストの合成データ活用フロー",
+      "data": {
+        "nodes": [
+          {
+            "id": "src",
+            "label": "保険顧客データ（実データ）",
+            "category": "source"
+          },
+          {
+            "id": "issue",
+            "label": "第三者提供の承認に最大6カ月",
+            "category": "constraint"
+          },
+          {
+            "id": "gen",
+            "label": "合成データ生成",
+            "category": "process"
+          },
+          {
+            "id": "use",
+            "label": "Fintech連携ツールのテスト",
+            "category": "application"
+          },
+          {
+            "id": "val",
+            "label": "承認期間を6カ月→3日に短縮",
+            "category": "outcome"
+          }
+        ],
+        "edges": [
+          {
+            "from": "src",
+            "to": "issue",
+            "label": "制約"
+          },
+          {
+            "from": "issue",
+            "to": "gen",
+            "label": "代替手段"
+          },
+          {
+            "from": "gen",
+            "to": "use",
+            "label": "テストデータ提供"
+          },
+          {
+            "from": "use",
+            "to": "val",
+            "label": "成果"
+          }
+        ]
+      },
+      "note": ""
+    }
+  ],
   "status": "seed",
   "created_at": "2026-02-26T00:00:00+09:00",
   "updated_at": "2026-02-26T00:00:00+09:00"

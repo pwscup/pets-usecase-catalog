@@ -31,7 +31,64 @@
       "note": "NHS Digitalの事例として言及"
     }
   ],
-  "figures": [],
+  "figures": [
+    {
+      "type": "data_flow",
+      "title": "がん臨床合成データの配布による研究迅速化フロー",
+      "data": {
+        "nodes": [
+          {
+            "id": "src",
+            "label": "がん臨床データ（実データ）",
+            "category": "source"
+          },
+          {
+            "id": "issue",
+            "label": "申請・審査に時間がかかる",
+            "category": "constraint"
+          },
+          {
+            "id": "gen",
+            "label": "100万人超の合成データ生成",
+            "category": "process"
+          },
+          {
+            "id": "use",
+            "label": "合成データの一般配布",
+            "category": "application"
+          },
+          {
+            "id": "val",
+            "label": "審査不要で研究準備に即着手可能",
+            "category": "outcome"
+          }
+        ],
+        "edges": [
+          {
+            "from": "src",
+            "to": "issue",
+            "label": "制約"
+          },
+          {
+            "from": "issue",
+            "to": "gen",
+            "label": "代替手段"
+          },
+          {
+            "from": "gen",
+            "to": "use",
+            "label": "オープン配布"
+          },
+          {
+            "from": "use",
+            "to": "val",
+            "label": "成果"
+          }
+        ]
+      },
+      "note": ""
+    }
+  ],
   "status": "seed",
   "created_at": "2026-02-26T00:00:00+09:00",
   "updated_at": "2026-02-26T00:00:00+09:00"

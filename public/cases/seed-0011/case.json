@@ -31,7 +31,64 @@
       "note": "米ワシントン大学の事例として、下流タスクでの比較に言及"
     }
   ],
-  "figures": [],
+  "figures": [
+    {
+      "type": "data_flow",
+      "title": "COVID-19診療データの合成データ外部共有フロー",
+      "data": {
+        "nodes": [
+          {
+            "id": "src",
+            "label": "COVID-19 診療データ（実データ）",
+            "category": "source"
+          },
+          {
+            "id": "issue",
+            "label": "患者プライバシーで外部配布困難",
+            "category": "constraint"
+          },
+          {
+            "id": "gen",
+            "label": "合成データ生成",
+            "category": "process"
+          },
+          {
+            "id": "use",
+            "label": "外部共有・下流タスク検証",
+            "category": "application"
+          },
+          {
+            "id": "val",
+            "label": "入院リスク予測等で有用性確認",
+            "category": "outcome"
+          }
+        ],
+        "edges": [
+          {
+            "from": "src",
+            "to": "issue",
+            "label": "制約"
+          },
+          {
+            "from": "issue",
+            "to": "gen",
+            "label": "代替手段"
+          },
+          {
+            "from": "gen",
+            "to": "use",
+            "label": "外部研究者に共有"
+          },
+          {
+            "from": "use",
+            "to": "val",
+            "label": "成果"
+          }
+        ]
+      },
+      "note": ""
+    }
+  ],
   "status": "seed",
   "created_at": "2026-02-26T00:00:00+09:00",
   "updated_at": "2026-02-26T00:00:00+09:00"

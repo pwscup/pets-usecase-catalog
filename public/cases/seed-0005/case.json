@@ -28,7 +28,64 @@
       "note": "FDUAの外部コンペに言及"
     }
   ],
-  "figures": [],
+  "figures": [
+    {
+      "type": "data_flow",
+      "title": "外部コンペにおける合成金融データ活用フロー",
+      "data": {
+        "nodes": [
+          {
+            "id": "src",
+            "label": "金融データ（実データ）",
+            "category": "source"
+          },
+          {
+            "id": "issue",
+            "label": "社外への実データ提供が困難",
+            "category": "constraint"
+          },
+          {
+            "id": "gen",
+            "label": "人工金融データ作成",
+            "category": "process"
+          },
+          {
+            "id": "use",
+            "label": "外部分析コンペ開催",
+            "category": "application"
+          },
+          {
+            "id": "val",
+            "label": "1,658名参加・新知見獲得",
+            "category": "outcome"
+          }
+        ],
+        "edges": [
+          {
+            "from": "src",
+            "to": "issue",
+            "label": "制約"
+          },
+          {
+            "from": "issue",
+            "to": "gen",
+            "label": "代替手段"
+          },
+          {
+            "from": "gen",
+            "to": "use",
+            "label": "コンペ用データ"
+          },
+          {
+            "from": "use",
+            "to": "val",
+            "label": "成果"
+          }
+        ]
+      },
+      "note": ""
+    }
+  ],
   "status": "seed",
   "created_at": "2026-02-26T00:00:00+09:00",
   "updated_at": "2026-02-26T00:00:00+09:00"

@@ -27,7 +27,64 @@
       "note": "J.P. Morganの取組として言及"
     }
   ],
-  "figures": [],
+  "figures": [
+    {
+      "type": "data_flow",
+      "title": "金融AI向け合成データ生成の研究フロー",
+      "data": {
+        "nodes": [
+          {
+            "id": "src",
+            "label": "金融取引データ（実データ）",
+            "category": "source"
+          },
+          {
+            "id": "issue",
+            "label": "機密性が高く学習データ不足",
+            "category": "constraint"
+          },
+          {
+            "id": "gen",
+            "label": "合成金融データ生成アルゴリズム開発",
+            "category": "process"
+          },
+          {
+            "id": "use",
+            "label": "AIモデル訓練",
+            "category": "application"
+          },
+          {
+            "id": "val",
+            "label": "訓練データ不足の解消",
+            "category": "outcome"
+          }
+        ],
+        "edges": [
+          {
+            "from": "src",
+            "to": "issue",
+            "label": "制約"
+          },
+          {
+            "from": "issue",
+            "to": "gen",
+            "label": "研究開発"
+          },
+          {
+            "from": "gen",
+            "to": "use",
+            "label": "学習データ提供"
+          },
+          {
+            "from": "use",
+            "to": "val",
+            "label": "成果"
+          }
+        ]
+      },
+      "note": ""
+    }
+  ],
   "status": "seed",
   "created_at": "2026-02-26T00:00:00+09:00",
   "updated_at": "2026-02-26T00:00:00+09:00"
