@@ -12,14 +12,10 @@
   "synthetic_generation_method": "調査中",
   "safety_evaluation_method": "プライバシーリスク評価（詳細は調査中）",
   "utility_evaluation_method": "下流タスク（モデル性能）による評価（元データ比97%と記載）",
+  "domain_sub": "保険",
   "tags": [
-    "sub:保険",
-    "insurance",
-    "internal-sharing",
-    "privacy-risk",
-    "utility:downstream",
-    "region:overseas",
-    "source:JRI"
+    "組織内共有",
+    "プライバシーリスク"
   ],
   "sources": [
     {
@@ -47,7 +43,7 @@
           },
           {
             "id": "p1",
-            "label": "実データの代替として合成データを生成（有用性97%）",
+            "label": "合成データを代替生成（有用性97%）",
             "category": "process"
           },
           {

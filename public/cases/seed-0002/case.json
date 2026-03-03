@@ -13,11 +13,8 @@
   "safety_evaluation_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": [
-    "finance",
-    "rnd",
-    "synthetic-data",
-    "region:overseas",
-    "source:JRI"
+    "研究開発",
+    "合成データ"
   ],
   "sources": [
     {
@@ -45,7 +42,7 @@
           },
           {
             "id": "p1",
-            "label": "リアルな合成金融データの生成アルゴリズムを開発",
+            "label": "合成金融データの生成手法を開発",
             "category": "process"
           },
           {

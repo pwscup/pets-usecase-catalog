@@ -2,55 +2,60 @@ import type { DataFlowData } from '../../types'
 
 interface DataFlowDiagramProps {
   data: DataFlowData
+  icons?: [string, string, string]
 }
 
 const COLUMN_CONFIG = [
   {
     key: 'collect',
-    label: 'データ収集',
+    label: '収集',
     categories: ['source', 'constraint'],
     bgClass: 'bg-blue-50',
     arrowClass: 'bg-blue-700',
-    icon: '📊',
+    defaultIcon: '📊',
   },
   {
     key: 'generate',
-    label: '合成データ生成',
+    label: '合成',
     categories: ['process'],
     bgClass: 'bg-indigo-50',
     arrowClass: 'bg-indigo-700',
-    icon: '⚙️',
+    defaultIcon: '⚙️',
   },
   {
     key: 'utilize',
-    label: 'データ活用',
+    label: '活用',
     categories: ['application', 'outcome'],
     bgClass: 'bg-emerald-50',
     arrowClass: 'bg-emerald-700',
-    icon: '🎯',
+    defaultIcon: '🎯',
   },
 ]
 
-export default function DataFlowDiagram({ data }: DataFlowDiagramProps) {
-  const columns = COLUMN_CONFIG.map((col) => ({
+export default function DataFlowDiagram({ data, icons }: DataFlowDiagramProps) {
+  const columns = COLUMN_CONFIG.map((col, i) => ({
     ...col,
+    icon: icons?.[i] ?? col.defaultIcon,
     nodes: data.nodes.filter((n) => col.categories.includes(n.category)),
   }))
 
   return (
-    <div className="grid grid-cols-3 gap-0 items-stretch">
+    <div
+      className="grid items-stretch gap-0"
+      style={{ gridTemplateColumns: '1fr auto 1fr auto 1fr' }}
+    >
       {columns.map((col, i) => (
-        <div key={col.key} className="flex items-stretch">
+        <>
           {/* Column card */}
-          <div className={`flex-1 rounded-lg ${col.bgClass} p-4 flex flex-col`}>
-            {/* Icon + header */}
-            <div className="text-center mb-3">
+          <div key={col.key} className={`rounded-lg ${col.bgClass} p-4 flex flex-col`}>
+            {/* Icon area — fixed height */}
+            <div className="h-12 flex items-center justify-center">
               <span className="text-2xl">{col.icon}</span>
             </div>
 
-            {/* Arrow label */}
-            <div className="relative mb-4">
-              <div className={`${col.arrowClass} text-white text-xs font-bold px-4 py-1.5 text-center`}
+            {/* Arrow label — fixed height */}
+            <div className="h-10 flex items-center">
+              <div className={`${col.arrowClass} text-white text-xs font-bold px-4 py-1.5 text-center w-full whitespace-nowrap`}
                 style={{
                   clipPath: 'polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%, 10% 50%)',
                   paddingLeft: i === 0 ? '12px' : '20px',
@@ -60,8 +65,8 @@ export default function DataFlowDiagram({ data }: DataFlowDiagramProps) {
               </div>
             </div>
 
-            {/* Node items */}
-            <ul className="space-y-2 flex-1">
+            {/* Node items — fixed min height */}
+            <ul className="space-y-2 flex-1 min-h-[120px] mt-2">
               {col.nodes.map((node) => (
                 <li key={node.id} className="flex items-start gap-2 text-sm">
                   <span className={`mt-1.5 w-2 h-2 rounded-full shrink-0 ${col.arrowClass}`} />
@@ -73,9 +78,9 @@ export default function DataFlowDiagram({ data }: DataFlowDiagramProps) {
 
           {/* Arrow connector between columns */}
           {i < columns.length - 1 && (
-            <div className="flex items-center px-1 text-gray-400 text-lg font-bold">▶</div>
+            <div key={`arrow-${col.key}`} className="flex items-center px-1 text-gray-400 text-lg font-bold">▶</div>
           )}
-        </div>
+        </>
       ))}
     </div>
   )

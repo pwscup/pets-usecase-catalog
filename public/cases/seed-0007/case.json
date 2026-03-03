@@ -12,13 +12,9 @@
   "synthetic_generation_method": "Timeseries DGAN（ベンダ一覧に記載）",
   "safety_evaluation_method": "差分プライバシー／過剰適合防止／類似性フィルター／外れ値フィルター（ベンダ一覧に記載）",
   "utility_evaluation_method": "調査中",
+  "domain_sub": "研究",
   "tags": [
-    "sub:研究",
-    "healthcare",
-    "genomics",
-    "vendor",
-    "region:overseas",
-    "source:JRI"
+    "ゲノミクス"
   ],
   "sources": [
     {
@@ -46,7 +42,7 @@
           },
           {
             "id": "p1",
-            "label": "Timeseries DGANで合成データを生成",
+            "label": "DGAN で合成データを生成",
             "category": "process"
           },
           {

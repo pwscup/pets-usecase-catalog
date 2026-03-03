@@ -12,13 +12,10 @@
   "synthetic_generation_method": "調査中",
   "safety_evaluation_method": "調査中",
   "utility_evaluation_method": "調査中",
+  "domain_sub": "人流",
   "tags": [
-    "sub:人流",
-    "mobility",
-    "synthetic-data",
-    "platform",
-    "region:domestic",
-    "source:JRI"
+    "合成データ",
+    "プラットフォーム"
   ],
   "sources": [
     {
@@ -41,7 +38,7 @@
           },
           {
             "id": "s2",
-            "label": "プライバシー上、集計データに限定されていた",
+            "label": "プライバシー上、集計データに限定",
             "category": "constraint"
           },
           {
@@ -56,7 +53,7 @@
           },
           {
             "id": "a2",
-            "label": "トリップ単位の詳細データを外部提供可能に",
+            "label": "詳細データの外部提供が可能に",
             "category": "outcome"
           }
         ],

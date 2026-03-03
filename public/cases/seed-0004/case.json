@@ -12,14 +12,10 @@
   "synthetic_generation_method": "統計情報と複雑な関係を学習し、元情報を含まない合成データセットを作成（手法名は調査中）",
   "safety_evaluation_method": "調査中",
   "utility_evaluation_method": "調査中",
+  "domain_sub": "保険",
   "tags": [
-    "sub:保険",
-    "insurance",
-    "fintech",
-    "test-data",
-    "approval-leadtime",
-    "region:overseas",
-    "source:JRI"
+    "フィンテック",
+    "テストデータ"
   ],
   "sources": [
     {
@@ -47,12 +43,12 @@
           },
           {
             "id": "p1",
-            "label": "統計情報と関係性を保持した合成データを生成",
+            "label": "統計的関係性を保持し合成データ生成",
             "category": "process"
           },
           {
             "id": "a1",
-            "label": "Fintech連携ツールのテストデータとして提供",
+            "label": "Fintech連携のテストデータに活用",
             "category": "application"
           },
           {

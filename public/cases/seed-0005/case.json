@@ -12,13 +12,10 @@
   "synthetic_generation_method": "調査中",
   "safety_evaluation_method": "調査中",
   "utility_evaluation_method": "調査中",
+  "editorial_notes": ["人工的に作成とのみ"],
   "tags": [
-    "note:人工的に作成とのみ",
-    "finance",
-    "competition",
-    "external-analysts",
-    "region:domestic",
-    "source:JRI"
+    "コンペティション",
+    "外部分析者"
   ],
   "sources": [
     {

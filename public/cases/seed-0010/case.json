@@ -12,14 +12,10 @@
   "synthetic_generation_method": "調査中",
   "safety_evaluation_method": "調査中",
   "utility_evaluation_method": "調査中",
+  "domain_sub": "医療",
   "tags": [
-    "sub:医療",
-    "public",
-    "healthcare",
-    "data-sharing",
-    "irb",
-    "region:overseas",
-    "source:JRI"
+    "データ共有",
+    "IRB"
   ],
   "sources": [
     {

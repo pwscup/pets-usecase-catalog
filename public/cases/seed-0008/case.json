@@ -12,14 +12,10 @@
   "synthetic_generation_method": "カーネル密度推定（ベンダ一覧に記載）",
   "safety_evaluation_method": "差分プライバシー（ベンダ一覧に記載）",
   "utility_evaluation_method": "実データとの分析結果比較（同等と記載）",
+  "domain_sub": "COVID-19",
   "tags": [
-    "sub:COVID-19",
-    "healthcare",
-    "covid19",
-    "kde",
-    "dp",
-    "region:overseas",
-    "source:JRI"
+    "KDE",
+    "差分プライバシー"
   ],
   "sources": [
     {
