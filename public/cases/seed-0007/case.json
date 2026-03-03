@@ -1,0 +1,35 @@
+{
+  "id": "seed-0007",
+  "title": "ゲノム分析における合成データセットを用いた研究",
+  "region": "国外",
+  "domain": "医療",
+  "organization": "Gretel.ai",
+  "usecase_category": [
+    "外部分析者活用"
+  ],
+  "summary": "ゲノムデータは機密性が高く、研究目的でもデータ共有が制限される。Gretel.aiの合成データ生成ツールを用い、マウスのゲノム分析において合成データセットでの研究を実施した。",
+  "value_proposition": "調査中",
+  "synthetic_generation_method": "Timeseries DGAN（ベンダ一覧に記載）",
+  "safety_evaluation_method": "差分プライバシー／過剰適合防止／類似性フィルター／外れ値フィルター（ベンダ一覧に記載）",
+  "utility_evaluation_method": "調査中",
+  "tags": [
+    "sub:研究",
+    "healthcare",
+    "genomics",
+    "vendor",
+    "region:overseas",
+    "source:JRI"
+  ],
+  "sources": [
+    {
+      "source_type": "pdf",
+      "title": "プライバシー保護合成データの概説と動向",
+      "url": "https://www.jri.co.jp/MediaLibrary/file/column/opinion/pdf/14266.pdf",
+      "note": "研究事例およびベンダ一覧の記載"
+    }
+  ],
+  "figures": [],
+  "status": "seed",
+  "created_at": "2026-02-26T00:00:00+09:00",
+  "updated_at": "2026-02-26T00:00:00+09:00"
+}

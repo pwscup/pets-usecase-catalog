@@ -9,7 +9,7 @@ const mockCase: Case = {
   region: '国内',
   domain: '医療',
   organization: 'テスト組織',
-  usecase_category: '組織内データ共有',
+  usecase_category: ['組織内データ共有'],
   summary: 'テスト概要',
   value_proposition: 'テスト成果',
   synthetic_generation_method: '生成方法',

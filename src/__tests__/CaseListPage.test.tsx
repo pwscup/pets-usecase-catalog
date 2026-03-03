@@ -11,7 +11,7 @@ const mockCases: Case[] = [
     region: '国内',
     domain: '医療',
     organization: 'テスト組織A',
-    usecase_category: 'プライバシー保護',
+    usecase_category: ['プライバシー保護'],
     summary: '概要1',
     value_proposition: '成果1',
     synthetic_generation_method: '方法1',
@@ -30,7 +30,7 @@ const mockCases: Case[] = [
     region: '国外',
     domain: '金融',
     organization: 'テスト組織B',
-    usecase_category: 'データ拡張',
+    usecase_category: ['データ拡張'],
     summary: '概要2',
     value_proposition: '成果2',
     synthetic_generation_method: '方法2',
@@ -57,16 +57,11 @@ vi.mock('../context/CaseContext', async () => {
 const mockedUseCases = vi.mocked(useCases)
 
 describe('CaseListPage', () => {
-  const noop = () => {}
-
   it('ローディング中に「読み込み中」が表示される', () => {
     mockedUseCases.mockReturnValue({
       cases: [],
       loading: true,
       error: null,
-      addCase: noop,
-      updateCase: noop,
-      deleteCase: noop,
     })
 
     render(
@@ -83,9 +78,6 @@ describe('CaseListPage', () => {
       cases: mockCases,
       loading: false,
       error: null,
-      addCase: noop,
-      updateCase: noop,
-      deleteCase: noop,
     })
 
     render(
@@ -103,9 +95,6 @@ describe('CaseListPage', () => {
       cases: [],
       loading: false,
       error: 'テストエラー',
-      addCase: noop,
-      updateCase: noop,
-      deleteCase: noop,
     })
 
     render(

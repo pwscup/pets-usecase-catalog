@@ -11,9 +11,7 @@ function validCaseInput(overrides: Record<string, unknown> = {}) {
     id: "550e8400-e29b-41d4-a716-446655440000",
     title: "合成データによる金融リスク分析",
     region: "国内" as const,
-    domain: "金融",
     organization: "テスト銀行",
-    usecase_category: "組織内共有",
     summary: "合成データを活用した金融リスク分析の事例",
     sources: [
       {
@@ -39,9 +37,47 @@ describe("caseSchema", () => {
     expect(result.status).toBe("user");
   });
 
-  it("titleが空の場合にバリデーションエラー", () => {
+  it("domain/usecase_categoryが未指定でもデフォルト値で通る", () => {
+    const input = validCaseInput();
+    const result = caseSchema.parse(input);
+
+    expect(result.domain).toBe("");
+    expect(result.usecase_category).toEqual([]);
+  });
+
+  it("domain/usecase_categoryが指定されていれば保持される", () => {
+    const input = validCaseInput({ domain: "金融", usecase_category: ["組織内共有"] });
+    const result = caseSchema.parse(input);
+
+    expect(result.domain).toBe("金融");
+    expect(result.usecase_category).toEqual(["組織内共有"]);
+  });
+
+  it("usecase_categoryが文字列の場合に配列に変換される（後方互換）", () => {
+    const input = validCaseInput({ usecase_category: "組織内共有" });
+    const result = caseSchema.parse(input);
+
+    expect(result.usecase_category).toEqual(["組織内共有"]);
+  });
+
+  it("imageフィールドがオプションで受け入れられる", () => {
+    const input = validCaseInput({ image: "test-image.png" });
+    const result = caseSchema.parse(input);
+
+    expect(result.image).toBe("test-image.png");
+  });
+
+  it("imageフィールドが未指定でも通る", () => {
+    const input = validCaseInput();
+    const result = caseSchema.parse(input);
+
+    expect(result.image).toBeUndefined();
+  });
+
+  it("titleが空でもデフォルト値で通る（任意フィールド）", () => {
     const input = validCaseInput({ title: "" });
-    expect(() => caseSchema.parse(input)).toThrow();
+    const result = caseSchema.parse(input);
+    expect(result.title).toBe("");
   });
 
   it("regionが不正値の場合にバリデーションエラー", () => {

@@ -1,0 +1,38 @@
+{
+  "id": "seed-0012",
+  "title": "がん臨床合成データの配布による審査不要の研究準備迅速化",
+  "region": "国外",
+  "domain": "医療",
+  "organization": "NHS Digital（英国）",
+  "usecase_category": [
+    "フィージビリティ検証"
+  ],
+  "summary": "がん臨床データの利用には申請・審査が必要で、研究企画の検討やプログラム開発の着手までに時間がかかっていた。NHS Digitalは100万人超の合成データを配布し、審査不要で即座に研究準備に取り掛かれる環境を提供した。",
+  "value_proposition": "申請・審査不要で研究準備に着手可能に。分析プログラムの作成を迅速化。",
+  "synthetic_generation_method": "調査中",
+  "safety_evaluation_method": "調査中",
+  "utility_evaluation_method": "調査中",
+  "tags": [
+    "sub:がん臨床",
+    "note:統計量を一定程度保持との記載のみ",
+    "note:記事では評価手法の具体記載なし",
+    "healthcare",
+    "oncology",
+    "feasibility",
+    "program-dev",
+    "region:overseas",
+    "source:NSSOL"
+  ],
+  "sources": [
+    {
+      "source_type": "web",
+      "title": "＜技術動向＞「プライバシー保護合成データ」でヘルスケアデータ活用の新時代を開く 〜新しいプライバシー強化技術に大きな期待～",
+      "url": "https://www.nssol.nipponsteel.com/future/stories/trends2023-12.html",
+      "note": "NHS Digitalの事例として言及"
+    }
+  ],
+  "figures": [],
+  "status": "seed",
+  "created_at": "2026-02-26T00:00:00+09:00",
+  "updated_at": "2026-02-26T00:00:00+09:00"
+}

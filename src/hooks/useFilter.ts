@@ -80,7 +80,9 @@ function collectFilterOptions(cases: Case[]): Record<string, string[]> {
   for (const c of cases) {
     options.region.add(c.region)
     options.domain.add(c.domain)
-    options.usecase_category.add(c.usecase_category)
+    for (const cat of c.usecase_category) {
+      options.usecase_category.add(cat)
+    }
   }
 
   const result: Record<string, string[]> = {}
@@ -111,7 +113,7 @@ function applyFilters(cases: Case[], filters: FilterState): Case[] {
     if (!matchesQuery(c, filters.query)) return false
     if (!matchesArrayFilter(c.region, filters.region)) return false
     if (!matchesArrayFilter(c.domain, filters.domain)) return false
-    if (!matchesArrayFilter(c.usecase_category, filters.usecase_category)) return false
+    if (filters.usecase_category.length > 0 && !c.usecase_category.some(cat => filters.usecase_category.includes(cat))) return false
     return true
   })
 }

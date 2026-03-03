@@ -9,7 +9,7 @@ const mockCase: Case = {
   region: '国内',
   domain: '医療',
   organization: 'テスト病院',
-  usecase_category: '組織内データ共有',
+  usecase_category: ['組織内データ共有'],
   summary: 'テスト概要',
   value_proposition: 'テスト成果',
   synthetic_generation_method: 'GAN',
@@ -26,53 +26,43 @@ const mockCase: Case = {
 }
 
 describe('CaseForm', () => {
-  it('フォームが表示される（全フィールドが存在）', () => {
+  it('出典フィールドと分野・カテゴリが初期表示される', () => {
     render(<CaseForm onSubmit={() => {}} submitLabel="作成" />)
 
-    expect(screen.getByLabelText('タイトル')).toBeInTheDocument()
-    expect(screen.getByLabelText('地域')).toBeInTheDocument()
+    expect(screen.getByText('出典（必須）')).toBeInTheDocument()
     expect(screen.getByLabelText('分野')).toBeInTheDocument()
-    expect(screen.getByLabelText('組織名')).toBeInTheDocument()
-    expect(screen.getByLabelText('ユースケースカテゴリ')).toBeInTheDocument()
-    expect(screen.getByLabelText('概要')).toBeInTheDocument()
-    expect(screen.getByLabelText('合成データで得られた価値')).toBeInTheDocument()
-    expect(screen.getByLabelText('合成データ生成手法')).toBeInTheDocument()
-    expect(screen.getByLabelText('安全性評価手法')).toBeInTheDocument()
-    expect(screen.getByLabelText('有用性評価手法')).toBeInTheDocument()
-    expect(screen.getByLabelText('タグ（カンマ区切り）')).toBeInTheDocument()
-    expect(screen.getByText('出典')).toBeInTheDocument()
+    expect(screen.getByText('カテゴリ（複数選択可）')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '作成' })).toBeInTheDocument()
   })
 
-  it('必須項目が空の場合にバリデーションエラーが表示される', async () => {
+  it('折りたたみセクションが存在する', () => {
+    render(<CaseForm onSubmit={() => {}} submitLabel="作成" />)
+
+    expect(screen.getByText('基本情報')).toBeInTheDocument()
+    expect(screen.getByText('技術情報')).toBeInTheDocument()
+    expect(screen.getByText('タグ')).toBeInTheDocument()
+  })
+
+  it('折りたたみセクションを開くと中のフィールドが表示される', async () => {
     const user = userEvent.setup()
     render(<CaseForm onSubmit={() => {}} submitLabel="作成" />)
 
-    await user.click(screen.getByRole('button', { name: '作成' }))
+    // 基本情報セクションを開く
+    await user.click(screen.getByText('基本情報'))
 
-    await waitFor(() => {
-      expect(screen.getByText('タイトルは必須です')).toBeInTheDocument()
-    })
-    expect(screen.getByText('分野は必須です')).toBeInTheDocument()
-    expect(screen.getByText('組織名は必須です')).toBeInTheDocument()
-    expect(screen.getByText('概要は必須です')).toBeInTheDocument()
+    expect(document.getElementById('title')).toBeInTheDocument()
+    expect(screen.getByLabelText('地域')).toBeInTheDocument()
+    expect(screen.getByLabelText('組織名')).toBeInTheDocument()
+    expect(screen.getByLabelText('概要')).toBeInTheDocument()
   })
 
-  it('有効なデータで submit できる', async () => {
+  it('URLのみ入力で submit できる（他は任意）', async () => {
     const user = userEvent.setup()
     const onSubmit = vi.fn()
     render(<CaseForm onSubmit={onSubmit} submitLabel="作成" />)
 
-    await user.type(screen.getByLabelText('タイトル'), 'テストタイトル')
-    await user.selectOptions(screen.getByLabelText('地域'), '国内')
-    await user.selectOptions(screen.getByLabelText('分野'), '金融')
-    await user.type(screen.getByLabelText('組織名'), 'テスト組織')
-    await user.selectOptions(screen.getByLabelText('ユースケースカテゴリ'), 'R&D')
-    await user.type(screen.getByLabelText('概要'), 'テスト概要文')
-
-    // Fill source fields
-    await user.type(screen.getByLabelText('出典タイトル'), '出典タイトル')
-    await user.type(screen.getByLabelText('URL'), 'https://example.com')
+    // 出典URLのみ入力
+    await user.type(screen.getByPlaceholderText('https://...'), 'https://example.com')
 
     await user.click(screen.getByRole('button', { name: '作成' }))
 
@@ -81,28 +71,27 @@ describe('CaseForm', () => {
     })
 
     const submitted = onSubmit.mock.calls[0][0] as Case
-    expect(submitted.title).toBe('テストタイトル')
-    expect(submitted.region).toBe('国内')
-    expect(submitted.domain).toBe('金融')
     expect(submitted.id).toBeTruthy()
     expect(submitted.status).toBe('user')
-    expect(submitted.created_at).toBeTruthy()
-    expect(submitted.updated_at).toBeTruthy()
+    expect(submitted.sources[0].url).toBe('https://example.com')
   })
 
-  it('defaultValues がフォームにプリフィルされる', () => {
+  it('defaultValues がフォームにプリフィルされる', async () => {
+    const user = userEvent.setup()
     render(<CaseForm defaultValues={mockCase} onSubmit={() => {}} submitLabel="更新" />)
 
-    expect(screen.getByLabelText('タイトル')).toHaveValue('編集テスト事例')
-    expect(screen.getByLabelText('地域')).toHaveValue('国内')
+    // 分野は初期表示
     expect(screen.getByLabelText('分野')).toHaveValue('医療')
+
+    // 基本情報セクションを開く
+    await user.click(screen.getByText('基本情報'))
+
+    const titleInput = document.getElementById('title') as HTMLInputElement
+    expect(titleInput).toHaveValue('編集テスト事例')
+    expect(screen.getByLabelText('地域')).toHaveValue('国内')
     expect(screen.getByLabelText('組織名')).toHaveValue('テスト病院')
-    expect(screen.getByLabelText('ユースケースカテゴリ')).toHaveValue('組織内データ共有')
     expect(screen.getByLabelText('概要')).toHaveValue('テスト概要')
-    expect(screen.getByLabelText('合成データで得られた価値')).toHaveValue('テスト成果')
-    expect(screen.getByLabelText('合成データ生成手法')).toHaveValue('GAN')
-    expect(screen.getByLabelText('安全性評価手法')).toHaveValue('k-匿名性')
-    expect(screen.getByLabelText('有用性評価手法')).toHaveValue('ベンチマーク')
+
     expect(screen.getByRole('button', { name: '更新' })).toBeInTheDocument()
   })
 

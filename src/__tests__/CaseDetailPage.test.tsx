@@ -10,7 +10,7 @@ const mockCase: Case = {
   region: '国内',
   domain: '医療',
   organization: 'テスト病院',
-  usecase_category: '組織内データ共有',
+  usecase_category: ['組織内データ共有'],
   summary: 'テスト概要の内容です',
   value_proposition: 'テスト成果の内容です',
   synthetic_generation_method: 'GAN',
@@ -35,7 +35,6 @@ vi.mock('../context/CaseContext', async () => {
 })
 
 const mockedUseCases = vi.mocked(useCases)
-const noop = () => {}
 
 function renderWithRoute(id: string) {
   return render(
@@ -53,9 +52,6 @@ describe('CaseDetailPage', () => {
       cases: [mockCase],
       loading: false,
       error: null,
-      addCase: noop,
-      updateCase: noop,
-      deleteCase: noop,
     })
   })
 
@@ -87,7 +83,6 @@ describe('CaseDetailPage', () => {
   it('技術詳細が折りたたみで表示される', async () => {
     renderWithRoute('case-001')
     expect(screen.getByText('技術詳細')).toBeInTheDocument()
-    // デフォルトは閉じている
     expect(screen.queryByTestId('tech-details')).not.toBeInTheDocument()
   })
 

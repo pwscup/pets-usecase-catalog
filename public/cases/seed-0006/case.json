@@ -1,0 +1,35 @@
+{
+  "id": "seed-0006",
+  "title": "人流合成データの生成と第三者向け分析プラットフォームでの提供",
+  "region": "国内",
+  "domain": "通信",
+  "organization": "GEOTRA",
+  "usecase_category": [
+    "データ販売"
+  ],
+  "summary": "人流データは個人の移動軌跡を含むためプライバシーの観点から外部提供が難しく、集計データに限定されていた。GEOTRAは人流合成データを生成し、集計前のトリップ単位データを第三者向け分析プラットフォームで提供可能にした。",
+  "value_proposition": "従来は提供困難だった集計前のトリップデータを外部分析者に提供可能に。",
+  "synthetic_generation_method": "調査中",
+  "safety_evaluation_method": "調査中",
+  "utility_evaluation_method": "調査中",
+  "tags": [
+    "sub:人流",
+    "mobility",
+    "synthetic-data",
+    "platform",
+    "region:domestic",
+    "source:JRI"
+  ],
+  "sources": [
+    {
+      "source_type": "pdf",
+      "title": "プライバシー保護合成データの概説と動向",
+      "url": "https://www.jri.co.jp/MediaLibrary/file/column/opinion/pdf/14266.pdf",
+      "note": "GEOTRAの提供形態に言及"
+    }
+  ],
+  "figures": [],
+  "status": "seed",
+  "created_at": "2026-02-26T00:00:00+09:00",
+  "updated_at": "2026-02-26T00:00:00+09:00"
+}

@@ -1,15 +1,11 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
 import type { Case } from '../types'
 import { loadAllCases } from '../lib/data-loader'
-import { saveUserCases } from '../lib/storage'
 
 interface CaseContextType {
   cases: Case[]
   loading: boolean
   error: string | null
-  addCase: (c: Case) => void
-  updateCase: (c: Case) => void
-  deleteCase: (id: string) => void
 }
 
 const CaseContext = createContext<CaseContextType | undefined>(undefined)
@@ -20,38 +16,14 @@ export function CaseProvider({ children }: { children: ReactNode }) {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    loadAllCases()
+    loadAllCases(import.meta.env.BASE_URL.replace(/\/$/, ''))
       .then((data) => setCases(data))
       .catch((e: unknown) => setError(e instanceof Error ? e.message : 'データの読み込みに失敗しました'))
       .finally(() => setLoading(false))
   }, [])
 
-  function addCase(c: Case) {
-    setCases((prev) => {
-      const next = [...prev, c]
-      saveUserCases(next.filter((item) => item.status !== 'seed'))
-      return next
-    })
-  }
-
-  function updateCase(c: Case) {
-    setCases((prev) => {
-      const next = prev.map((item) => (item.id === c.id ? c : item))
-      saveUserCases(next.filter((item) => item.status !== 'seed'))
-      return next
-    })
-  }
-
-  function deleteCase(id: string) {
-    setCases((prev) => {
-      const next = prev.filter((item) => item.id !== id)
-      saveUserCases(next.filter((item) => item.status !== 'seed'))
-      return next
-    })
-  }
-
   return (
-    <CaseContext.Provider value={{ cases, loading, error, addCase, updateCase, deleteCase }}>
+    <CaseContext.Provider value={{ cases, loading, error }}>
       {children}
     </CaseContext.Provider>
   )

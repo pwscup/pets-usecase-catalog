@@ -10,7 +10,7 @@ const mockCase: Case = {
   region: '国内',
   domain: '医療',
   organization: 'テスト病院',
-  usecase_category: 'プライバシー保護',
+  usecase_category: ['プライバシー保護'],
   summary: 'テスト概要の内容です',
   value_proposition: 'テスト成果の内容です',
   synthetic_generation_method: 'GAN',
@@ -52,22 +52,15 @@ describe('CaseEditPage', () => {
       cases: [mockCase],
       loading: false,
       error: null,
-      addCase: vi.fn(),
-      updateCase: vi.fn(),
-      deleteCase: vi.fn(),
     })
   })
 
-  it('編集フォームが既存データでプリフィルされる', () => {
+  it('編集フォームが表示される', () => {
     renderWithRoute('case-001')
 
     expect(screen.getByText('ケース編集')).toBeInTheDocument()
-    expect(screen.getByLabelText('タイトル')).toHaveValue('テスト事例タイトル')
-    expect(screen.getByLabelText('地域')).toHaveValue('国内')
     expect(screen.getByLabelText('分野')).toHaveValue('医療')
-    expect(screen.getByLabelText('組織名')).toHaveValue('テスト病院')
-    expect(screen.getByRole('button', { name: '更新' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: '削除' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'プレビュー' })).toBeInTheDocument()
   })
 
   it('存在しないidの場合にエラー表示', () => {
