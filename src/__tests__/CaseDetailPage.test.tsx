@@ -1,0 +1,128 @@
+import { render, screen } from '@testing-library/react'
+import { MemoryRouter, Routes, Route } from 'react-router-dom'
+import CaseDetailPage from '../pages/CaseDetailPage'
+import { useCases } from '../context/CaseContext'
+import type { Case } from '../types'
+
+const mockCase: Case = {
+  id: 'case-001',
+  title: 'テスト事例タイトル',
+  region: '国内',
+  domain: '医療',
+  organization: 'テスト病院',
+  usecase_category: '組織内データ共有',
+  summary: 'テスト概要の内容です',
+  value_proposition: 'テスト成果の内容です',
+  synthetic_generation_method: 'GAN',
+  safety_evaluation_method: '調査中',
+  utility_evaluation_method: 'ベンチマーク評価',
+  tags: ['healthcare', 'sub:研究'],
+  sources: [
+    { source_type: 'web', title: '出典1', url: 'https://example.com', note: 'メモ' },
+  ],
+  figures: [],
+  status: 'seed',
+  created_at: '2026-01-01T00:00:00Z',
+  updated_at: '2026-01-01T00:00:00Z',
+}
+
+vi.mock('../context/CaseContext', async () => {
+  const actual = await vi.importActual<typeof import('../context/CaseContext')>('../context/CaseContext')
+  return {
+    ...actual,
+    useCases: vi.fn(),
+  }
+})
+
+const mockedUseCases = vi.mocked(useCases)
+const noop = () => {}
+
+function renderWithRoute(id: string) {
+  return render(
+    <MemoryRouter initialEntries={[`/cases/${id}`]}>
+      <Routes>
+        <Route path="/cases/:id" element={<CaseDetailPage />} />
+      </Routes>
+    </MemoryRouter>,
+  )
+}
+
+describe('CaseDetailPage', () => {
+  beforeEach(() => {
+    mockedUseCases.mockReturnValue({
+      cases: [mockCase],
+      loading: false,
+      error: null,
+      addCase: noop,
+      updateCase: noop,
+      deleteCase: noop,
+    })
+  })
+
+  it('ヘッダーにtitleとorganizationが表示される', () => {
+    renderWithRoute('case-001')
+    expect(screen.getByText('テスト事例タイトル')).toBeInTheDocument()
+    expect(screen.getByText('テスト病院')).toBeInTheDocument()
+  })
+
+  it('左カラムにsummaryが「課題と解決」として表示される', () => {
+    renderWithRoute('case-001')
+    expect(screen.getByText('課題と解決')).toBeInTheDocument()
+    expect(screen.getByText('テスト概要の内容です')).toBeInTheDocument()
+  })
+
+  it('左カラムにvalue_propositionが「得られた価値」として表示される', () => {
+    renderWithRoute('case-001')
+    expect(screen.getByText('得られた価値')).toBeInTheDocument()
+    expect(screen.getByText('テスト成果の内容です')).toBeInTheDocument()
+  })
+
+  it('region, domain, usecase_categoryのバッジが表示される', () => {
+    renderWithRoute('case-001')
+    expect(screen.getByText('国内')).toBeInTheDocument()
+    expect(screen.getByText('医療')).toBeInTheDocument()
+    expect(screen.getByText('組織内データ共有')).toBeInTheDocument()
+  })
+
+  it('技術詳細が折りたたみで表示される', async () => {
+    renderWithRoute('case-001')
+    expect(screen.getByText('技術詳細')).toBeInTheDocument()
+    // デフォルトは閉じている
+    expect(screen.queryByTestId('tech-details')).not.toBeInTheDocument()
+  })
+
+  it('概要図プレースホルダーが右カラムに表示される', () => {
+    renderWithRoute('case-001')
+    expect(screen.getByTestId('figure-placeholder')).toBeInTheDocument()
+    expect(screen.getByText('準備中')).toBeInTheDocument()
+  })
+
+  it('タグが#形式で表示される', () => {
+    renderWithRoute('case-001')
+    expect(screen.getByText('#healthcare')).toBeInTheDocument()
+    expect(screen.getByText('#sub:研究')).toBeInTheDocument()
+  })
+
+  it('出典がフッターに表示される', () => {
+    renderWithRoute('case-001')
+    expect(screen.getByText('出典1')).toBeInTheDocument()
+  })
+
+  it('存在しないidの場合に「事例が見つかりません」が表示される', () => {
+    renderWithRoute('nonexistent')
+    expect(screen.getByText('事例が見つかりません')).toBeInTheDocument()
+  })
+
+  it('「一覧に戻る」リンクが存在する', () => {
+    renderWithRoute('case-001')
+    const backLink = screen.getByText('← 一覧に戻る')
+    expect(backLink).toBeInTheDocument()
+    expect(backLink.closest('a')).toHaveAttribute('href', '/')
+  })
+
+  it('「編集」リンクが存在する', () => {
+    renderWithRoute('case-001')
+    const editLink = screen.getByText('編集')
+    expect(editLink.closest('a')).toHaveAttribute('href', '/cases/case-001/edit')
+  })
+})

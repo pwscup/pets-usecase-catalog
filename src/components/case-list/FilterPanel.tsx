@@ -1,0 +1,84 @@
+import { useState } from 'react'
+import type { FilterState } from '../../hooks/useFilter'
+
+interface FilterPanelProps {
+  filters: FilterState
+  filterOptions: Record<string, string[]>
+  onToggle: (key: keyof Omit<FilterState, 'query' | 'sortBy'>, value: string) => void
+  onClear: () => void
+}
+
+const filterSections: { key: keyof Omit<FilterState, 'query' | 'sortBy'>; label: string }[] = [
+  { key: 'region', label: '地域' },
+  { key: 'domain', label: '分野' },
+  { key: 'usecase_category', label: 'ユースケース分類' },
+]
+
+export default function FilterPanel({ filters, filterOptions, onToggle, onClear }: FilterPanelProps) {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const hasActiveFilters =
+    filters.region.length > 0 ||
+    filters.domain.length > 0 ||
+    filters.usecase_category.length > 0
+
+  const content = (
+    <div className="space-y-4">
+      {filterSections.map((section) => {
+        const options = filterOptions[section.key] ?? []
+        if (options.length === 0) return null
+        const selected = filters[section.key] as string[]
+
+        return (
+          <div key={section.key}>
+            <h3 className="text-sm font-semibold text-gray-700 mb-2">{section.label}</h3>
+            <div className="space-y-1">
+              {options.map((option) => (
+                <label key={option} className="flex items-center gap-2 text-sm cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={selected.includes(option)}
+                    onChange={() => onToggle(section.key, option)}
+                    className="rounded border-gray-300"
+                  />
+                  <span>{option}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+        )
+      })}
+
+      {hasActiveFilters && (
+        <button
+          onClick={onClear}
+          className="w-full px-3 py-2 text-sm text-red-600 border border-red-300 rounded-lg hover:bg-red-50"
+          data-testid="clear-filters"
+        >
+          フィルタをクリア
+        </button>
+      )}
+    </div>
+  )
+
+  return (
+    <>
+      {/* Mobile toggle button */}
+      <div className="md:hidden mb-4">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="w-full px-4 py-2 text-sm bg-gray-100 rounded-lg hover:bg-gray-200"
+        >
+          {isOpen ? 'フィルタを閉じる' : 'フィルタを開く'}
+          {hasActiveFilters && ' (適用中)'}
+        </button>
+      </div>
+
+      {/* Mobile panel */}
+      {isOpen && <div className="md:hidden mb-4 p-4 bg-white rounded-lg shadow">{content}</div>}
+
+      {/* Desktop sidebar */}
+      <div className="hidden md:block w-64 shrink-0 p-4 bg-white rounded-lg shadow">{content}</div>
+    </>
+  )
+}
