@@ -80,7 +80,7 @@ export interface Figure {
 export interface Case {
   id: string;
   title: string;
-  region: Region;
+  region?: Region;
   domain: string;
   organization: string;
   usecase_category: string[];

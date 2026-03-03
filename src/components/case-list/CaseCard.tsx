@@ -50,9 +50,11 @@ export default function CaseCard({ caseItem }: CaseCardProps) {
 
       {/* Tags */}
       <div className="flex flex-wrap gap-1.5">
-        <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${regionStyles[caseItem.region] ?? 'bg-gray-100 text-gray-600'}`}>
-          {caseItem.region}
-        </span>
+        {caseItem.region && (
+          <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${regionStyles[caseItem.region] ?? 'bg-gray-100 text-gray-600'}`}>
+            {caseItem.region}
+          </span>
+        )}
         <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${domainStyles[caseItem.domain] ?? 'bg-gray-100 text-gray-600'}`}>
           {caseItem.domain}
         </span>
