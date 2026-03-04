@@ -4,6 +4,13 @@ import { generateCreatePrompt, generateEnrichPrompt } from '../constants/prompts
 describe('generateCreatePrompt', () => {
   const prompt = generateCreatePrompt()
 
+  it('入力情報セクションが冒頭にある', () => {
+    const inputIdx = prompt.indexOf('## 入力情報')
+    const outputIdx = prompt.indexOf('## 出力仕様')
+    expect(inputIdx).toBeGreaterThan(-1)
+    expect(outputIdx).toBeGreaterThan(inputIdx)
+  })
+
   it('usecase_category の選択肢一覧を含む', () => {
     expect(prompt).toContain('組織内データ共有')
     expect(prompt).toContain('組織間データ共有')
@@ -37,21 +44,31 @@ describe('generateCreatePrompt', () => {
 })
 
 describe('generateEnrichPrompt', () => {
+  it('入力情報セクションが冒頭にある', () => {
+    const prompt = generateEnrichPrompt('{}')
+    const inputIdx = prompt.indexOf('## 入力情報')
+    const existingIdx = prompt.indexOf('## 既存の事例JSON')
+    expect(inputIdx).toBeGreaterThan(-1)
+    expect(existingIdx).toBeGreaterThan(inputIdx)
+  })
+
   it('引数の既存JSONがプロンプトに埋め込まれる', () => {
     const json = '{"title":"テスト事例","sources":[]}'
     const prompt = generateEnrichPrompt(json)
     expect(prompt).toContain(json)
   })
 
-  it('「調査中」項目の補完ルールを含む', () => {
+  it('すべての項目が改善対象であることを示す', () => {
     const prompt = generateEnrichPrompt('{}')
     expect(prompt).toContain('調査中')
     expect(prompt).toContain('更新対象')
+    expect(prompt).toContain('すべての項目が改善の対象')
   })
 
-  it('既存内容の保持ルールを含む', () => {
+  it('改善の例を含む', () => {
     const prompt = generateEnrichPrompt('{}')
-    expect(prompt).toContain('既存内容の保持')
+    expect(prompt).toContain('改善の例')
+    expect(prompt).toContain('抽象的な記述')
   })
 
   it('sources追加ルールを含む', () => {

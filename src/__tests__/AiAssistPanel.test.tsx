@@ -11,30 +11,30 @@ describe('AiAssistPanel', () => {
     })
   })
 
-  it('パネルが表示されること', () => {
+  it('パネルがデフォルトで折りたたまれていること', () => {
     render(<AiAssistPanel mode="create" onImport={() => {}} />)
 
     expect(screen.getByText('AI で入力を補助する')).toBeInTheDocument()
-    expect(screen.getByText('プロンプト')).toBeInTheDocument()
-    expect(screen.getByText('AIの出力をインポート')).toBeInTheDocument()
+    expect(screen.queryByText('プロンプト')).not.toBeInTheDocument()
   })
 
   it('折りたたみが動作すること', async () => {
     const user = userEvent.setup()
     render(<AiAssistPanel mode="create" onImport={() => {}} />)
 
-    expect(screen.getByText('プロンプト')).toBeInTheDocument()
-
-    await user.click(screen.getByText('AI で入力を補助する'))
     expect(screen.queryByText('プロンプト')).not.toBeInTheDocument()
 
     await user.click(screen.getByText('AI で入力を補助する'))
     expect(screen.getByText('プロンプト')).toBeInTheDocument()
+
+    await user.click(screen.getByText('AI で入力を補助する'))
+    expect(screen.queryByText('プロンプト')).not.toBeInTheDocument()
   })
 
   it('プロンプトコピーボタンが動作すること', async () => {
     render(<AiAssistPanel mode="create" onImport={() => {}} />)
 
+    fireEvent.click(screen.getByText('AI で入力を補助する'))
     fireEvent.click(screen.getByText('プロンプトをコピー'))
 
     await screen.findByText(/コピーしました/)
@@ -47,12 +47,14 @@ describe('AiAssistPanel', () => {
   it('インポートテキストエリアが表示されること', () => {
     render(<AiAssistPanel mode="create" onImport={() => {}} />)
 
+    fireEvent.click(screen.getByText('AI で入力を補助する'))
     expect(screen.getByPlaceholderText('AIが出力したJSONをここに貼り付け...')).toBeInTheDocument()
     expect(screen.getByText('インポート')).toBeInTheDocument()
   })
 
   it('createモードとeditモードでプロンプトテキストが異なること', () => {
     const { unmount } = render(<AiAssistPanel mode="create" onImport={() => {}} />)
+    fireEvent.click(screen.getByText('AI で入力を補助する'))
     // createモードでは「事例を抽出し」という文言が含まれる
     expect(screen.getAllByText(/事例を抽出し/).length).toBeGreaterThan(0)
 
@@ -65,6 +67,7 @@ describe('AiAssistPanel', () => {
         onImport={() => {}}
       />
     )
+    fireEvent.click(screen.getByText('AI で入力を補助する'))
     // editモードでは「既存事例JSON」という文言が含まれる
     expect(screen.getAllByText(/既存事例JSON/).length).toBeGreaterThan(0)
   })
@@ -74,6 +77,7 @@ describe('AiAssistPanel', () => {
     const onImport = vi.fn()
     render(<AiAssistPanel mode="create" onImport={onImport} />)
 
+    await user.click(screen.getByText('AI で入力を補助する'))
     const textarea = screen.getByPlaceholderText('AIが出力したJSONをここに貼り付け...')
     // sources が必須なので最低限のバリデーションを通すJSONを用意
     const validJson = JSON.stringify({
@@ -95,6 +99,7 @@ describe('AiAssistPanel', () => {
     const onImport = vi.fn()
     render(<AiAssistPanel mode="create" onImport={onImport} />)
 
+    await user.click(screen.getByText('AI で入力を補助する'))
     const textarea = screen.getByPlaceholderText('AIが出力したJSONをここに貼り付け...')
     await user.clear(textarea)
     await user.type(textarea, 'これはJSONではない')

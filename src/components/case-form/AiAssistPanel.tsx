@@ -10,7 +10,7 @@ interface AiAssistPanelProps {
 }
 
 export default function AiAssistPanel({ mode, currentCaseJson, onImport }: AiAssistPanelProps) {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
   const [isPromptExpanded, setIsPromptExpanded] = useState(false)
   const [copied, setCopied] = useState(false)
   const [importText, setImportText] = useState('')
