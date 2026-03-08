@@ -75,7 +75,7 @@ export default function CaseDetailView({ caseData }: { caseData: Case }) {
         <div className="bg-yellow-50 border border-t-0 border-yellow-200 px-5 py-2.5 flex items-start gap-2" data-testid="review-alert">
           <span className="text-yellow-600 text-sm mt-0.5">&#9888;</span>
           <p className="text-xs text-yellow-700">
-            この事例はAIにより生成されました。内容の正確性は人間によるレビュー前です。
+            このページに表示された内容は、公開情報をもとにAIを用いて整理したものです。内容の正確性は保証しません。
           </p>
         </div>
       )}
