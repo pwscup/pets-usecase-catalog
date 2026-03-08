@@ -1,0 +1,37 @@
+{
+  "id": "anon-0018",
+  "title": "アストラゼネカ：次世代医療基盤法に基づく仮名加工医療情報による医薬品開発加速",
+  "region": "国内",
+  "domain": "医療",
+  "organization": "アストラゼネカ",
+  "usecase_category": [
+    "R&D"
+  ],
+  "technology_category": [
+    "anonymization"
+  ],
+  "review_status": "ai_generated",
+  "summary": "次世代医療基盤法に基づく日本初の認定仮名加工医療情報利用事業者として、匿名加工医療情報では加工されていた特異的な検査値や病名等を含む仮名加工医療情報を利用可能に。より詳細で継続的な同一患者データの収集、目的に合ったリアルワールドデータ構築、薬事承認のためのデータ利用が可能となり、医薬品開発、安全性調査、エビデンス構築、個別化医療の推進を加速。",
+  "value_proposition": "仮名加工医療情報により詳細な患者データを保持したまま、リアルワールドデータ構築・薬事承認・個別化医療推進を加速",
+  "synthetic_generation_method": "調査中",
+  "safety_evaluation_method": "調査中",
+  "utility_evaluation_method": "調査中",
+  "tags": [
+    "仮名加工情報",
+    "次世代医療基盤法",
+    "医薬品開発",
+    "リアルワールドデータ",
+    "個別化医療"
+  ],
+  "sources": [
+    {
+      "source_type": "web",
+      "title": "アストラゼネカ、次世代医療基盤法に基づく日本初となる「認定仮名加工医療情報利用事業者」認定を取得",
+      "url": "https://prtimes.jp/main/html/rd/p/000000490.000024308.html"
+    }
+  ],
+  "figures": [],
+  "status": "seed",
+  "created_at": "2026-03-08T00:00:00+09:00",
+  "updated_at": "2026-03-08T00:00:00+09:00"
+}

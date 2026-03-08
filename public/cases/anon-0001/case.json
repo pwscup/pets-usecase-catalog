@@ -1,6 +1,6 @@
 {
   "id": "anon-0001",
-  "title": "日産自動車：NissanConnect車両データの匿名加工情報による第三者提供",
+  "title": "日産自動車：NissanConnect車両データの匿名加工によるVICS交通情報サービス提供",
   "region": "国内",
   "domain": "モビリティ",
   "organization": "日産自動車",
@@ -11,8 +11,8 @@
     "anonymization"
   ],
   "review_status": "ai_generated",
-  "summary": "NissanConnect加入車両から取得した位置情報、車種、充電実績、走行実績などを匿名加工情報として第三者に提供。VICS向け交通情報やEV普及関連の分析に活用されており、モビリティデータの制度利用事例。",
-  "value_proposition": "調査中",
+  "summary": "NissanConnect加入車両から取得した位置情報と時刻情報を匿名加工し、道路ごとの走行時間情報などへ変換した上で、VICSの交通情報サービスに提供。多量の車両情報と交通情報を組み合わせて渋滞回避ルートのリアルタイム提示に活用されており、利用者の運転時間短縮に寄与している。",
+  "value_proposition": "匿名加工情報が交通サービスの品質向上に直結し、渋滞回避ルートのリアルタイム提示による運転時間短縮を実現",
   "synthetic_generation_method": "調査中",
   "safety_evaluation_method": "調査中",
   "utility_evaluation_method": "調査中",
@@ -20,17 +20,18 @@
     "匿名加工情報",
     "モビリティデータ",
     "交通情報",
-    "EV"
+    "VICS",
+    "渋滞回避"
   ],
   "sources": [
     {
       "source_type": "web",
-      "title": "NissanConnect プライバシーポリシー",
+      "title": "NissanConnect プライバシーポリシー（匿名加工情報の活用事例）",
       "url": "https://www.nissan.co.jp/CONNECT/MEMBER/RULES/privacy.html"
     }
   ],
   "figures": [],
   "status": "seed",
   "created_at": "2026-03-07T00:00:00+09:00",
-  "updated_at": "2026-03-07T00:00:00+09:00"
+  "updated_at": "2026-03-08T00:00:00+09:00"
 }
