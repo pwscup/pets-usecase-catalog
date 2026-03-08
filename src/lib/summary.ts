@@ -17,12 +17,14 @@ export interface CaseSummary {
   byReviewStatus: CountItem[]
 }
 
-/** Count cases grouped by a specific field */
+/** Count cases grouped by a specific field.
+ *  For array fields (usecase_category, technology_category), percentage is
+ *  based on the sum of all assignments so that stacked bars add up to 100%.
+ */
 export function countByField(
   cases: Case[],
   field: 'region' | 'domain' | 'usecase_category' | 'technology_category' | 'review_status',
 ): CountItem[] {
-  const total = cases.length
   const counts = new Map<string, number>()
 
   for (const c of cases) {
@@ -36,11 +38,15 @@ export function countByField(
     }
   }
 
+  // For array fields, use sum of counts so stacked bar totals 100%
+  const sumCounts = Array.from(counts.values()).reduce((a, b) => a + b, 0)
+  const denominator = sumCounts > 0 ? sumCounts : 1
+
   return Array.from(counts.entries())
     .map(([label, count]) => ({
       label,
       count,
-      percentage: total === 0 ? 0 : Math.round((count / total) * 1000) / 10,
+      percentage: Math.round((count / denominator) * 1000) / 10,
     }))
     .sort((a, b) => b.count - a.count)
 }

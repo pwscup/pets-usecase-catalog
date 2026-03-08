@@ -9,10 +9,11 @@ interface BarItem {
   color: string
 }
 
-function HorizontalBarChart({ title, items, maxCount }: { title: string; items: BarItem[]; maxCount: number }) {
+function HorizontalBarChart({ title, items, maxCount, note }: { title: string; items: BarItem[]; maxCount: number; note?: string }) {
   return (
     <div className="bg-white rounded-lg shadow px-5 py-4">
-      <h3 className="text-sm font-semibold text-gray-700 mb-3">{title}</h3>
+      <h3 className="text-sm font-semibold text-gray-700 mb-1">{title}</h3>
+      {note && <p className="text-[11px] text-gray-400 mb-2">{note}</p>}
       <div className="space-y-2">
         {items.map((item) => (
           <div key={item.label} className="flex items-center gap-3">
@@ -312,10 +313,10 @@ export default function StatsPage() {
 
       {/* Charts grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <HorizontalBarChart title="技術カテゴリ別" items={stats.techItems} maxCount={maxTech} />
+        <HorizontalBarChart title="技術カテゴリ別" items={stats.techItems} maxCount={maxTech} note="※ 複数技術を併用する事例があるため、合計は総事例数を超えます" />
         <HorizontalBarChart title="分野別" items={stats.domainItems} maxCount={maxDomain} />
         <HorizontalBarChart title="地域別" items={stats.regionItems} maxCount={maxRegion} />
-        <HorizontalBarChart title="ユースケース分類別" items={stats.usecaseItems} maxCount={maxUsecase} />
+        <HorizontalBarChart title="ユースケース分類別" items={stats.usecaseItems} maxCount={maxUsecase} note="※ 複数分類にまたがる事例があるため、合計は総事例数を超えます" />
         <HorizontalBarChart title="レビュー状態別" items={stats.reviewItems} maxCount={maxReview} />
       </div>
     </div>
