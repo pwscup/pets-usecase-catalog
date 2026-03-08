@@ -146,7 +146,7 @@ describe('CaseDetailPage', () => {
   it('AI生成の注意書きが表示される', () => {
     renderWithRoute('case-001')
     expect(screen.getByTestId('review-alert')).toBeInTheDocument()
-    expect(screen.getByText(/この事例はAIにより生成されました/)).toBeInTheDocument()
+    expect(screen.getByText(/公開情報をもとにAIを用いて整理したものです/)).toBeInTheDocument()
   })
 
   it('human_reviewedの場合は注意書きが表示されない', () => {
