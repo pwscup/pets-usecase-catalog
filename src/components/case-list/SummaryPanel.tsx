@@ -167,7 +167,8 @@ export default function SummaryPanel({ filteredCases, totalCases, filters, onTog
         </div>
 
         <div className="bg-white rounded-lg shadow px-4 py-3">
-          <h3 className="text-sm font-semibold text-gray-700 mb-2">ユースケース分類別</h3>
+          <h3 className="text-sm font-semibold text-gray-700 mb-1">ユースケース分類別</h3>
+          <p className="text-[11px] text-gray-400 mb-2">※ 複数分類にまたがる事例あり</p>
           <StackedBar
             items={categoryItems}
             colorMap={CATEGORY_COLORS}
