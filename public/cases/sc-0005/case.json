@@ -1,0 +1,27 @@
+{
+  "id": "sc-0005",
+  "title": "千葉大学病院 × NTT Com：ePRO×秘密計算による炎症性腸疾患（IBD）観察研究",
+  "region": "国内",
+  "domain": "医療",
+  "organization": "千葉大学病院・NTTコミュニケーションズ",
+  "usecase_category": ["R&D"],
+  "technology_category": ["secure_computation"],
+  "review_status": "ai_generated",
+  "summary": "患者がスマートフォンから入力するePROと臨床所見を、NTT Comの「SmartPRO」「析秘」を使って秘匿分析し、IBDの新たな知見獲得と患者QOL向上を目指す観察研究。患者が医師に話しづらい私生活情報も収集しつつ、医師や研究者が生データを見られない設計。日本初のePRO×秘密計算によるIBD観察研究。",
+  "value_proposition": "データを守れるから患者が出しやすくなるという構図により、従来取りにくかったPROを収集・分析可能に。多施設共同研究や治療品質向上への拡張も視野に入れた取り組み",
+  "synthetic_generation_method": "調査中",
+  "safety_evaluation_method": "調査中",
+  "utility_evaluation_method": "調査中",
+  "tags": ["秘密計算", "ePRO", "IBD", "患者QOL"],
+  "sources": [
+    {
+      "source_type": "web",
+      "title": "炎症性腸疾患において患者のプライバシーを保護したまま行う観察研究",
+      "url": "https://www.ntt.com/about-us/press-releases/news/article/2022/1129.html"
+    }
+  ],
+  "figures": [],
+  "status": "seed",
+  "created_at": "2026-03-08T00:00:00+09:00",
+  "updated_at": "2026-03-08T00:00:00+09:00"
+}

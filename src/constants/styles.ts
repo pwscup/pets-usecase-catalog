@@ -8,6 +8,7 @@ export const DOMAIN_COLORS = {
   'IT': { bg: 'bg-purple-500', border: 'border-l-purple-500', badge: 'bg-purple-50 text-purple-700 ring-1 ring-purple-200' },
   'エネルギー': { bg: 'bg-amber-500', border: 'border-l-amber-500', badge: 'bg-amber-50 text-amber-700 ring-1 ring-amber-200' },
   '小売': { bg: 'bg-orange-500', border: 'border-l-orange-500', badge: 'bg-orange-50 text-orange-700 ring-1 ring-orange-200' },
+  '製造': { bg: 'bg-teal-500', border: 'border-l-teal-500', badge: 'bg-teal-50 text-teal-700 ring-1 ring-teal-200' },
 } as const
 
 /** Region ごとの色定義 */
