@@ -13,8 +13,8 @@
   "review_status": "ai_generated",
   "summary": "レセプト・健診情報を匿名加工し、他健保とのベンチマーク分析を目的として第三者提供。さらに、健診結果の共有による事後指導や高リスク者への医療機関受診勧奨を実施。自組合の健康課題の相対把握と、保健指導・受診勧奨の改善に活用している。",
   "value_proposition": "他健保との比較分析による自組合の健康課題の相対把握と、保健指導・受診勧奨プログラムの改善",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": [
     "匿名加工情報",

@@ -9,8 +9,8 @@
   "review_status": "ai_generated",
   "summary": "サプライチェーン間で機密データを直接開示せずに、秘密計算プラットフォームALCHEMISTAを使って企業間データを連携し、マテリアルズ・インフォマティクス（MI）による新規材料開発を推進。両社がより具体的・定量的なデータを出し合える状態を実現。",
   "value_proposition": "通常2〜3年かかる材料開発プロセスを1年未満に短縮し、顧客提供可能なビジネスレベルのサンプル作成に成功。秘密計算が単なる安全性強化ではなく、開発スピードと企業間コミュニケーションの質そのものを変えた事例",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": ["秘密計算", "マテリアルズ・インフォマティクス", "新規材料開発", "企業間データ連携"],
   "sources": [

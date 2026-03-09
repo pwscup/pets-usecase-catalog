@@ -16,7 +16,8 @@ export type TechnologyCategory =
   | "differential_privacy"
   | "anonymization"
   | "federated_learning"
-  | "secure_computation";
+  | "secure_computation"
+  | "distributed_analytics";
 
 // Review status
 export type ReviewStatus =
@@ -105,8 +106,8 @@ export interface Case {
   image?: string;
   summary: string;
   value_proposition: string;
-  synthetic_generation_method: string;
-  safety_evaluation_method: string;
+  privacy_enhancement_method: string;
+  safety_assurance_method: string;
   utility_evaluation_method: string;
   tags: string[];
   editorial_notes?: string[];

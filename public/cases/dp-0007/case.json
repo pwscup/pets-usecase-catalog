@@ -13,8 +13,8 @@
   "review_status": "ai_generated",
   "summary": "広告配信・露出・コンバージョン・キャンペーン分析用データを対象に、クラウド型の分析環境で差分プライバシー由来のノイズ注入や差分チェックなどのプライバシー保護モードを提供している。3,000超のブランド等が利用している。",
   "value_proposition": "ブランドや代理店は個票を直接受け取らずに広告効果分析やROAS評価を実施できる。差分プライバシーを安全な広告分析の構成要素として提供する典型例である。",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": [
     "広告分析",

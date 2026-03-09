@@ -13,8 +13,8 @@
   "review_status": "ai_generated",
   "summary": "2020年米国国勢調査の回答データを対象に、TopDown Algorithmにより差分プライバシーに基づくノイズ入り計測を行い、公開統計やprivacy-protected microdata file（PPMF）を生成している。PPMFは実際の回答ではなく保護処理済みのマイクロデータとして公開されている。",
   "value_proposition": "回答者の機密性を守りながら、全国から細粒度地域までの統計公開を継続できる。公的統計における差分プライバシーの世界的な代表事例である。",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": [
     "国勢調査",

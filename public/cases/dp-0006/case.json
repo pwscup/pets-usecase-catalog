@@ -14,8 +14,8 @@
   "review_status": "ai_generated",
   "summary": "Gboard利用時の入力文脈に基づく学習信号を対象に、Federated Learningと差分プライバシーを組み合わせて次単語予測モデルを訓練している。スペイン語話者向けGboardの本番系モデルとして導入されている。",
   "value_proposition": "実際の入力データを中央に集めずに、予測変換の改善を進められる。差分プライバシーがモデル学習に直接使われる数少ない明示事例である。",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": [
     "予測変換",

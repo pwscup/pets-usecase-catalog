@@ -13,8 +13,8 @@
   "review_status": "ai_generated",
   "summary": "よく訪れる場所で撮影された写真の種類に関する情報を対象に、差分プライバシーを用いて群集レベルの傾向を学習し、PhotosのMemoriesやPlacesで代表写真を選定している。個人の写真や行動をデバイス外に出さない設計としている。",
   "value_proposition": "個人の写真や行動を直接外部に出さずに、群集レベルの傾向を学習し、写真体験を改善できる。",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": [
     "画像",

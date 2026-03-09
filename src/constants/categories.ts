@@ -18,6 +18,7 @@ export const TECHNOLOGY_CATEGORY_OPTIONS = [
   'anonymization',
   'federated_learning',
   'secure_computation',
+  'distributed_analytics',
 ] as const
 
 export const TECHNOLOGY_CATEGORY_LABELS: Record<string, string> = {
@@ -26,6 +27,7 @@ export const TECHNOLOGY_CATEGORY_LABELS: Record<string, string> = {
   anonymization: '匿名化',
   federated_learning: '連合学習',
   secure_computation: '秘密計算',
+  distributed_analytics: '分散データ分析',
 }
 
 export const REVIEW_STATUS_OPTIONS = [

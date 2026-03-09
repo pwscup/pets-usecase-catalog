@@ -13,8 +13,8 @@
   "review_status": "ai_generated",
   "summary": "チーム単位のコラボレーションデータを対象に、People Manager向けに個人情報を共有せずチームの働き方を把握する集計インサイトを差分プライバシーを適用して提供している。エンタープライズ分析領域での差分プライバシー適用例である。",
   "value_proposition": "個人単位の行動可視化に寄りすぎずに、働き方改善や組織マネジメントに必要な傾向把握を可能にしている。",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": [
     "働き方分析",

@@ -9,8 +9,8 @@
   "review_status": "ai_generated",
   "summary": "患者がスマートフォンから入力するePROと臨床所見を、NTT Comの「SmartPRO」「析秘」を使って秘匿分析し、IBDの新たな知見獲得と患者QOL向上を目指す観察研究。患者が医師に話しづらい私生活情報も収集しつつ、医師や研究者が生データを見られない設計。日本初のePRO×秘密計算によるIBD観察研究。",
   "value_proposition": "データを守れるから患者が出しやすくなるという構図により、従来取りにくかったPROを収集・分析可能に。多施設共同研究や治療品質向上への拡張も視野に入れた取り組み",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": ["秘密計算", "ePRO", "IBD", "患者QOL"],
   "sources": [

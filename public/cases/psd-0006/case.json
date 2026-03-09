@@ -9,8 +9,8 @@
   "review_status": "ai_generated",
   "summary": "公的統計系資料において、本物のデータを一部欠損させて補完する手法と、統計的マッチングやパネルデータ作成による情報量増加が整理されている。共通変数を接着剤として、異なるデータソースを疑似的に結合する手法の研究事例。",
   "value_proposition": "調査中",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": ["部分合成データ", "統計的マッチング", "疑似結合"],
   "sources": [

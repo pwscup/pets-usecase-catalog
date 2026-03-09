@@ -9,8 +9,8 @@
   "review_status": "ai_generated",
   "summary": "Veteransデータに対し、稀少で識別されやすい高リスクレコードの一部変数のみを合成対象にする部分合成設計。全件合成ではなく、高リスク部分だけを選択的に置換する実務設計の事例。",
   "value_proposition": "調査中",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": ["部分合成データ", "秘匿保護", "退役軍人"],
   "sources": [

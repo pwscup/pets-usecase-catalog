@@ -13,8 +13,8 @@
   "review_status": "ai_generated",
   "summary": "健診データ、レセプトデータ、保健事業データを匿名加工情報に加工し、IQVIAソリューションズジャパンへ提供。他組合比較を含む保健事業の企画・評価に活用している。",
   "value_proposition": "調査中",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": [
     "匿名加工情報",

@@ -13,8 +13,8 @@
   "review_status": "ai_generated",
   "summary": "ID-POSデータのメーカー・卸への提供、クレジットカード利用情報の利活用、処方箋記載事項の利活用、健康保険組合レセプトデータの活用、介護サービス利用情報の活用など、匿名加工情報の実務事例を網羅的に整理した公的資料。",
   "value_proposition": "調査中",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": [
     "匿名加工情報",

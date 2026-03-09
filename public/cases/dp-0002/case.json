@@ -13,8 +13,8 @@
   "review_status": "ai_generated",
   "summary": "QuickType候補、絵文字候補、Safariのクラッシュドメイン、Healthアプリの編集データ種別などを対象に、端末側で差分プライバシー処理したイベントを収集し、どの機能やカテゴリが多く使われているかを把握している。ローカル差分プライバシーを採用し、識別子やIPアドレスを保持しない運用としている。",
   "value_proposition": "多数ユーザーの傾向を把握しつつ、個人単位の行動や内容をサーバ側で直接把握しない設計により、プロダクト改善とプライバシー保護を両立している。",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": [
     "ローカル差分プライバシー",

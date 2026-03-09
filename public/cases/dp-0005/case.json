@@ -13,8 +13,8 @@
   "review_status": "ai_generated",
   "summary": "Location Historyを有効にしたユーザーの位置履歴の集計を対象に、小売、職場、公共交通、公園、住宅地などカテゴリ別の移動傾向を地域ごとに差分プライバシーで保護して公表した。人工ノイズを加える差分プライバシーを用いている。",
   "value_proposition": "公衆衛生当局や地域社会が行動制限や政策の影響を把握する材料を得られる一方、個人の移動を特定しない形で公開できる。",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": [
     "公衆衛生",

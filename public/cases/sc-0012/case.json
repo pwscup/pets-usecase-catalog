@@ -9,8 +9,8 @@
   "review_status": "ai_generated",
   "summary": "銀行4行の実データを使い、プライバシー保護連合学習技術DeepProtectにより不正口座検知を共同で実施。個別学習モデルと連合学習モデルを組み合わせたアンサンブル学習を採用し、AMLシステムとの並行運用の可能性まで検討。",
   "value_proposition": "不正口座検知の精度向上に加え、AMLシステムとの並行運用の可能性まで検討。PoC段階でも業務に乗せられるかという実装観点まで踏み込んだ、金融実務への接続が強い事例",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": ["プライバシー保護連合学習", "不正口座検知", "DeepProtect", "AML"],
   "sources": [
