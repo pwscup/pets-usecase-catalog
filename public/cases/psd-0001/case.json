@@ -9,8 +9,8 @@
   "review_status": "ai_generated",
   "summary": "米国国勢調査局が、家計・所得・給付に関するSIPP調査データを税・給付の行政データと統合したうえで公開用に部分合成化（partially synthetic）した事例。機微な変数を合成値で置換し、研究利用可能性を高めている。",
   "value_proposition": "調査中",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": ["部分合成データ", "公的統計", "行政データ"],
   "sources": [

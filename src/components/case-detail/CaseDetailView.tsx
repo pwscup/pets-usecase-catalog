@@ -127,12 +127,12 @@ export default function CaseDetailView({ caseData }: { caseData: Case }) {
               {techOpen && (
                 <dl className="text-sm space-y-1.5" data-testid="tech-details">
                   <div>
-                    <dt className="text-gray-500 text-xs">合成データ生成手法</dt>
-                    <dd className="text-gray-800"><TechValue value={caseData.synthetic_generation_method} /></dd>
+                    <dt className="text-gray-500 text-xs">プライバシー強化手法</dt>
+                    <dd className="text-gray-800"><TechValue value={caseData.privacy_enhancement_method} /></dd>
                   </div>
                   <div>
-                    <dt className="text-gray-500 text-xs">安全性評価手法</dt>
-                    <dd className="text-gray-800"><TechValue value={caseData.safety_evaluation_method} /></dd>
+                    <dt className="text-gray-500 text-xs">安全性保証手法</dt>
+                    <dd className="text-gray-800"><TechValue value={caseData.safety_assurance_method} /></dd>
                   </div>
                   <div>
                     <dt className="text-gray-500 text-xs">有用性評価手法</dt>

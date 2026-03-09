@@ -14,8 +14,8 @@
   "review_status": "ai_generated",
   "summary": "千葉銀行、三菱UFJ銀行、中国銀行、三井住友信託銀行、伊予銀行と連携し、各銀行がデータを持ったままプライバシー保護連合学習技術「DeepProtect」を用いて不正送金検知を実証。目標の検知精度80％以上を達成し、単独行では検知できなかった被害取引や不正口座の早期検知も確認された。",
   "value_proposition": "単独行では検知困難な不正送金パターンを複数銀行の連合学習で検知可能にし、検知精度80%以上を達成",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "個別学習モデルとの比較による検知精度評価",
   "tags": [
     "連合学習",

@@ -13,8 +13,8 @@
   "review_status": "ai_generated",
   "summary": "NissanConnect加入車両から取得した位置情報、車種、充電実績、走行実績などを匿名加工情報として第三者に提供。VICS向け交通情報やEV普及関連の分析に活用されており、モビリティデータの制度利用事例。",
   "value_proposition": "調査中",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": [
     "匿名加工情報",

@@ -14,8 +14,8 @@
   "review_status": "ai_generated",
   "summary": "りそな銀行を含む4銀行と連携し、銀行間で元データを共有せずに不正口座検知モデルを連合学習で構築。個別学習モデルと連合学習モデルを組み合わせたアンサンブル学習を適用し、適合率が最大約10ポイント向上、再現率95％超を確認。従来のルールベース監視や個別学習では捉えにくかった潜在的不正口座の特定可能性も示され、AML実運用への接続まで視野に入っている。",
   "value_proposition": "アンサンブル学習により適合率最大約10ポイント向上・再現率95%超を達成し、AML実運用への接続を実現",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "個別学習モデルとの適合率・再現率比較",
   "tags": [
     "連合学習",

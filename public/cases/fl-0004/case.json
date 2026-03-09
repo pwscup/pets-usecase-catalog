@@ -14,8 +14,8 @@
   "review_status": "ai_generated",
   "summary": "プライバシー保護連合学習技術「DeepProtect」を医療に応用し、各大学・医療機関が保有する症例データを外部に持ち出さずに放射線画像診断支援AIを研究開発する共同研究。NICT・立命館大学が高機能暗号と連合学習の基盤を強化し、医療側の大学が臨床研究を担う。現時点では共同研究開始の公表段階であり、業務KPIや本番導入結果はまだ公開されていない。",
   "value_proposition": "調査中",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": [
     "連合学習",

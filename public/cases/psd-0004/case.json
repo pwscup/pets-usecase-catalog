@@ -9,8 +9,8 @@
   "review_status": "ai_generated",
   "summary": "英国ONSが2011年国勢調査と死亡登録を結合した大規模機密データを合成化。複数データソースの結合後に、公開・分析用の合成版を作成する事例として、高機微データの安全な公開手法を示している。",
   "value_proposition": "調査中",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": ["合成データ", "公的統計", "データ連結"],
   "sources": [

@@ -9,8 +9,8 @@
   "review_status": "ai_generated",
   "summary": "Statistics Canadaが国勢調査や死亡レジストリなどの高リスクデータを、分析価値を保った合成データとしてハッカソン等に提供。公開できない部分を安全化して、教育・研究用途に提供する事例。",
   "value_proposition": "調査中",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": ["合成データ", "公的統計", "教育利用"],
   "sources": [

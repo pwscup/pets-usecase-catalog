@@ -13,8 +13,8 @@
   "review_status": "ai_generated",
   "summary": "サービス利用者情報から仮名加工情報を作成し、性別・住所・年齢等の情報を用いた分析を実施。プロダクト改善・分析用途の制度活用例。",
   "value_proposition": "調査中",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": [
     "仮名加工情報",

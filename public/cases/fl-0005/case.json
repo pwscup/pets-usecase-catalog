@@ -13,8 +13,8 @@
   "review_status": "ai_generated",
   "summary": "少数症例しか集めにくい医療領域を前提に、100例以下でも学習可能なスモールデータ深層学習と連合学習を融合し、患者データを病院外へ出さずに診断支援AIを構築する研究課題。希少疾患や主要疾患を対象に安全性・有効性の高い診断支援AIの実証を計画。現在進行中の研究案件であり、成果はまだ公開されていない。",
   "value_proposition": "調査中",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": [
     "連合学習",

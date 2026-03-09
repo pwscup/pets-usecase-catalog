@@ -119,8 +119,8 @@ describe("caseSchema", () => {
     const result = caseSchema.parse(input);
 
     expect(result.value_proposition).toBe("調査中");
-    expect(result.synthetic_generation_method).toBe("調査中");
-    expect(result.safety_evaluation_method).toBe("調査中");
+    expect(result.privacy_enhancement_method).toBe("調査中");
+    expect(result.safety_assurance_method).toBe("調査中");
     expect(result.utility_evaluation_method).toBe("調査中");
     expect(result.tags).toEqual([]);
     expect(result.figures).toEqual([]);

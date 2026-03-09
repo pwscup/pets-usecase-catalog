@@ -13,8 +13,8 @@
   "review_status": "ai_generated",
   "summary": "鉄道会社が保有するICカード乗降履歴を匿名加工し、一般事業者へ提供して商圏分析やターゲティング広告に用いるユースケース。個人情報保護委員会の想定事例として整理されている。",
   "value_proposition": "調査中",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": [
     "匿名加工情報",

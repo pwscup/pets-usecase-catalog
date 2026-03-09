@@ -13,8 +13,8 @@
   "review_status": "ai_generated",
   "summary": "健康ポイントサービスアプリで取得した個人情報から仮名加工情報を作成し、ライフログデータを用いたAI技術の研究開発に利用。仮名加工情報制度の社内分析・研究開発利用の実例。",
   "value_proposition": "調査中",
-  "synthetic_generation_method": "調査中",
-  "safety_evaluation_method": "調査中",
+  "privacy_enhancement_method": "調査中",
+  "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
   "tags": [
     "仮名加工情報",
