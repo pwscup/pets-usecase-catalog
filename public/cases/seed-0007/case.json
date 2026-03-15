@@ -7,10 +7,14 @@
   "usecase_category": [
     "外部分析者活用"
   ],
+  "technology_category": [
+    "synthetic_data"
+  ],
+  "review_status": "human_reviewed",
   "summary": "ゲノムデータは機密性が高く、研究目的でもデータ共有が制限される。Gretel.aiの合成データ生成ツールを用い、マウスのゲノム分析において合成データセットでの研究を実施した。",
   "value_proposition": "調査中",
-  "synthetic_generation_method": "Timeseries DGAN（ベンダ一覧に記載）",
-  "safety_evaluation_method": "差分プライバシー／過剰適合防止／類似性フィルター／外れ値フィルター（ベンダ一覧に記載）",
+  "privacy_enhancement_method": "Timeseries DGAN（ベンダ一覧に記載）",
+  "safety_assurance_method": "差分プライバシー／過剰適合防止／類似性フィルター／外れ値フィルター（ベンダ一覧に記載）",
   "utility_evaluation_method": "調査中",
   "domain_sub": "研究",
   "tags": [
