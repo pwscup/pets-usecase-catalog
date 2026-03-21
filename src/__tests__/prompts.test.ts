@@ -32,6 +32,30 @@ describe('generateCreatePrompt', () => {
     expect(prompt).toContain('国外')
   })
 
+  it('technology_category の選択肢一覧を含む', () => {
+    expect(prompt).toContain('synthetic_data')
+    expect(prompt).toContain('differential_privacy')
+    expect(prompt).toContain('anonymization')
+    expect(prompt).toContain('federated_learning')
+    expect(prompt).toContain('secure_computation')
+    expect(prompt).toContain('distributed_analytics')
+    expect(prompt).toContain('合成データ')
+    expect(prompt).toContain('差分プライバシー')
+    expect(prompt).toContain('匿名化')
+    expect(prompt).toContain('連合学習')
+    expect(prompt).toContain('秘密計算')
+    expect(prompt).toContain('分散データ分析')
+  })
+
+  it('occurred_at のガイドラインを含む', () => {
+    expect(prompt).toContain('occurred_at')
+    expect(prompt).toContain('YYYY')
+  })
+
+  it('公的利用 の判断基準を含む', () => {
+    expect(prompt).toContain('公的利用')
+  })
+
   it('title と summary のガイドラインを含む', () => {
     expect(prompt).toContain('title')
     expect(prompt).toContain('summary')
@@ -75,5 +99,15 @@ describe('generateEnrichPrompt', () => {
     const prompt = generateEnrichPrompt('{}')
     expect(prompt).toContain('sources の追加')
     expect(prompt).toContain('既存のsourceは削除しない')
+  })
+
+  it('technology_category の見直しルールを含む', () => {
+    const prompt = generateEnrichPrompt('{}')
+    expect(prompt).toContain('technology_category')
+  })
+
+  it('occurred_at の補完ルールを含む', () => {
+    const prompt = generateEnrichPrompt('{}')
+    expect(prompt).toContain('occurred_at')
   })
 })
