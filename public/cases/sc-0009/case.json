@@ -4,15 +4,24 @@
   "region": "国内",
   "domain": "製造",
   "organization": "EAGLYS・三井物産",
-  "usecase_category": ["R&D"],
-  "technology_category": ["secure_computation"],
+  "usecase_category": [
+    "R&D"
+  ],
+  "technology_category": [
+    "secure_computation"
+  ],
   "review_status": "ai_generated",
   "summary": "創薬・素材開発（マテリアルズ・インフォマティクス）の分野では、複数の研究機関や事業者が持つデータやAIモデルを連携させることで精度向上が期待されるが、研究データもAIモデルも企業秘密にあたるため、相互に開示することが困難だった。",
   "value_proposition": "秘密計算環境で特徴量抽出から学習・推論までを処理するPoCを実施し、1予測あたり0.06〜0.11秒、多層ニューラルネットでも平文比2.1〜3.8倍程度という現実的な処理時間を確認した。データだけでなくAIモデルも秘匿したまま共有でき、推論精度が向上することを実証した。",
   "privacy_enhancement_method": "調査中",
   "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
-  "tags": ["秘密計算", "AIモデル共有", "創薬", "素材開発"],
+  "tags": [
+    "秘密計算",
+    "AIモデル共有",
+    "創薬",
+    "素材開発"
+  ],
   "sources": [
     {
       "source_type": "web",
@@ -26,11 +35,31 @@
       "title": "概要フロー",
       "data": {
         "nodes": [
-          {"id": "s1", "label": "創薬・素材の研究データとAIモデル", "category": "source"},
-          {"id": "s2", "label": "データもモデルも企業秘密で共有困難", "category": "constraint"},
-          {"id": "p1", "label": "秘密計算で特徴量抽出〜推論を処理", "category": "process"},
-          {"id": "a1", "label": "秘匿したままAIモデルを共有・活用", "category": "application"},
-          {"id": "a2", "label": "平文比2〜4倍の現実的な処理時間を実証", "category": "outcome"}
+          {
+            "id": "s1",
+            "label": "創薬・素材の研究データとAIモデル",
+            "category": "source"
+          },
+          {
+            "id": "s2",
+            "label": "データもモデルも企業秘密で共有困難",
+            "category": "constraint"
+          },
+          {
+            "id": "p1",
+            "label": "秘密計算で特徴量抽出〜推論を処理",
+            "category": "process"
+          },
+          {
+            "id": "a1",
+            "label": "秘匿したままAIモデルを共有・活用",
+            "category": "application"
+          },
+          {
+            "id": "a2",
+            "label": "平文比2〜4倍の現実的な処理時間を実証",
+            "category": "outcome"
+          }
         ],
         "edges": []
       },

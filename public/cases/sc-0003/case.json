@@ -4,8 +4,12 @@
   "region": "国内",
   "domain": "医療",
   "organization": "NEC・大阪大学",
-  "usecase_category": ["組織間データ共有"],
-  "technology_category": ["secure_computation"],
+  "usecase_category": [
+    "組織間データ共有"
+  ],
+  "technology_category": [
+    "secure_computation"
+  ],
   "review_status": "flagged",
   "editorial_notes": ["出典URL（NEC）がHTTP 403でアクセス不能。代替出典の追加が必要"],
   "summary": "個別化医療や先端医療研究を推進するには、複数の医療・研究機関が保有するゲノム情報や疾病情報を横断的に解析する必要があるが、機関間でデータを直接共有することはプライバシー上の制約から困難だった。AMED事業の文脈でこの課題の解決が求められていた。",
@@ -13,7 +17,12 @@
   "privacy_enhancement_method": "調査中",
   "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
-  "tags": ["秘密計算", "ゲノム解析", "MPC", "秘匿結合"],
+  "tags": [
+    "秘密計算",
+    "ゲノム解析",
+    "MPC",
+    "秘匿結合"
+  ],
   "sources": [
     {
       "source_type": "web",
@@ -27,11 +36,31 @@
       "title": "概要フロー",
       "data": {
         "nodes": [
-          {"id": "s1", "label": "複数機関のゲノム・疾病情報", "category": "source"},
-          {"id": "s2", "label": "機関間でデータを直接共有できない", "category": "constraint"},
-          {"id": "p1", "label": "秘密計算で秘匿結合・集計分析", "category": "process"},
-          {"id": "a1", "label": "年代別ゲノム変異頻度の解析", "category": "application"},
-          {"id": "a2", "label": "多機関データで個別化医療を推進", "category": "outcome"}
+          {
+            "id": "s1",
+            "label": "複数機関のゲノム・疾病情報",
+            "category": "source"
+          },
+          {
+            "id": "s2",
+            "label": "機関間でデータを直接共有できない",
+            "category": "constraint"
+          },
+          {
+            "id": "p1",
+            "label": "秘密計算で秘匿結合・集計分析",
+            "category": "process"
+          },
+          {
+            "id": "a1",
+            "label": "年代別ゲノム変異頻度の解析",
+            "category": "application"
+          },
+          {
+            "id": "a2",
+            "label": "多機関データで個別化医療を推進",
+            "category": "outcome"
+          }
         ],
         "edges": []
       },

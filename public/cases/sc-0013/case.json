@@ -4,8 +4,12 @@
   "region": "国内",
   "domain": "製造",
   "organization": "三菱重工業・NEC",
-  "usecase_category": ["R&D"],
-  "technology_category": ["secure_computation"],
+  "usecase_category": [
+    "R&D"
+  ],
+  "technology_category": [
+    "secure_computation"
+  ],
   "review_status": "flagged",
   "editorial_notes": ["出典URL（NEC）がHTTP 403でアクセス不能。代替出典の追加が必要"],
   "summary": "プラント装置のログデータにはサイバー攻撃の兆候を検知するための重要な情報が含まれるが、営業機密性が高いため、クラウド等の外部環境での分析が困難だった。ログデータを安全に分析できる仕組みの構築が求められていた。",
@@ -13,7 +17,12 @@
   "privacy_enhancement_method": "調査中",
   "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
-  "tags": ["秘密計算", "MPC", "ログ分析", "異常検知"],
+  "tags": [
+    "秘密計算",
+    "MPC",
+    "ログ分析",
+    "異常検知"
+  ],
   "sources": [
     {
       "source_type": "web",
@@ -27,11 +36,31 @@
       "title": "概要フロー",
       "data": {
         "nodes": [
-          {"id": "s1", "label": "プラント装置のログデータ", "category": "source"},
-          {"id": "s2", "label": "営業機密性が高く外部分析が困難", "category": "constraint"},
-          {"id": "p1", "label": "MPC方式で3サーバに秘密分散し分析", "category": "process"},
-          {"id": "a1", "label": "暗号化したまま異常検知ルールと突合", "category": "application"},
-          {"id": "a2", "label": "機密ログの安全なクラウド分析を実現", "category": "outcome"}
+          {
+            "id": "s1",
+            "label": "プラント装置のログデータ",
+            "category": "source"
+          },
+          {
+            "id": "s2",
+            "label": "営業機密性が高く外部分析が困難",
+            "category": "constraint"
+          },
+          {
+            "id": "p1",
+            "label": "MPC方式で3サーバに秘密分散し分析",
+            "category": "process"
+          },
+          {
+            "id": "a1",
+            "label": "暗号化したまま異常検知ルールと突合",
+            "category": "application"
+          },
+          {
+            "id": "a2",
+            "label": "機密ログの安全なクラウド分析を実現",
+            "category": "outcome"
+          }
         ],
         "edges": []
       },

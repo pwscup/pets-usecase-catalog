@@ -4,15 +4,23 @@
   "region": "国内",
   "domain": "公共",
   "organization": "日本マーケティング・リサーチ協会",
-  "usecase_category": ["R&D"],
-  "technology_category": ["synthetic_data"],
+  "usecase_category": [
+    "R&D"
+  ],
+  "technology_category": [
+    "synthetic_data"
+  ],
   "review_status": "ai_generated",
   "summary": "公的統計の分野では、異なる調査やデータソースを直接結合して分析したいニーズがあるが、個人単位でのデータ結合はプライバシーリスクが高く、また技術的にも共通IDが存在しない場合は困難であった。",
   "value_proposition": "共通変数を接着剤として異なるデータソースを疑似的に結合する統計的マッチング手法と、部分合成データによる欠損補完手法を整理した。疑似結合パネルデータの作成により、個人情報の直接結合なしに情報量を増加させる可能性を示した。",
   "privacy_enhancement_method": "調査中",
   "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
-  "tags": ["部分合成データ", "統計的マッチング", "疑似結合"],
+  "tags": [
+    "部分合成データ",
+    "統計的マッチング",
+    "疑似結合"
+  ],
   "sources": [
     {
       "source_type": "pdf",
@@ -26,11 +34,31 @@
       "title": "概要フロー",
       "data": {
         "nodes": [
-          {"id": "s1", "label": "複数の公的統計データソース", "category": "source"},
-          {"id": "s2", "label": "異なるデータの直接結合が困難", "category": "constraint"},
-          {"id": "p1", "label": "共通変数で統計的マッチング", "category": "process"},
-          {"id": "a1", "label": "疑似結合パネルデータの作成", "category": "application"},
-          {"id": "a2", "label": "情報量を増加し分析精度向上", "category": "outcome"}
+          {
+            "id": "s1",
+            "label": "複数の公的統計データソース",
+            "category": "source"
+          },
+          {
+            "id": "s2",
+            "label": "異なるデータの直接結合が困難",
+            "category": "constraint"
+          },
+          {
+            "id": "p1",
+            "label": "共通変数で統計的マッチング",
+            "category": "process"
+          },
+          {
+            "id": "a1",
+            "label": "疑似結合パネルデータの作成",
+            "category": "application"
+          },
+          {
+            "id": "a2",
+            "label": "情報量を増加し分析精度向上",
+            "category": "outcome"
+          }
         ],
         "edges": []
       },

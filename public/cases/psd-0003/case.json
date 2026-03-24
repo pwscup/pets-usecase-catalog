@@ -4,15 +4,23 @@
   "region": "国外",
   "domain": "公共",
   "organization": "U.S. Census Bureau",
-  "usecase_category": ["公的利用"],
-  "technology_category": ["synthetic_data"],
+  "usecase_category": [
+    "公的利用"
+  ],
+  "technology_category": [
+    "synthetic_data"
+  ],
   "review_status": "ai_generated",
   "summary": "退役軍人に関する統計データでは、稀少な属性の組み合わせを持つレコードが個人の識別リスクを高めていた。全件を合成すると分析精度が低下する一方、秘匿処理を行わなければプライバシー上の問題が残るというジレンマがあった。",
   "value_proposition": "高リスクレコードの一部変数のみを選択的に合成値で置換する部分合成手法を研究し、全件合成より高い分析精度を維持しつつ識別リスクを低減するアプローチを提示した。なお、本研究は研究段階の取り組みである。",
   "privacy_enhancement_method": "調査中",
   "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
-  "tags": ["部分合成データ", "秘匿保護", "退役軍人"],
+  "tags": [
+    "部分合成データ",
+    "秘匿保護",
+    "退役軍人"
+  ],
   "sources": [
     {
       "source_type": "pdf",
@@ -26,11 +34,31 @@
       "title": "概要フロー",
       "data": {
         "nodes": [
-          {"id": "s1", "label": "退役軍人の統計データ", "category": "source"},
-          {"id": "s2", "label": "稀少レコードで個人識別リスク", "category": "constraint"},
-          {"id": "p1", "label": "高リスク変数のみ選択的に合成", "category": "process"},
-          {"id": "a1", "label": "統計分析・政策立案に活用", "category": "application"},
-          {"id": "a2", "label": "全件合成より精度を維持し秘匿化", "category": "outcome"}
+          {
+            "id": "s1",
+            "label": "退役軍人の統計データ",
+            "category": "source"
+          },
+          {
+            "id": "s2",
+            "label": "稀少レコードで個人識別リスク",
+            "category": "constraint"
+          },
+          {
+            "id": "p1",
+            "label": "高リスク変数のみ選択的に合成",
+            "category": "process"
+          },
+          {
+            "id": "a1",
+            "label": "統計分析・政策立案に活用",
+            "category": "application"
+          },
+          {
+            "id": "a2",
+            "label": "全件合成より精度を維持し秘匿化",
+            "category": "outcome"
+          }
         ],
         "edges": []
       },

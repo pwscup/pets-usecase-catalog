@@ -4,15 +4,24 @@
   "region": "国内",
   "domain": "IT",
   "organization": "デジタル・アドバタイジング・コンソーシアム（DAC）・Acompany",
-  "usecase_category": ["組織間データ共有"],
-  "technology_category": ["secure_computation"],
+  "usecase_category": [
+    "組織間データ共有"
+  ],
+  "technology_category": [
+    "secure_computation"
+  ],
   "review_status": "ai_generated",
   "summary": "デジタルマーケティングでは、広告主の顧客アンケートデータとメディア側のDMPデータを突合した分析が求められるが、個人情報保護の観点から企業間でのデータ共有が困難だった。プライバシー規制の強化により、従来のCookie等に依存しないデータ活用手法の確立が急務となっていた。",
   "value_proposition": "秘密計算ソフトウェアQuickMPC（秘密分散MPC）を用いて、数十万〜数百万点規模のデータを暗号化したまま突合・相関分析する実証実験に成功した。暗号化から分析完了までが数分、平均絶対誤差0.001未満という精度で、マーケティング分析が実務レベルで成立することを確認した。",
   "privacy_enhancement_method": "調査中",
   "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
-  "tags": ["秘密計算", "MPC", "マーケティング", "プライバシー保護データ分析"],
+  "tags": [
+    "秘密計算",
+    "MPC",
+    "マーケティング",
+    "プライバシー保護データ分析"
+  ],
   "sources": [
     {
       "source_type": "web",
@@ -26,11 +35,31 @@
       "title": "概要フロー",
       "data": {
         "nodes": [
-          {"id": "s1", "label": "顧客アンケート＋DMP属性データ", "category": "source"},
-          {"id": "s2", "label": "企業間でプライバシーデータ共有不可", "category": "constraint"},
-          {"id": "p1", "label": "秘密計算(MPC)で暗号化突合・分析", "category": "process"},
-          {"id": "a1", "label": "マーケティング相関分析", "category": "application"},
-          {"id": "a2", "label": "高精度かつプライバシー保護の分析", "category": "outcome"}
+          {
+            "id": "s1",
+            "label": "顧客アンケート＋DMP属性データ",
+            "category": "source"
+          },
+          {
+            "id": "s2",
+            "label": "企業間でプライバシーデータ共有不可",
+            "category": "constraint"
+          },
+          {
+            "id": "p1",
+            "label": "秘密計算(MPC)で暗号化突合・分析",
+            "category": "process"
+          },
+          {
+            "id": "a1",
+            "label": "マーケティング相関分析",
+            "category": "application"
+          },
+          {
+            "id": "a2",
+            "label": "高精度かつプライバシー保護の分析",
+            "category": "outcome"
+          }
         ],
         "edges": []
       },

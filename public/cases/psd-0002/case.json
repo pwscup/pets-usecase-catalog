@@ -4,15 +4,23 @@
   "region": "国外",
   "domain": "公共",
   "organization": "U.S. Census Bureau",
-  "usecase_category": ["公的利用"],
-  "technology_category": ["synthetic_data"],
+  "usecase_category": [
+    "公的利用"
+  ],
+  "technology_category": [
+    "synthetic_data"
+  ],
   "review_status": "ai_generated",
   "summary": "米国国勢調査局のOnTheMap/LODESデータセットは、就業地と居住地の地理的な対応関係を示す重要な統計資源であるが、個人の就業地・居住地ペアの情報は個人の特定につながるリスクがあり、そのままでの公開が困難であった。",
   "value_proposition": "就業地・居住地ペアのデータを合成手法で置換し、個人の特定リスクを低減しつつ地理的分布の統計特性を保持したデータセットを公開した。研究者や政策立案者が通勤・雇用パターンの地理分析に活用できる環境を実現した。",
   "privacy_enhancement_method": "調査中",
   "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
-  "tags": ["部分合成データ", "地理情報", "雇用統計"],
+  "tags": [
+    "部分合成データ",
+    "地理情報",
+    "雇用統計"
+  ],
   "sources": [
     {
       "source_type": "web",
@@ -31,11 +39,31 @@
       "title": "概要フロー",
       "data": {
         "nodes": [
-          {"id": "s1", "label": "就業地・居住地の地理データ", "category": "source"},
-          {"id": "s2", "label": "居住地情報の秘匿保護が必要", "category": "constraint"},
-          {"id": "p1", "label": "居住地側のみ部分合成データ化", "category": "process"},
-          {"id": "a1", "label": "地理的分布の分析に活用", "category": "application"},
-          {"id": "a2", "label": "秘匿保護しつつ地理分析を実現", "category": "outcome"}
+          {
+            "id": "s1",
+            "label": "就業地・居住地の地理データ",
+            "category": "source"
+          },
+          {
+            "id": "s2",
+            "label": "居住地情報の秘匿保護が必要",
+            "category": "constraint"
+          },
+          {
+            "id": "p1",
+            "label": "居住地側のみ部分合成データ化",
+            "category": "process"
+          },
+          {
+            "id": "a1",
+            "label": "地理的分布の分析に活用",
+            "category": "application"
+          },
+          {
+            "id": "a2",
+            "label": "秘匿保護しつつ地理分析を実現",
+            "category": "outcome"
+          }
         ],
         "edges": []
       },

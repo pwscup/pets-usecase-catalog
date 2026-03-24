@@ -4,15 +4,24 @@
   "region": "国内",
   "domain": "医療",
   "organization": "千葉大学病院・NTTコミュニケーションズ",
-  "usecase_category": ["R&D"],
-  "technology_category": ["secure_computation"],
+  "usecase_category": [
+    "R&D"
+  ],
+  "technology_category": [
+    "secure_computation"
+  ],
   "review_status": "ai_generated",
   "summary": "炎症性腸疾患（IBD）の治療改善には、患者の食事・生活習慣・排泄状況など私生活に関わる情報の収集が重要だが、こうした情報は医師に直接話しづらく、また生データが研究者に見られることへの患者の抵抗感もあり、十分なデータ収集が困難だった。",
   "value_proposition": "NTT Comの「SmartPRO」「析秘」を用いて、患者がスマートフォンから入力するePROデータを医師や研究者が生データを見られない設計で秘匿分析する日本初のePRO×秘密計算によるIBD観察研究を開始した。データが守られるからこそ患者が安心して情報提供でき、従来取りにくかったPROの収集・分析が可能になる。",
   "privacy_enhancement_method": "調査中",
   "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
-  "tags": ["秘密計算", "ePRO", "IBD", "患者QOL"],
+  "tags": [
+    "秘密計算",
+    "ePRO",
+    "IBD",
+    "患者QOL"
+  ],
   "sources": [
     {
       "source_type": "web",
@@ -26,11 +35,31 @@
       "title": "概要フロー",
       "data": {
         "nodes": [
-          {"id": "s1", "label": "患者のePRO入力データ", "category": "source"},
-          {"id": "s2", "label": "私生活情報を医師に直接見せられない", "category": "constraint"},
-          {"id": "p1", "label": "秘密計算でePROを秘匿分析", "category": "process"},
-          {"id": "a1", "label": "IBDの新知見獲得・治療改善", "category": "application"},
-          {"id": "a2", "label": "患者が安心して情報提供でき研究促進", "category": "outcome"}
+          {
+            "id": "s1",
+            "label": "患者のePRO入力データ",
+            "category": "source"
+          },
+          {
+            "id": "s2",
+            "label": "私生活情報を医師に直接見せられない",
+            "category": "constraint"
+          },
+          {
+            "id": "p1",
+            "label": "秘密計算でePROを秘匿分析",
+            "category": "process"
+          },
+          {
+            "id": "a1",
+            "label": "IBDの新知見獲得・治療改善",
+            "category": "application"
+          },
+          {
+            "id": "a2",
+            "label": "患者が安心して情報提供でき研究促進",
+            "category": "outcome"
+          }
         ],
         "edges": []
       },

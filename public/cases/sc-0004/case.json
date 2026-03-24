@@ -4,15 +4,24 @@
   "region": "国内",
   "domain": "医療",
   "organization": "千葉大学病院・NTTコミュニケーションズ",
-  "usecase_category": ["R&D"],
-  "technology_category": ["secure_computation"],
+  "usecase_category": [
+    "R&D"
+  ],
+  "technology_category": [
+    "secure_computation"
+  ],
   "review_status": "ai_generated",
   "summary": "希少疾患は単一施設では症例数が限られるため、診断支援AIの開発には多施設のデータを統合する必要がある。しかし、診断情報などの機微な臨床データを施設間で直接共有することは困難であり、多施設共同研究の推進が妨げられていた。",
   "value_proposition": "秘密計算ディープラーニング技術を活用し、複数施設の臨床研究データを相互秘匿のまま横断研究・縦断研究に利用できるかを検証する共同研究を開始した。診断時間短縮や薬剤選定支援AIへの展開まで見据えた研究基盤の構築を目指している。",
   "privacy_enhancement_method": "調査中",
   "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
-  "tags": ["秘密計算", "希少疾患", "ディープラーニング", "多施設共同研究"],
+  "tags": [
+    "秘密計算",
+    "希少疾患",
+    "ディープラーニング",
+    "多施設共同研究"
+  ],
   "sources": [
     {
       "source_type": "web",
@@ -26,11 +35,31 @@
       "title": "概要フロー",
       "data": {
         "nodes": [
-          {"id": "s1", "label": "複数施設の希少疾患臨床データ", "category": "source"},
-          {"id": "s2", "label": "単施設では症例数が不足", "category": "constraint"},
-          {"id": "p1", "label": "秘密計算DLで秘匿のままAI学習", "category": "process"},
-          {"id": "a1", "label": "診断支援・薬剤選定AIの構築", "category": "application"},
-          {"id": "a2", "label": "データ非開示で多施設共同研究", "category": "outcome"}
+          {
+            "id": "s1",
+            "label": "複数施設の希少疾患臨床データ",
+            "category": "source"
+          },
+          {
+            "id": "s2",
+            "label": "単施設では症例数が不足",
+            "category": "constraint"
+          },
+          {
+            "id": "p1",
+            "label": "秘密計算DLで秘匿のままAI学習",
+            "category": "process"
+          },
+          {
+            "id": "a1",
+            "label": "診断支援・薬剤選定AIの構築",
+            "category": "application"
+          },
+          {
+            "id": "a2",
+            "label": "データ非開示で多施設共同研究",
+            "category": "outcome"
+          }
         ],
         "edges": []
       },

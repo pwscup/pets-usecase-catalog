@@ -5,15 +5,25 @@
   "domain": "医療",
   "domain_sub": "製薬・臨床研究",
   "organization": "TOPPANホールディングス株式会社（DATuM IDEA®）",
-  "technology_category": ["anonymization"],
-  "usecase_category": ["データ販売", "外部分析者活用"],
+  "technology_category": [
+    "anonymization"
+  ],
+  "usecase_category": [
+    "データ販売",
+    "外部分析者活用"
+  ],
   "review_status": "ai_generated",
   "summary": "医療機関が保有する電子カルテ・レセプトデータは、がんや希少疾患の研究・医薬品開発に有用だが、個人情報保護の制約から二次利用が困難であった。特に、異なる医療施設のデータを横断的に統合・分析するニーズに対し、安全なデータ提供の仕組みが求められていた。",
   "value_proposition": "次世代医療基盤法に基づき、認定匿名加工医療情報作成事業者（J-MIMO）が匿名加工を施したデータをDATuM IDEA®が統合し、製薬企業やアカデミアにWebツール・解析レポート・データセットとして提供している。がん診療連携拠点病院のデータを多く含み、がんや希少疾患の治療データの横断的分析を可能にした。",
   "privacy_enhancement_method": "次世代医療基盤法（医療分野の研究開発に資するための匿名加工医療情報に関する法律）に基づき、国が認定した匿名加工医療情報作成事業者（J-MIMO：一般財団法人日本医師会医療情報管理機構）が匿名加工を実施。匿名加工の責任は認定事業者に帰属し、オプトアウト制度を採用している。",
   "safety_assurance_method": "認定匿名加工医療情報作成事業者による法令遵守の匿名加工処理。匿名加工の責任は認定事業者に帰属。",
   "utility_evaluation_method": "調査中",
-  "tags": ["次世代医療基盤法", "電子カルテ", "レセプト", "J-MIMO"],
+  "tags": [
+    "次世代医療基盤法",
+    "電子カルテ",
+    "レセプト",
+    "J-MIMO"
+  ],
   "sources": [
     {
       "source_type": "web",
@@ -28,22 +38,78 @@
       "title": "DATuM IDEA® 匿名加工医療情報提供フロー",
       "data": {
         "nodes": [
-          {"id": "s1", "label": "医療機関の電子カルテ・レセプトデータ", "category": "source"},
-          {"id": "s2", "label": "個人情報保護による二次利用の制約", "category": "constraint"},
-          {"id": "p1", "label": "J-MIMOによる匿名加工処理", "category": "process"},
-          {"id": "p2", "label": "DATuM IDEA®でデータ統合・提供", "category": "process"},
-          {"id": "a1", "label": "製薬企業向けWebツール・解析レポート", "category": "application"},
-          {"id": "a2", "label": "アカデミア向け研究データ検索", "category": "application"},
-          {"id": "a3", "label": "がん・希少疾患の治療データ分析が可能に", "category": "outcome"}
+          {
+            "id": "s1",
+            "label": "医療機関の電子カルテ・レセプトデータ",
+            "category": "source"
+          },
+          {
+            "id": "s2",
+            "label": "個人情報保護による二次利用の制約",
+            "category": "constraint"
+          },
+          {
+            "id": "p1",
+            "label": "J-MIMOによる匿名加工処理",
+            "category": "process"
+          },
+          {
+            "id": "p2",
+            "label": "DATuM IDEA®でデータ統合・提供",
+            "category": "process"
+          },
+          {
+            "id": "a1",
+            "label": "製薬企業向けWebツール・解析レポート",
+            "category": "application"
+          },
+          {
+            "id": "a2",
+            "label": "アカデミア向け研究データ検索",
+            "category": "application"
+          },
+          {
+            "id": "a3",
+            "label": "がん・希少疾患の治療データ分析が可能に",
+            "category": "outcome"
+          }
         ],
         "edges": [
-          {"from": "s1", "to": "p1", "label": "次世代医療基盤法に基づき収集"},
-          {"from": "s2", "to": "p1", "label": "法的根拠による解決"},
-          {"from": "p1", "to": "p2", "label": "匿名加工済みデータを提供"},
-          {"from": "p2", "to": "a1", "label": "データセット・解析提供"},
-          {"from": "p2", "to": "a2", "label": "研究用データ提供"},
-          {"from": "a1", "to": "a3", "label": "データ分析に活用"},
-          {"from": "a2", "to": "a3", "label": "研究に活用"}
+          {
+            "from": "s1",
+            "to": "p1",
+            "label": "次世代医療基盤法に基づき収集"
+          },
+          {
+            "from": "s2",
+            "to": "p1",
+            "label": "法的根拠による解決"
+          },
+          {
+            "from": "p1",
+            "to": "p2",
+            "label": "匿名加工済みデータを提供"
+          },
+          {
+            "from": "p2",
+            "to": "a1",
+            "label": "データセット・解析提供"
+          },
+          {
+            "from": "p2",
+            "to": "a2",
+            "label": "研究用データ提供"
+          },
+          {
+            "from": "a1",
+            "to": "a3",
+            "label": "データ分析に活用"
+          },
+          {
+            "from": "a2",
+            "to": "a3",
+            "label": "研究に活用"
+          }
         ]
       },
       "note": ""

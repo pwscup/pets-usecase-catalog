@@ -1,18 +1,28 @@
 {
   "id": "sc-0012",
-  "title": "NICT × 神戸大学 × EAGLYS × 銀行4行：DeepProtectによる銀行横断の不正口座検知実証",
+  "title": "NICT × 神戸大学 × EAGLYS × 銀行4行：銀行間のデータ非共有による不正口座検知実証",
   "region": "国内",
   "domain": "金融",
   "organization": "NICT・神戸大学・EAGLYS・りそな銀行ほか3行",
-  "usecase_category": ["組織間データ共有"],
-  "technology_category": ["federated_learning", "secure_computation"],
+  "usecase_category": [
+    "組織間データ共有"
+  ],
+  "technology_category": [
+    "federated_learning",
+    "secure_computation"
+  ],
   "review_status": "ai_generated",
   "summary": "複雑化する金融犯罪に対応するため複数金融機関による協調的なAI開発が求められていたが、単独の金融機関では学習データの確保が難しく、顧客のプライバシー保護と協調開発の両立が大きな課題だった。各機関が個別にAIモデルを構築しても検知精度には限界があり、ルールベースの監視やAI個別学習では潜在的な不正口座の検知が困難な状況にあった。",
   "value_proposition": "NICTのDeepProtect技術により、データを外部に開示せず機密性を保ったまま銀行4行が共同でAIモデルを構築する連合学習を実現した。各銀行の個別学習モデル4個と連合学習モデル5個を組み合わせた計9個のアンサンブル学習を適用した結果、適合率が個別学習比で最大約10ポイント向上するケースが見られ、再現率95％超の高精度な検知を達成するケースも確認された。さらに、個別学習では検知されなかった「潜在的な不正口座」を特定できる可能性が示された。",
   "privacy_enhancement_method": "調査中",
   "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
-  "tags": ["プライバシー保護連合学習", "不正口座検知", "DeepProtect", "AML"],
+  "tags": [
+    "プライバシー保護連合学習",
+    "不正口座検知",
+    "DeepProtect",
+    "AML"
+  ],
   "sources": [
     {
       "source_type": "web",
@@ -26,11 +36,31 @@
       "title": "概要フロー",
       "data": {
         "nodes": [
-          {"id": "s1", "label": "銀行4行の口座・取引データ", "category": "source"},
-          {"id": "s2", "label": "銀行間でデータ開示ができない制約", "category": "constraint"},
-          {"id": "p1", "label": "DeepProtectで連合＋個別のアンサンブル学習", "category": "process"},
-          {"id": "a1", "label": "不正口座検知の精度向上に活用", "category": "application"},
-          {"id": "a2", "label": "AMLシステムとの並行運用を検討可能に", "category": "outcome"}
+          {
+            "id": "s1",
+            "label": "銀行4行の口座・取引データ",
+            "category": "source"
+          },
+          {
+            "id": "s2",
+            "label": "銀行間でデータ開示ができない制約",
+            "category": "constraint"
+          },
+          {
+            "id": "p1",
+            "label": "DeepProtectで連合＋個別のアンサンブル学習",
+            "category": "process"
+          },
+          {
+            "id": "a1",
+            "label": "不正口座検知の精度向上に活用",
+            "category": "application"
+          },
+          {
+            "id": "a2",
+            "label": "AMLシステムとの並行運用を検討可能に",
+            "category": "outcome"
+          }
         ],
         "edges": []
       },

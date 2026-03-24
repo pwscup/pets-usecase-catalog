@@ -110,6 +110,13 @@ export default function CaseDetailView({ caseData }: { caseData: Case }) {
                 <span className="inline-block w-1 h-5 bg-slate-800 rounded-full" />
                 {keywords.constraint ? `課題：${keywords.constraint}` : '課題'}
               </h2>
+              {keywords.constraint && (
+                <p className="mb-1.5" data-testid="keyword-constraint">
+                  <span className="inline-flex items-center gap-1 text-xs font-medium bg-amber-50 border border-amber-200 text-amber-800 px-2.5 py-0.5 rounded">
+                    課題 | {keywords.constraint}
+                  </span>
+                </p>
+              )}
               <p className="text-sm text-gray-700 leading-relaxed">{caseData.summary}</p>
             </section>
 
@@ -119,6 +126,13 @@ export default function CaseDetailView({ caseData }: { caseData: Case }) {
                 <span className="inline-block w-1 h-5 bg-slate-800 rounded-full" />
                 {keywords.outcome ? `PETs適用により得られた価値：${keywords.outcome}` : 'PETs適用により得られた価値'}
               </h2>
+              {keywords.outcome && (
+                <p className="mb-1.5" data-testid="keyword-outcome">
+                  <span className="inline-flex items-center gap-1 text-xs font-medium bg-emerald-50 border border-emerald-200 text-emerald-800 px-2.5 py-0.5 rounded">
+                    成果 | {keywords.outcome}
+                  </span>
+                </p>
+              )}
               <p className="text-sm text-gray-700 leading-relaxed">{caseData.value_proposition}</p>
             </section>
 

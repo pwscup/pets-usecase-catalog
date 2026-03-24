@@ -4,8 +4,12 @@
   "region": "国内",
   "domain": "医療",
   "organization": "三谷産業・Acompany",
-  "usecase_category": ["組織間データ共有"],
-  "technology_category": ["secure_computation"],
+  "usecase_category": [
+    "組織間データ共有"
+  ],
+  "technology_category": [
+    "secure_computation"
+  ],
   "review_status": "ai_generated",
   "editorial_notes": ["出典では『シミュレーション用データ（擬似データ）』と明記されている"],
   "summary": "地域医療の質を向上させるには複数病院のデータを横断的に分析して医療サービスの格差を把握する必要があるが、患者の医療行為データは機密性が高く、病院間での直接的なデータ共有は困難だった。",
@@ -13,7 +17,12 @@
   "privacy_enhancement_method": "調査中",
   "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
-  "tags": ["秘密計算", "MPC", "医療格差", "統合分析"],
+  "tags": [
+    "秘密計算",
+    "MPC",
+    "医療格差",
+    "統合分析"
+  ],
   "sources": [
     {
       "source_type": "web",
@@ -27,11 +36,31 @@
       "title": "概要フロー",
       "data": {
         "nodes": [
-          {"id": "s1", "label": "複数病院の約6万人分医療行為データ", "category": "source"},
-          {"id": "s2", "label": "病院間で患者データを共有できない", "category": "constraint"},
-          {"id": "p1", "label": "秘密計算(QuickMPC)で秘匿統合分析", "category": "process"},
-          {"id": "a1", "label": "医療サービス格差の分析", "category": "application"},
-          {"id": "a2", "label": "生データ同等精度で格差を可視化", "category": "outcome"}
+          {
+            "id": "s1",
+            "label": "複数病院の約6万人分医療行為データ",
+            "category": "source"
+          },
+          {
+            "id": "s2",
+            "label": "病院間で患者データを共有できない",
+            "category": "constraint"
+          },
+          {
+            "id": "p1",
+            "label": "秘密計算(QuickMPC)で秘匿統合分析",
+            "category": "process"
+          },
+          {
+            "id": "a1",
+            "label": "医療サービス格差の分析",
+            "category": "application"
+          },
+          {
+            "id": "a2",
+            "label": "生データ同等精度で格差を可視化",
+            "category": "outcome"
+          }
         ],
         "edges": []
       },

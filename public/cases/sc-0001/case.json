@@ -4,15 +4,24 @@
   "region": "国内",
   "domain": "医療",
   "organization": "JALSG・NTT",
-  "usecase_category": ["R&D"],
-  "technology_category": ["secure_computation"],
+  "usecase_category": [
+    "R&D"
+  ],
+  "technology_category": [
+    "secure_computation"
+  ],
   "review_status": "ai_generated",
   "summary": "臨床研究においては、患者の機微な臨床データを研究者に直接開示することにプライバシー上の課題があり、多施設研究や外部委託分析の推進が難しかった。約1,000症例・800項目規模の臨床データを安全に統計解析する手段が求められていた。",
   "value_proposition": "秘密計算技術により、データを暗号化したまま平均・分散・中央値・t検定・Kaplan-Meier法などの医療統計を実行できることを世界で初めて実証した。平均・分散は1秒以内、中央値は5秒以内、t検定も3秒以内で処理でき、秘密計算でも医療統計が実用速度で動作することを確認した。",
   "privacy_enhancement_method": "調査中",
   "safety_assurance_method": "調査中",
   "utility_evaluation_method": "調査中",
-  "tags": ["秘密計算", "医療統計", "臨床研究", "秘密分散"],
+  "tags": [
+    "秘密計算",
+    "医療統計",
+    "臨床研究",
+    "秘密分散"
+  ],
   "sources": [
     {
       "source_type": "web",
@@ -26,11 +35,31 @@
       "title": "概要フロー",
       "data": {
         "nodes": [
-          {"id": "s1", "label": "約1,000症例×800項目の臨床データ", "category": "source"},
-          {"id": "s2", "label": "生データを研究者に開示できない", "category": "constraint"},
-          {"id": "p1", "label": "秘密計算で暗号化したまま統計処理", "category": "process"},
-          {"id": "a1", "label": "平均・分散・t検定等の医療統計", "category": "application"},
-          {"id": "a2", "label": "生データ非開示で多施設研究を実現", "category": "outcome"}
+          {
+            "id": "s1",
+            "label": "約1,000症例×800項目の臨床データ",
+            "category": "source"
+          },
+          {
+            "id": "s2",
+            "label": "生データを研究者に開示できない",
+            "category": "constraint"
+          },
+          {
+            "id": "p1",
+            "label": "秘密計算で暗号化したまま統計処理",
+            "category": "process"
+          },
+          {
+            "id": "a1",
+            "label": "平均・分散・t検定等の医療統計",
+            "category": "application"
+          },
+          {
+            "id": "a2",
+            "label": "生データ非開示で多施設研究を実現",
+            "category": "outcome"
+          }
         ],
         "edges": []
       },
