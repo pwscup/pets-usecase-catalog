@@ -32,6 +32,12 @@
       "title": "Gretel Customer Case Study: Illumina",
       "url": "https://info.gretel.ai/case-study-illumina",
       "note": "GretelによるIllumina事例紹介"
+    },
+    {
+      "source_type": "pdf",
+      "title": "プライバシー保護合成データの概説と動向",
+      "url": "https://www.jri.co.jp/MediaLibrary/file/column/opinion/pdf/14266.pdf",
+      "note": "Gretel.aiのゲノム研究事例およびベンダ一覧の記載（Timeseries DGAN、差分プライバシー等の技術情報）"
     }
   ],
   "figures": [
