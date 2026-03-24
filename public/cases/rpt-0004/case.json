@@ -29,6 +29,18 @@
       "title": "MDClone: Three Pilot Projects Ensure Synthetic Data Accuracy - Washington University",
       "url": "https://mdclone.com/customer-story/three-pilot-projects-ensure-synthetic-data-accuracy-and-maintained-patient-privacy-washington-university/",
       "note": "MDCloneによるワシントン大学事例紹介"
+    },
+    {
+      "source_type": "pdf",
+      "title": "プライバシー保護合成データの概説と動向",
+      "url": "https://www.jri.co.jp/MediaLibrary/file/column/opinion/pdf/14266.pdf",
+      "note": "MDCloneのCOVID-19分析事例およびベンダ一覧の記載（カーネル密度推定、差分プライバシー等の技術情報）"
+    },
+    {
+      "source_type": "web",
+      "title": "The National COVID Cohort Collaborative: Analyses of Original and Computationally Derived Electronic Health Record Data",
+      "url": "https://www.jmir.org/2021/10/e30697/PDF",
+      "note": "ワシントン大学のCOVID-19合成データ活用事例。入院リスク予測・流行曲線予測等の下流タスクで実データとほぼ同等の分析結果を確認"
     }
   ],
   "figures": [
