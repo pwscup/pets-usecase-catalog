@@ -28,7 +28,7 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - name: Validate case.json files
-        run: npx tsx scripts/validate-cases.ts
+        run: npx tsx scripts/ops/validate-cases.ts
       - run: npm run build
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3

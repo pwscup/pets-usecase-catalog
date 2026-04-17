@@ -18,7 +18,7 @@ jobs:
       - run: npm ci
 
       - name: Validate case.json files
-        run: npx tsx scripts/validate-cases.ts
+        run: npx tsx scripts/ops/validate-cases.ts
 
       - name: Type check
         run: npx tsc -b --noEmit
