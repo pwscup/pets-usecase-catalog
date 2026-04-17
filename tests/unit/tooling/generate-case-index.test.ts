@@ -73,7 +73,7 @@ describe('generate-case-index ロジック', () => {
   it('全事例がindex.jsonに含まれることを検証（回帰テスト）', () => {
     // 実際の public/cases/ を読み取って、index生成ロジックと一致するか確認
     const { resolve } = require('node:path')
-    const realCasesDir = resolve(__dirname, '../../public/cases')
+    const realCasesDir = resolve(__dirname, '../../../public/cases')
     if (!existsSync(realCasesDir)) return // CI等で存在しない場合はスキップ
 
     const result = generateIndex(realCasesDir)

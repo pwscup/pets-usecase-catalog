@@ -1,5 +1,5 @@
-import { fetchSeedCases, loadAllCases } from "../lib/data-loader"
-import type { Case } from "../types/case"
+import { fetchSeedCases, loadAllCases } from "../../src/lib/data-loader"
+import type { Case } from "../../src/types/case"
 
 function makeCase(overrides: Partial<Case> = {}): Case {
   return {

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import SourceList from '../components/case-detail/SourceList'
-import type { Source } from '../types'
+import SourceList from '../../src/components/case-detail/SourceList'
+import type { Source } from '../../src/types'
 
 const mockSources: Source[] = [
   {

@@ -1,5 +1,5 @@
-import type { Case } from '../types'
-import { applyFilters, applySorting, collectFilterOptions, parseFiltersFromParams, filtersToParams, ITEMS_PER_PAGE, type FilterState } from '../hooks/useFilter'
+import type { Case } from '../../src/types'
+import { applyFilters, applySorting, collectFilterOptions, parseFiltersFromParams, filtersToParams, ITEMS_PER_PAGE, type FilterState } from '../../src/hooks/useFilter'
 
 function makeCase(overrides: Partial<Case> = {}): Case {
   return {

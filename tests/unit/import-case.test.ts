@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { parseCaseFromAiOutput } from '../lib/import-case'
+import { parseCaseFromAiOutput } from '../../src/lib/import-case'
 
 /** 最小限の有効なフォームデータJSON */
 const validFormJson = JSON.stringify({

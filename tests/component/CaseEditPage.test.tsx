@@ -1,9 +1,9 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Routes, Route } from 'react-router-dom'
-import CaseEditPage from '../pages/CaseEditPage'
-import { useCases } from '../context/CaseContext'
-import type { Case } from '../types'
+import CaseEditPage from '../../src/pages/CaseEditPage'
+import { useCases } from '../../src/context/CaseContext'
+import type { Case } from '../../src/types'
 
 const mockCase: Case = {
   id: 'case-001',
@@ -29,8 +29,8 @@ const mockCase: Case = {
   updated_at: '2026-01-01T00:00:00Z',
 }
 
-vi.mock('../context/CaseContext', async () => {
-  const actual = await vi.importActual<typeof import('../context/CaseContext')>('../context/CaseContext')
+vi.mock('../../src/context/CaseContext', async () => {
+  const actual = await vi.importActual<typeof import('../../src/context/CaseContext')>('../../src/context/CaseContext')
   return {
     ...actual,
     useCases: vi.fn(),

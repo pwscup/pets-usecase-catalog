@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import FigureRenderer from '../components/figures/FigureRenderer'
-import type { Figure, DataFlowData, RiskMatrixData, UtilityChartData } from '../types'
+import FigureRenderer from '../../src/components/figures/FigureRenderer'
+import type { Figure, DataFlowData, RiskMatrixData, UtilityChartData } from '../../src/types'
 
 describe('FigureRenderer', () => {
   it('data_flow typeのFigureで3列レイアウトが描画される', () => {

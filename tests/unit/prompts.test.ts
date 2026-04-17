@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { generateCreatePrompt, generateEnrichPrompt } from '../constants/prompts'
+import { generateCreatePrompt, generateEnrichPrompt } from '../../src/constants/prompts'
 
 describe('generateCreatePrompt', () => {
   const prompt = generateCreatePrompt()

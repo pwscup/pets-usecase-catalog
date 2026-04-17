@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
-import SettingsPage from '../pages/SettingsPage'
-import { useCases } from '../context/CaseContext'
+import SettingsPage from '../../src/pages/SettingsPage'
+import { useCases } from '../../src/context/CaseContext'
 
-vi.mock('../context/CaseContext', async () => {
-  const actual = await vi.importActual<typeof import('../context/CaseContext')>('../context/CaseContext')
+vi.mock('../../src/context/CaseContext', async () => {
+  const actual = await vi.importActual<typeof import('../../src/context/CaseContext')>('../../src/context/CaseContext')
   return {
     ...actual,
     useCases: vi.fn(),

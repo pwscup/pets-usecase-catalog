@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
-import FilterPanel from '../components/case-list/FilterPanel'
-import type { FilterState } from '../hooks/useFilter'
-import type { Case } from '../types'
+import FilterPanel from '../../src/components/case-list/FilterPanel'
+import type { FilterState } from '../../src/hooks/useFilter'
+import type { Case } from '../../src/types'
 
 const defaultFilters: FilterState = {
   query: '',

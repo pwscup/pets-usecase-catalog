@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
-import CaseListPage from '../pages/CaseListPage'
-import { useCases } from '../context/CaseContext'
-import type { Case } from '../types'
+import CaseListPage from '../../src/pages/CaseListPage'
+import { useCases } from '../../src/context/CaseContext'
+import type { Case } from '../../src/types'
 
 const mockCases: Case[] = [
   {
@@ -50,8 +50,8 @@ const mockCases: Case[] = [
 ]
 
 // Mock CaseContext by providing a wrapper with test data
-vi.mock('../context/CaseContext', async () => {
-  const actual = await vi.importActual<typeof import('../context/CaseContext')>('../context/CaseContext')
+vi.mock('../../src/context/CaseContext', async () => {
+  const actual = await vi.importActual<typeof import('../../src/context/CaseContext')>('../../src/context/CaseContext')
   return {
     ...actual,
     useCases: vi.fn(),

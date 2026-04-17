@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
-import CaseNewPage from '../pages/CaseNewPage'
+import CaseNewPage from '../../src/pages/CaseNewPage'
 
 describe('CaseNewPage', () => {
   it('新規作成フォームが表示される', () => {
