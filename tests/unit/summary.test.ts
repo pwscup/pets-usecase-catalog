@@ -1,5 +1,5 @@
-import { countByField, buildSummary } from '../lib/summary'
-import type { Case } from '../types'
+import { countByField, buildSummary } from '../../src/lib/summary'
+import type { Case } from '../../src/types'
 
 function makeCase(overrides: Partial<Case> = {}): Case {
   return {

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
-import Header from '../components/layout/Header'
+import Header from '../../src/components/layout/Header'
 
 function renderHeader() {
   return render(

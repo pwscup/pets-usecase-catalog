@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import CaseForm from '../components/case-form/CaseForm'
+import CaseForm from '../../src/components/case-form/CaseForm'
 
 describe('SourceFields', () => {
   it('初期状態で1つの出典フォームが表示される', () => {

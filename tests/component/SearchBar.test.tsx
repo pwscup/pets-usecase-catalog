@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
-import SearchBar from '../components/case-list/SearchBar'
+import SearchBar from '../../src/components/case-list/SearchBar'
 
 function renderSearchBar(props: { value?: string; onChange?: (v: string) => void } = {}) {
   const defaultOnChange = vi.fn()

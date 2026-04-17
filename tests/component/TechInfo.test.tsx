@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import TechInfo from '../components/case-detail/TechInfo'
+import TechInfo from '../../src/components/case-detail/TechInfo'
 
 describe('TechInfo', () => {
   it('技術情報が表示される', () => {

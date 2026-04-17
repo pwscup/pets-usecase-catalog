@@ -1,5 +1,5 @@
-import { exportCases } from '../lib/export-import'
-import type { Case } from '../types'
+import { exportCases } from '../../src/lib/export-import'
+import type { Case } from '../../src/types'
 
 const validCase: Case = {
   id: 'case-001',

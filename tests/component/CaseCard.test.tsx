@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
-import CaseCard from '../components/case-list/CaseCard'
-import type { Case } from '../types'
+import CaseCard from '../../src/components/case-list/CaseCard'
+import type { Case } from '../../src/types'
 
 const mockCase: Case = {
   id: 'case-001',

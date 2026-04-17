@@ -1,7 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import CaseForm from '../components/case-form/CaseForm'
-import type { Case } from '../types'
+import CaseForm from '../../src/components/case-form/CaseForm'
+import type { Case } from '../../src/types'
 
 const mockCase: Case = {
   id: 'case-edit-001',

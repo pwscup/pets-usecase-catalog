@@ -3,7 +3,7 @@ import {
   caseSchema,
   caseCatalogSchema,
   figureSchema,
-} from "../schemas/case.schema";
+} from "../../src/schemas/case.schema";
 
 /** Helper: minimal valid case data (all required fields) */
 function validCaseInput(overrides: Record<string, unknown> = {}) {

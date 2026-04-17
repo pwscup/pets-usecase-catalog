@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
-import AboutPage from '../pages/AboutPage'
+import AboutPage from '../../src/pages/AboutPage'
 
 describe('AboutPage', () => {
   it('アプリ名が表示される', () => {

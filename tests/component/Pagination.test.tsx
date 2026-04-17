@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import Pagination from '../components/case-list/Pagination'
+import Pagination from '../../src/components/case-list/Pagination'
 
 describe('Pagination', () => {
   it('totalPages <= 1の場合は非表示', () => {

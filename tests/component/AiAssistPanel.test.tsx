@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import AiAssistPanel from '../components/case-form/AiAssistPanel'
+import AiAssistPanel from '../../src/components/case-form/AiAssistPanel'
 
 describe('AiAssistPanel', () => {
   beforeEach(() => {
