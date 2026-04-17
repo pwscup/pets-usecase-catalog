@@ -70,9 +70,10 @@ src/
 ├── schemas/            #   Zodバリデーションスキーマ
 ├── constants/          #   選択肢定数（domain, region, category）
 ├── types/              #   TypeScript型定義
-├── lib/                #   ユーティリティ関数
-└── __tests__/          #   テストファイル
+└── lib/                #   ユーティリティ関数
 ```
+
+テストは `tests/` 配下（詳細は下記「ディレクトリ責務」参照）。
 
 ```
 public/cases/           # 事例データ（JSONファイル）
@@ -187,8 +188,6 @@ npm run test:e2e     # Playwright E2E
 - `@testing-library/react` でレンダリング
 - `@testing-library/user-event` でユーザー操作
 - `useFilter` のロジックは純粋関数を直接テスト
-
-> 現在 `src/__tests__/`, `plugins/__tests__/`, `src/test/` に残っているテストは Issue #109 (Phase 2) で `tests/` へ移設予定。
 
 ## コントリビューション
 

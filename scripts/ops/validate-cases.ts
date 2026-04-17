@@ -2,7 +2,7 @@
  * public/cases/ 配下の全 case.json をバリデーションするスクリプト。
  * CI で実行し、不正なデータがデプロイされるのを防ぐ。
  *
- * Usage: npx tsx scripts/validate-cases.ts
+ * Usage: npx tsx scripts/ops/validate-cases.ts
  */
 import { readdirSync, existsSync, readFileSync } from 'node:fs'
 import { resolve, join } from 'node:path'

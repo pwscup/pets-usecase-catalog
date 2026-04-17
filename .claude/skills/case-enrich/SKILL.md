@@ -42,7 +42,7 @@ URL が指定された場合は WebFetch で取得する。テキストが直接
 ### 5. バリデーション
 
 ```bash
-npx tsx scripts/validate-cases.ts
+npx tsx scripts/ops/validate-cases.ts
 ```
 
 エラーがあれば修正して再度バリデーションを実行する。

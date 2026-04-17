@@ -31,16 +31,28 @@ src/
 ├── constants/       # 定数（categories, styles, prompts）
 ├── context/         # CaseContext（データ提供）
 ├── hooks/           # useFilter（フィルタ・ソート）
-├── lib/             # ユーティリティ（data-loader, import-case）
-└── __tests__/       # 単体テスト
+└── lib/             # ユーティリティ（data-loader, import-case）
 
 public/cases/        # 事例データ（1ディレクトリ = 1事例）
 ├── index.json       # 事例ID一覧（ビルド時に自動生成）
 └── <id>/case.json   # 個別事例データ
 
-scripts/             # validate-cases.ts 等のCLIスクリプト
-e2e/                 # Playwright E2Eテスト
+tests/
+├── unit/            # ロジック単体テスト（Vitest）
+├── component/       # React コンポーネントテスト（Vitest + Testing Library）
+├── e2e/             # Playwright E2E テスト
+└── setup/           # Vitest 用 setup ファイル
+
+tooling/
+├── vite-plugins/    # Vite dev/build パイプラインに組み込むプラグイン
+└── lib/             # plugin と CLI で共用する純粋ロジック
+
+scripts/
+├── ops/             # 継続運用スクリプト（CI・日常作業で使う）
+└── oneoff/          # 一回限りのデータ移行スクリプト（書き捨て前提）
 ```
+
+詳細なディレクトリ責務は `docs/CONTRIBUTING.md` を参照。
 
 ## ブランチ戦略
 
