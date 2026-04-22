@@ -137,7 +137,7 @@ describe('CaseDetailPage', () => {
     expect(editLink.closest('a')).toHaveAttribute('href', '/cases/case-001/edit')
   })
 
-  it('data_flow図がある場合、constraintキーワードが「課題と解決」に表示される', () => {
+  it('data_flow図がある場合、constraint/outcomeキーワードが見出しに表示される', () => {
     const caseWithFigure: Case = {
       ...mockCase,
       figures: [{
@@ -158,14 +158,14 @@ describe('CaseDetailPage', () => {
     }
     mockedUseCases.mockReturnValue({ cases: [caseWithFigure], loading: false, error: null })
     renderWithRoute('case-001')
-    expect(screen.getByTestId('keyword-constraint')).toHaveTextContent('テスト制約')
-    expect(screen.getByTestId('keyword-outcome')).toHaveTextContent('テスト成果')
+    expect(screen.getByTestId('section-heading-constraint')).toHaveTextContent('課題：テスト制約')
+    expect(screen.getByTestId('section-heading-outcome')).toHaveTextContent('PETs適用により得られた価値：テスト成果')
   })
 
-  it('data_flow図がない場合、キーワードチップが表示されない', () => {
+  it('data_flow図がない場合、見出しはキーワード付きでない汎用表記になる', () => {
     renderWithRoute('case-001')
-    expect(screen.queryByTestId('keyword-constraint')).not.toBeInTheDocument()
-    expect(screen.queryByTestId('keyword-outcome')).not.toBeInTheDocument()
+    expect(screen.getByTestId('section-heading-constraint')).toHaveTextContent(/^課題$/)
+    expect(screen.getByTestId('section-heading-outcome')).toHaveTextContent(/^PETs適用により得られた価値$/)
   })
 
   it('review_statusバッジが表示される', () => {
@@ -193,5 +193,22 @@ describe('CaseDetailPage', () => {
   it('technology_categoryバッジが表示される', () => {
     renderWithRoute('case-001')
     expect(screen.getByText('合成データ')).toBeInTheDocument()
+  })
+
+  it('ai_generated の場合「レビュー済みとして編集・提出」ボタンが表示される', () => {
+    renderWithRoute('case-001')
+    const cta = screen.getByTestId('review-cta')
+    expect(cta).toBeInTheDocument()
+    expect(cta).toHaveAttribute('href', '/cases/case-001/edit')
+  })
+
+  it('human_reviewed の場合「レビュー済みとして編集・提出」ボタンは表示されない', () => {
+    mockedUseCases.mockReturnValue({
+      cases: [{ ...mockCase, review_status: 'human_reviewed' }],
+      loading: false,
+      error: null,
+    })
+    renderWithRoute('case-001')
+    expect(screen.queryByTestId('review-cta')).not.toBeInTheDocument()
   })
 })
