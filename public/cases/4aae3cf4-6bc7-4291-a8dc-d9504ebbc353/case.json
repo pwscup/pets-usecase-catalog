@@ -1,0 +1,74 @@
+{
+  "title": "APTO：高齢者を想定した攻撃プロンプトでLLMを検証し攻撃成功率を6%から0%に低減",
+  "region": "国内",
+  "domain": "IT",
+  "domain_sub": "LLM安全性評価",
+  "organization": "株式会社APTO",
+  "usecase_category": [
+    "R&D"
+  ],
+  "technology_category": [
+    "synthetic_data"
+  ],
+  "review_status": "ai_generated",
+  "summary": "組織や業界、職種を深く理解するドメイン特化型AIが求められる中、専門性と信頼性が高いデータを用意するには労力がかかり、AI開発工程の約80%をデータ収集やアノテーションが占めているとされる。APTOは、オープンソースのLLMを日本の高齢者が使う際のリスクを軽減するという目標を設定したが、LLMに疑似攻撃を仕掛けて弱点を探るレッドチーミングには、高齢者の振る舞いを想定したペルソナと攻撃用プロンプトが必要だった。",
+  "value_proposition": "日本の人口動態や文化を反映したNVIDIAの合成ペルソナデータセット「Nemotron-Personas-Japan」とNeMo Data Designerを用いて高齢者のペルソナを200件以上生成し、そこから高齢者の振る舞いを想定した攻撃用プロンプトを作成したとされている。100件の攻撃プロンプトによる評価で元のLLMの攻撃成功率は6%だったが、見つかった弱点を基に生成した1,000件以上の追加学習用データで安全対策を施したLLMでは0%に抑えられたと報告されている。実在の高齢者のデータを使わずに、配慮が必要な利用者層を想定した安全性検証を行える点が、本事例で示された価値の一つと考えられる。",
+  "privacy_enhancement_method": "NVIDIAが公開した、日本の人口動態や文化を反映した合成ペルソナデータセット「Nemotron-Personas-Japan」を起点に、NVIDIA NeMo Data Designerで高齢者のペルソナを200件以上生成し、Validator機能でフィルタリングして品質を高めた。生成したペルソナから高齢者の振る舞いを想定した攻撃用プロンプトを作成した。また、データ整備にはNVIDIA NeMo Curatorを用い、データの分類、フィルタリング、個人識別情報の削除、機密情報のマスキングを自動化したとされている。プライバシー上の利点は、テスト対象の利用者像を実在の高齢者ではなく合成ペルソナで表している点にあると考えられる（記事には明記なし）。使用したオープンソースLLMの名称は調査中。",
+  "safety_assurance_method": "記事では、データ整備においてNeMo Curatorにより個人識別情報の削除や機密情報のマスキングを行ったとされている。合成ペルソナ自体の安全性については、データセット提供元のNVIDIAが、全データは実世界の分布を反映しつつ完全に人工的に生成されたものであり、実在の人物との類似は偶然にすぎないとしている。再識別リスク評価などの具体的な検証内容は調査中。",
+  "utility_evaluation_method": "高齢者のペルソナから作成した100件の攻撃プロンプトをLLMに実行し、攻撃成功率で安全性を評価した。元のLLMの攻撃成功率は6%、弱点を基に生成した1,000件以上の追加学習用データで安全対策を施したLLMでは0%とされている。攻撃成功の判定基準は調査中。",
+  "occurred_at": "2026",
+  "tags": [
+    "Nemotron-Personas-Japan",
+    "レッドチーミング",
+    "高齢者",
+    "LLM安全性"
+  ],
+  "sources": [
+    {
+      "source_type": "web",
+      "title": "APTO、“AI データ” の開発高速化と品質向上を実現",
+      "url": "https://www.nvidia.com/ja-jp/case-studies/apto-improves-ai-data-quality/",
+      "note": "NVIDIAの顧客事例（公開日の記載なし）。課題背景、高齢者ペルソナ200件以上の生成、100件の攻撃プロンプトによる評価（攻撃成功率6%→0%）、1,000件以上の追加学習用データ、NeMo Curatorによる個人識別情報の削除を参照"
+    },
+    {
+      "source_type": "web",
+      "title": "NeMo Data Designer: An Extensible Framework for Multimodal Synthetic Data Generation",
+      "url": "https://arxiv.org/abs/2609.17699",
+      "note": "NVIDIAの論文。Nemotron-Personas-Japanの活用例として本事例（高齢者を想定したレッドチーミング、攻撃成功率6%→0%）を紹介。事例ページが2026年3月4日までに公開されていたことを参照"
+    },
+    {
+      "source_type": "web",
+      "title": "nvidia/Nemotron-Personas-Japan (Hugging Face dataset card)",
+      "url": "https://huggingface.co/datasets/nvidia/Nemotron-Personas-Japan",
+      "note": "データセットが完全に人工的に生成されている旨を参照"
+    }
+  ],
+  "figures": [
+    {
+      "type": "data_flow",
+      "title": "APTO 高齢者向けLLM安全性検証のPETs活用フロー",
+      "data": {
+        "nodes": [
+          { "id": "s1", "label": "日本の人口動態を反映した合成ペルソナ", "category": "source" },
+          { "id": "s2", "label": "高齢者を想定した攻撃データが必要", "category": "constraint" },
+          { "id": "p1", "label": "高齢者ペルソナを200件以上生成", "category": "process" },
+          { "id": "p2", "label": "攻撃プロンプトを作成", "category": "process" },
+          { "id": "a1", "label": "LLMのレッドチーミングと追加学習", "category": "application" },
+          { "id": "a2", "label": "攻撃成功率6%→0%", "category": "outcome" }
+        ],
+        "edges": [
+          { "from": "s1", "to": "p1", "label": "ペルソナの起点" },
+          { "from": "s2", "to": "p1", "label": "高齢者の振る舞いを想定" },
+          { "from": "p1", "to": "p2", "label": "ペルソナから生成" },
+          { "from": "p2", "to": "a1", "label": "100件の攻撃プロンプト" },
+          { "from": "a1", "to": "a2", "label": "1,000件以上の追加学習データで対策" }
+        ]
+      },
+      "note": ""
+    }
+  ],
+  "id": "4aae3cf4-6bc7-4291-a8dc-d9504ebbc353",
+  "status": "user",
+  "created_at": "2026-10-10T20:57:50.000Z",
+  "updated_at": "2026-10-10T20:57:50.000Z"
+}
