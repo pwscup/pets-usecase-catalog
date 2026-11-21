@@ -1,0 +1,114 @@
+{
+  "title": "NVIDIA：合成ペルソナ由来の日本語学習データで小型LLMを追加学習し10B未満で首位と報告",
+  "region": "国内",
+  "domain": "IT",
+  "domain_sub": "日本語LLM",
+  "organization": "NVIDIA（NVIDIA Japan）",
+  "usecase_category": [
+    "R&D"
+  ],
+  "technology_category": [
+    "synthetic_data"
+  ],
+  "review_status": "ai_generated",
+  "summary": "日本の機密データを扱う企業では、軽量で高度な日本語能力を持ち、オンプレミスで運用できる言語モデルへの需要があると報じられている。こうした小規模な日本語モデルの能力を高めるには、日本語の学習データの拡充が課題となる。",
+  "value_proposition": "NVIDIA Japanは、日本の実世界に基づく合成ペルソナデータセット「Nemotron-Personas-Japan」を用いて作成した日本語のツール呼び出しデータ（4Bトークン）でNVIDIA-Nemotron-Nano-9B-v2を追加学習し、NVIDIA-Nemotron-Nano-9B-v2-Japaneseとして公開した。NVIDIAの論文では、同モデルは日本語LLM評価のNejumi Leaderboard 4において100億パラメータ未満のモデルの中で1位と報告されている（報道では「最先端の性能を達成した」とされている）。合成ペルソナを起点にすることで、日本の実情を反映した学習データを用意できる点が、本事例で示された価値の一つと考えられる。",
+  "privacy_enhancement_method": "NVIDIAが公開した合成ペルソナデータセット「Nemotron-Personas-Japan」（国勢調査データ等を基に確率的グラフィカルモデルとLLMで生成した、計600万件の日本語ペルソナ、CC BY 4.0）を用いて、日本語のツール呼び出し学習用の合成データ（4Bトークン、生成モデル: Qwen3-235B-A22B、Qwen3-235B-A22B-Thinking-2507、GPT-OSS-120B）を作成した。ペルソナの使用件数や生成手順の詳細は調査中。本事例での合成データの主目的は日本語学習データの拡充であり、プライバシー上の利点は起点となるペルソナが合成データである点にあると考えられる（出典には明記なし）。",
+  "safety_assurance_method": "モデルカードにはPrivacyサブカードへのリンクがあるが、その内容は本事例では確認していない。データセット提供元のNVIDIAは、全データは実世界の分布を反映しつつ完全に人工的に生成されたものであり、実在の人物との類似は偶然にすぎないとしている。再識別リスク評価などの具体的な検証内容は調査中。",
+  "utility_evaluation_method": "日本語LLM評価のNejumi Leaderboard 4で評価した。モデルカードの表では、TOTAL_AVGが本モデル0.711、Qwen3-8Bが0.690とされている（元のベンチマークのスコアとは互換性がないと注記あり）。100億パラメータ未満のモデルの中で1位という順位はNVIDIAの論文での報告であり、リーダーボード自体は出典に含めていない。合成データの有無による比較は調査中。",
+  "occurred_at": "2026-02-17",
+  "tags": [
+    "Nemotron-Personas-Japan",
+    "ソブリンAI",
+    "ツール呼び出し",
+    "小規模言語モデル"
+  ],
+  "sources": [
+    {
+      "source_type": "web",
+      "title": "nvidia/NVIDIA-Nemotron-Nano-9B-v2-Japanese (Hugging Face model card)",
+      "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2-Japanese",
+      "note": "リリース日（2026年2月17日）、NVIDIA Japanによる追加学習、Nemotron-Personas-Japanを用いた日本語ツール呼び出しデータ（4Bトークン）と生成に用いたモデル、Nejumi Leaderboard 4のスコア表を参照"
+    },
+    {
+      "source_type": "web",
+      "title": "NeMo Data Designer: An Extensible Framework for Multimodal Synthetic Data Generation",
+      "url": "https://arxiv.org/abs/2609.17699",
+      "note": "NVIDIAの論文（主題はNeMo Data Designer）。4.6節（PDF本文p.18-19）での1文の言及で、本モデルがNejumi Leaderboard 4で100億パラメータ未満のモデル中1位であることを参照。absページには該当記述なし"
+    },
+    {
+      "source_type": "web",
+      "title": "NVIDIAから日本語モデル登場。軽量級で最高性能をうたう",
+      "url": "https://pc.watch.impress.co.jp/docs/news/2087605.html",
+      "note": "PC Watch（2026年2月20日）。日本の機密データを扱う企業でのオンプレミス運用に適しているという位置づけ、Nemotron-Personas-Japanを活用した合成データ生成による日本語能力の強化、100億パラメータ未満のカテゴリで「最先端の性能を達成した」との記述を参照"
+    },
+    {
+      "source_type": "web",
+      "title": "nvidia/Nemotron-Personas-Japan (Hugging Face dataset card)",
+      "url": "https://huggingface.co/datasets/nvidia/Nemotron-Personas-Japan",
+      "note": "データセットの生成方法、規模、ライセンス、完全に人工的に生成されている旨を参照"
+    }
+  ],
+  "figures": [
+    {
+      "type": "data_flow",
+      "title": "NVIDIA 日本語小型LLM開発のPETs活用フロー",
+      "data": {
+        "nodes": [
+          {
+            "id": "s1",
+            "label": "日本の実世界に基づく合成ペルソナ",
+            "category": "source"
+          },
+          {
+            "id": "s2",
+            "label": "小型日本語モデルの学習データ拡充",
+            "category": "constraint"
+          },
+          {
+            "id": "p1",
+            "label": "LLMでツール呼び出しデータを合成",
+            "category": "process"
+          },
+          {
+            "id": "a1",
+            "label": "Nemotron-Nano-9B-v2を追加学習",
+            "category": "application"
+          },
+          {
+            "id": "a2",
+            "label": "10B未満で首位（NVIDIA論文の報告）",
+            "category": "outcome"
+          }
+        ],
+        "edges": [
+          {
+            "from": "s1",
+            "to": "p1",
+            "label": "ペルソナを起点に生成"
+          },
+          {
+            "from": "s2",
+            "to": "p1",
+            "label": "日本語データの不足を補う"
+          },
+          {
+            "from": "p1",
+            "to": "a1",
+            "label": "4Bトークンの日本語データ"
+          },
+          {
+            "from": "a1",
+            "to": "a2",
+            "label": "Nejumi Leaderboard 4で評価"
+          }
+        ]
+      },
+      "note": ""
+    }
+  ],
+  "id": "a28421d8-a464-41c4-aa55-e52139634fff",
+  "status": "user",
+  "created_at": "2026-10-10T20:57:50.000Z",
+  "updated_at": "2026-10-10T20:59:25.000Z"
+}
