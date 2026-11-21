@@ -1,0 +1,124 @@
+{
+  "title": "Ant International：デジタルウォレットと顧客データを出し合わずにクーポン利用予測モデルを共同学習し、利用率を90%超向上",
+  "region": "国外",
+  "domain": "金融",
+  "domain_sub": "決済・マーケティング",
+  "organization": "Ant International",
+  "usecase_category": [
+    "組織間データ共有",
+    "フィージビリティ検証"
+  ],
+  "technology_category": [
+    "federated_learning",
+    "secure_computation"
+  ],
+  "review_status": "ai_generated",
+  "summary": "シンガポールに本社を置くAnt Internationalは、デジタルウォレットや小売事業者向けに特典プログラムを提供している。ウォレット利用者に関連性の高いクーポンを届けるには、Ant Internationalが持つクーポン利用履歴と、提携するデジタルウォレット（資料では「Wallet」と表記）が持つ購買履歴・嗜好・属性（年齢、性別など）を組み合わせて予測モデルを学習することが望ましかった。しかし、個人データの懸念から両者は共通顧客を特定するための識別子を開示・共有できず、事業上の機微性から顧客データを自社の環境の外に出すことも認めていなかった。",
+  "value_proposition": "シンガポールIMDAのPETサンドボックスで、秘匿積集合（PSI）、連合学習、秘密分散による秘密計算、準同型暗号を組み合わせたPoCを実施した。両者は互いの顧客リストを明かさずに共通顧客だけを特定し、データを自社の環境に置いたまま決定木系モデルを共同学習した。学習後、各社は部分的なモデルしか保持しない。7万人の顧客に2.5週間クーポンを配布した評価では、モデルで選んだ顧客群の利用率は、Ant International側の業務ルールだけで選んだ基準群に対して90%超の相対的な向上となり、両社の業務ルールを組み合わせた場合（7%向上）を大きく上回った。IMDAのケーススタディ時点でAnt Internationalは本番運用への移行を予定しており、モデルを同社のオープンソースのPETプラットフォームで公開するとしていた。OECD PETsリポジトリの概要では、サンドボックス終了後に本番環境へ展開したとされている。",
+  "privacy_enhancement_method": "【共通顧客の特定】楕円曲線Diffie-Hellman（ECDH、secp256k1）に基づく半正直モデルの2者間PSIを用いた。各社が自らの秘密鍵で顧客IDのハッシュを暗号化して交換し、受け取った側がさらに自らの鍵で暗号化する。二重に暗号化されたリスト同士を突き合わせ、一致したものだけを共通顧客とする。【モデル学習】連合学習の枠組みで決定木系モデルを共同学習する。学習の過程では、2^64または2^128の範囲の乱数でデータを秘密分散して互いに計算し、勾配の集計には加法準同型暗号を用いて秘密分散だけの場合より通信量を減らした（資料では、ここでの準同型暗号の役割は安全性の向上ではなく計算効率の向上と説明されている）。学習後のモデルは両者が同じ木構造を持つが、各ノードの分岐情報は対応する特徴量を持つ側にしか見えず、葉の重みは秘密分散で両者が保持する。【推論】予測時にも秘密分散で各社の部分結果を保護し、Ant Internationalが最終的な予測スコアを得る。再学習時には準同型暗号の鍵と乱数を再生成する。",
+  "safety_assurance_method": "シンガポール個人情報保護委員会（PDPC）が技術構成と法令遵守を審査中であり、学習段階のMPCとHEについて予備的な規制ガイダンスを示した。いずれかの当事者が秘密分散の両方の値にアクセスできない限り、分散された値は一般に個人データとはみなされず、学習段階で個人データを共有したことにはならないとされる。その前提として、各社が自らの分散値と秘密鍵を漏らさないよう、業界で認められたガバナンスと技術標準（IEEE 2842-2021 秘密計算の推奨実践）を整えることが求められた。また、決定木モデルで個人や少人数が特定されるリスクを下げるため、学習前の外れ値の除去、十分な学習サンプル数と木の深さの上限、予測スコアごとの最少人数のルール化を検討するよう示した。エンドツーエンドの実装に関する実務ガイダンスは後日示されるとされている。",
+  "utility_evaluation_method": "50万行・約200列の履歴データでモデルを共同学習した（各社4ノード、各ノード29 CPUコア・75GBメモリ、学習時間12時間）。7万人の顧客に2.5週間クーポンを配布し、利用率（利用数／配布数）で顧客選定の有効性を評価した。Ant Internationalの業務ルールのみで選んだ群を基準とし、両社の業務ルールを組み合わせた群は7%、モデルの予測（例：利用見込みスコア75超）で選んだ群は90%超の相対的な向上だった。リアルタイム推論の予備試験では、顧客がウォレットにログインしてから0.5〜1秒で利用見込みを予測してクーポンを送れたとされる。",
+  "occurred_at": "2024",
+  "tags": [
+    "IMDA PET Sandbox",
+    "秘匿積集合",
+    "マーケティング",
+    "OECD PETs Repository"
+  ],
+  "sources": [
+    {
+      "source_type": "pdf",
+      "title": "Enhancing Customer Engagement with Privacy Preserving AI — IMDA PET Sandbox Ant International Case Study",
+      "url": "https://www.imda.gov.sg/assets/b927d4bf-3cae-44e8-8943-aee97a191e06.pdf",
+      "note": "IMDAが公開したケーススタディ。事業背景と課題、PSI・連合学習・秘密計算・準同型暗号の組み合わせ（付録Aの技術解説を含む）、学習データ規模と計算資源、7万人・2.5週間の評価と利用率の比較表、リアルタイム推論の予備試験、PDPCの予備的な規制ガイダンス、今後の方針を参照。PDFのメタデータ上の作成日は2024年7月で、occurred_atの根拠とした（PoCの実施時期そのものは明記なし）。提携ウォレットの名称は記載なし"
+    },
+    {
+      "source_type": "web",
+      "title": "Improving Customer Engagement by Training Prediction Models with Multiple PETs — OECD Global Repository for Privacy Enhancing Technologies",
+      "url": "https://www.oecd.org/en/toolkits/oecd-global-repository-for-privacy-enhancing-technologies/use-cases-and-documents/Improving-Customer-Engagement-by-Training-Prediction-Models-with-Multiple-PETs.html",
+      "note": "OECD PETsリポジトリ（2026年10月公開）の掲載事例。URLはOECDが配信するRSSに記載のもの。本文ページはボット対策により未確認。RSSの概要では、サンドボックス終了後にAnt Internationalが本ソリューションを本番環境に展開したとされている"
+    }
+  ],
+  "figures": [
+    {
+      "type": "data_flow",
+      "title": "Ant International クーポン利用予測モデル共同学習のPETs活用フロー",
+      "data": {
+        "nodes": [
+          {
+            "id": "s1",
+            "label": "Ant Internationalのクーポン利用履歴",
+            "category": "source"
+          },
+          {
+            "id": "s2",
+            "label": "提携ウォレットの購買履歴・嗜好・属性",
+            "category": "source"
+          },
+          {
+            "id": "s3",
+            "label": "識別子を開示できず、データを社外に出せない",
+            "category": "constraint"
+          },
+          {
+            "id": "p1",
+            "label": "ECDH-PSIで共通顧客のみを特定",
+            "category": "process"
+          },
+          {
+            "id": "p2",
+            "label": "連合学習＋秘密分散＋準同型暗号で決定木を共同学習",
+            "category": "process"
+          },
+          {
+            "id": "a1",
+            "label": "利用見込みの高い顧客を選んでクーポン配布",
+            "category": "application"
+          },
+          {
+            "id": "a2",
+            "label": "利用率が基準比90%超向上",
+            "category": "outcome"
+          }
+        ],
+        "edges": [
+          {
+            "from": "s1",
+            "to": "p1",
+            "label": "二重暗号化した顧客ID"
+          },
+          {
+            "from": "s2",
+            "to": "p1",
+            "label": "二重暗号化した顧客ID"
+          },
+          {
+            "from": "s3",
+            "to": "p2",
+            "label": "データは各社の環境に留める"
+          },
+          {
+            "from": "p1",
+            "to": "p2",
+            "label": "共通顧客のデータで学習"
+          },
+          {
+            "from": "p2",
+            "to": "a1",
+            "label": "部分モデルを秘密計算で推論"
+          },
+          {
+            "from": "a1",
+            "to": "a2",
+            "label": "7万人・2.5週間で評価"
+          }
+        ]
+      },
+      "note": ""
+    }
+  ],
+  "id": "612995cd-f626-4550-9441-6dec2ca82e82",
+  "status": "user",
+  "created_at": "2026-11-21T13:34:05.000Z",
+  "updated_at": "2026-11-21T13:34:05.000Z"
+}

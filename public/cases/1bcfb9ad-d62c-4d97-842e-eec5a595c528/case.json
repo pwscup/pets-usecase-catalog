@@ -1,0 +1,119 @@
+{
+  "title": "Mastercard：国境を越えた金融犯罪情報の照会を、照会内容と相手方データを互いに秘匿したまま実現",
+  "region": "国外",
+  "domain": "金融",
+  "domain_sub": "マネーロンダリング対策",
+  "organization": "Mastercard",
+  "usecase_category": [
+    "組織間データ共有",
+    "フィージビリティ検証"
+  ],
+  "technology_category": [
+    "secure_computation"
+  ],
+  "review_status": "ai_generated",
+  "summary": "Mastercardは、マネーロンダリングなどの金融犯罪対策として、シンガポール・米国・インド・英国の拠点間や銀行などの第三者との間で、特定の口座（IBAN）が高リスクとして登録されているかを照会し合う仕組みを検討していた。しかし、IBANとその関連情報は暗号化されていても各国のデータ保護法上の個人データに当たりうるとされ、越境移転規制やデータローカライゼーション規制（インド準備銀行による決済データの国内保存指令など）、銀行の守秘義務に抵触するおそれがあった。照会内容そのものが相手方に知られると、捜査対象が露見する懸念もあった。",
+  "value_proposition": "シンガポールIMDAのPETサンドボックスで、第三者事業者が提供する完全準同型暗号（FHE）製品を用いたPoCを実施した。照会側が暗号化したIBANをハブ経由で各照会先に送り、照会先は自らのデータを外に出さずに暗号文のまま照合して、True/Falseの結果を暗号化して返す構成である。照会先は何を問われたかを知らず、照会側は照会先の元データを見ないまま結果だけを得られる。4か国の法的分析では、FHEの利用は越境移転・データローカライゼーション・データ保護の各面で肯定的な影響を持つと結論づけられた一方、銀行の守秘義務とデータローカライゼーションについては個別の明確化が必要とされた。Mastercardは、FHEは有望であり、FHE上に構築したAPIで有用なユーザー体験を提供できると結論づけている。",
+  "privacy_enhancement_method": "完全準同型暗号（FHE）による暗号化照会。照会側が自らの公開鍵でIBANを暗号化し、シンガポールのハブが全照会先に配信する。各照会先は自らの元データに対してFHE演算を行い、暗号化された結果（True/False）をハブに返す。ハブは結果を暗号文のまま集約して照会側に返し、照会側が秘密鍵で復号する。公開鍵・秘密鍵・評価鍵の3種類の鍵はPoCでは照会ごとに照会側が生成した。暗号化述語と非暗号化述語を組み合わせる複合クエリでは、非暗号化述語（リスク閾値など）で先に絞り込んでから暗号化述語で照合する。FHE製品の提供事業者名は資料に記載がなく調査中。",
+  "safety_assurance_method": "外部の法律顧問の助言を一部踏まえ、シンガポール（PDPA）、インド（IT Rules 2011、RBIの決済データ保存指令）、米国（GLBA）、英国（UK GDPR）の要件に照らして、越境移転・データローカライゼーション、法的根拠、銀行の守秘義務、AML/KYC報告義務を評価した。インドについては、暗号化照会がインド国外に2分を超えて留まらない点を踏まえても、照会側がインドにある場合の扱いはさらなる明確化が必要とされた。ガバナンス面では、照会ごとの鍵生成、FHE鍵に対応した鍵管理の必要性（標準的なHSMはFHE鍵に未対応）、ウォッチリストの最新性・形式の標準化・不正アクセス防止といった照会先データのガバナンスが検討された。テストデータはPythonのfakerライブラリでランダム生成したもので、実データは使用していない。",
+  "utility_evaluation_method": "データ項目長、計算時間、クエリの複雑さ、ガバナンス体制の観点で評価した。通常のIBANの2倍の大きさの識別子（44文字）でも、データノードのメモリに余裕がある限り往復時間に有意な影響はなかった。米国オハイオ・インドのムンバイ・英国ロンドンにノードを置き、シンガポールのハブからの往復時間を測定したところ、100万件を照会する同等クエリで最速約100秒であり、ハブから最も遠いオハイオのノードが律速となった。IBANの存在確認、リスク閾値との組み合わせ、取引額の閾値、口座開設日の範囲という4種類のクエリ（いずれも結果はTrue/False）を実行した。",
+  "occurred_at": "2023",
+  "tags": [
+    "IMDA PET Sandbox",
+    "完全準同型暗号",
+    "越境データ移転",
+    "OECD PETs Repository"
+  ],
+  "sources": [
+    {
+      "source_type": "pdf",
+      "title": "Preventing Financial Fraud Across Different Jurisdictions with Secure Data Collaborations — IMDA PET Sandbox Mastercard Case Study",
+      "url": "https://www.imda.gov.sg/-/media/imda/files/programme/pet-sandbox/imda-pet-sandbox--case-study--mastercard.pdf",
+      "note": "IMDAが公開したケーススタディ。事業背景、照会の仕組み（ハブ経由のFHE照会とTrue/False応答）、4か国の法的分析、性能評価（44文字の識別子、100万件で約100秒）、鍵管理と照会先データのガバナンス、結論を参照。PDFのメタデータ上の作成日は2023年11月で、occurred_atの根拠とした（PoCの実施時期そのものは明記なし。インドの分析は2023年デジタル個人データ保護法の施行前に行われたとの注記あり）"
+    },
+    {
+      "source_type": "pdf",
+      "title": "PETs Use Case: Preventing Financial Fraud Across Different Jurisdictions with Fully Homomorphic Encryption",
+      "url": "https://fpf.org/wp-content/uploads/2025/07/PETs-Use-Case_-Preventing-Financial-Fraud-Across-Different-Jurisdictions-with-Fully-Homomorphic-Encryption.pdf",
+      "note": "Future of Privacy Forumのイシューブリーフ（2025年7月）。同じPoCを米国の政策の観点から解説したもの。照会内容が相手方に知られること（tipping off）のリスクに関する記述を参照"
+    },
+    {
+      "source_type": "web",
+      "title": "Preventing Cross-Border Financial Fraud with Homomorphic Encryption — OECD Global Repository for Privacy Enhancing Technologies",
+      "url": "https://www.oecd.org/en/toolkits/oecd-global-repository-for-privacy-enhancing-technologies/use-cases-and-documents/Preventing-Cross-Border-Financial-Fraud-with-Homomorphic-Encryption.html",
+      "note": "OECD PETsリポジトリ（2026年10月公開）の掲載事例。URLはOECDが配信するRSSに記載のもの。本文ページはボット対策により未確認。RSSの概要（MastercardがIMDAのPETサンドボックスでFHEを試験した）のみ確認した"
+    }
+  ],
+  "figures": [
+    {
+      "type": "data_flow",
+      "title": "Mastercard 越境金融犯罪情報照会のPETs活用フロー",
+      "data": {
+        "nodes": [
+          {
+            "id": "s1",
+            "label": "各国拠点・銀行が持つ高リスク口座（IBAN）リスト",
+            "category": "source"
+          },
+          {
+            "id": "s2",
+            "label": "越境移転・データローカライゼーション・銀行の守秘義務",
+            "category": "constraint"
+          },
+          {
+            "id": "p1",
+            "label": "照会側がIBANをFHEで暗号化しハブ経由で配信",
+            "category": "process"
+          },
+          {
+            "id": "p2",
+            "label": "照会先が暗号文のまま照合し暗号化結果を返却",
+            "category": "process"
+          },
+          {
+            "id": "a1",
+            "label": "照会側が集約結果（True/False）を復号",
+            "category": "application"
+          },
+          {
+            "id": "a2",
+            "label": "100万件の照会で最速約100秒、4か国で法的影響は概ね肯定的",
+            "category": "outcome"
+          }
+        ],
+        "edges": [
+          {
+            "from": "s1",
+            "to": "p2",
+            "label": "元データは照会先の環境に留まる"
+          },
+          {
+            "from": "s2",
+            "to": "p1",
+            "label": "照会内容と元データを秘匿"
+          },
+          {
+            "from": "p1",
+            "to": "p2",
+            "label": "暗号化照会"
+          },
+          {
+            "from": "p2",
+            "to": "a1",
+            "label": "ハブで暗号文のまま集約"
+          },
+          {
+            "from": "a1",
+            "to": "a2",
+            "label": "PoCの評価"
+          }
+        ]
+      },
+      "note": ""
+    }
+  ],
+  "id": "1bcfb9ad-d62c-4d97-842e-eec5a595c528",
+  "status": "user",
+  "created_at": "2026-11-21T13:34:05.000Z",
+  "updated_at": "2026-11-21T13:34:05.000Z"
+}
