@@ -42,7 +42,7 @@
 |---|---|
 | 手元 | `npm run dev`（5173）、`npm run preview`（4173） |
 | 本番 | GitHub Pages（`main` に push で更新） |
-| ドキュメント | 手元で `python3 -m http.server`。本番には出さない |
+| ドキュメント | raw.githack.com で `develop` の `docs/index.html` を表示。本番には出さない |
 
 ---
 

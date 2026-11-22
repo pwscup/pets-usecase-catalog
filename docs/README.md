@@ -2,8 +2,8 @@
 
 PETs活用事例カタログの開発者向けドキュメントの入口です。人（初めて触る人を含む）と AI（Claude Code など）が、同じものを読んで作業します。
 
-- ブラウザで読む：[`docs/index.html`](index.html)（目次つきの閲覧ページ。表示の仕方は[ドキュメントを書く](howto/write-docs.md)）
-- 5分でつかむ：[スライド](slides.md)
+- ブラウザで読む：[閲覧ページ](https://raw.githack.com/pwscup/pets-usecase-catalog/develop/docs/index.html)（目次つき。`develop` の最新を表示）
+- 5分でつかむ：[スライド](https://raw.githack.com/pwscup/pets-usecase-catalog/develop/docs/slides.html)（原本は [slides.md](slides.md)）
 
 ## このリポジトリは何か
 

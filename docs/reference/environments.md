@@ -7,9 +7,10 @@
 | 手元（開発） | `npm run dev` → `http://localhost:5173` | 作業中のアプリ | ファイルを保存するたび |
 | 手元（本番と同じ形） | `npm run build && npm run preview` → `http://localhost:4173` | `dist/` | 実行したとき |
 | 本番 | GitHub Pages（リポジトリの Settings → Pages に URL） | `dist/`（アプリと `public/cases/`） | `main` に push されたとき |
-| ドキュメント | 手元：`python3 -m http.server 8000` → `http://localhost:8000/docs/index.html` | `docs/` | 実行したとき |
+| ドキュメント | https://raw.githack.com/pwscup/pets-usecase-catalog/develop/docs/index.html（raw.githack.com 経由） | `develop` の `docs/` | `develop` に push されてから数分後 |
+| ドキュメント（手元） | `python3 -m http.server 8000` → `http://localhost:8000/docs/index.html` | 作業中の `docs/` | 実行したとき |
 
-- 開発用の確認環境（PR ごとのプレビューなど）は今はありません
+- 開発用の確認環境は、ドキュメントの閲覧（raw.githack.com）だけです。`develop` のアプリの画面を確認する環境や、PR ごとのプレビューはありません
 - 本番に出るのは `dist/` だけです。`docs/` と `CLAUDE.md` は本番に出ません
 
 ## ブランチ

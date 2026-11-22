@@ -91,7 +91,18 @@ PC とスマホ（ブラウザの開発者ツールで幅を狭める）、ラ�
 
 ## 公開先
 
-ドキュメントは本番（GitHub Pages）には出しません。本番のビルド（`dist/`）には `index.html`（アプリ）と `public/` だけが入り、`docs/` と `CLAUDE.md` は入りません。開発用の確認環境は今はないので、手元のサーバーか GitHub のファイル表示で読みます。
+ドキュメントは本番（GitHub Pages）には出しません。本番のビルド（`dist/`）には `index.html`（アプリ）と `public/` だけが入り、`docs/` と `CLAUDE.md` は入りません。
+
+閲覧ページとスライドは、[raw.githack.com](https://raw.githack.com/) を通して GitHub 上のファイルをそのまま表示して読みます。設定やデプロイは要りません（リポジトリが公開であることが前提）。
+
+| 見たいもの | URL |
+|---|---|
+| `develop` の閲覧ページ | https://raw.githack.com/pwscup/pets-usecase-catalog/develop/docs/index.html |
+| `develop` のスライド | https://raw.githack.com/pwscup/pets-usecase-catalog/develop/docs/slides.html |
+| 作業ブランチの閲覧ページ | `https://raw.githack.com/pwscup/pets-usecase-catalog/<ブランチ名>/docs/index.html` |
+
+- push してから反映されるまで、数分かかることがあります
+- 外部の無料サービスなので、止まっているときは手元のサーバーか GitHub のファイル表示で読みます
 
 ## PR のチェックリスト（ドキュメントに関わる変更）
 
@@ -106,6 +117,7 @@ PC とスマホ（ブラウザの開発者ツールで幅を狭める）、ラ�
 | 症状 | よくある原因 | 対処 |
 |---|---|---|
 | 閲覧ページが「読み込めませんでした」になる | `file://` で開いた、パスが違う | サーバー経由で開く。`DOCS` の `path` を確かめる |
+| raw.githack.com で古い内容が出る | 反映待ち・キャッシュ | 数分待って再読み込みする。急ぐときは手元のサーバーで見る |
 | 図が出ずにコードのまま表示される | Mermaid の文法の誤り、または CDN に届かない | 括弧を `"..."` で囲む。CDN に届かないときは原文がそのまま出る作り |
 | 目次に出ない | `DOCS` に足していない | `docs/index.html` の `DOCS` に1行足す |
 | リンクを押すと GitHub が開く | `docs/` の外のファイルへのリンク | そういう作り。`docs/` 内の `.md` だけが閲覧ページ内で開く |
