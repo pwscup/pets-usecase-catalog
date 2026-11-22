@@ -128,7 +128,7 @@ describe('FilterPanel', () => {
   it('レビュー状態フィルタが表示される', () => {
     renderPanel()
     expect(screen.getByText('レビュー状態')).toBeInTheDocument()
-    expect(screen.getByText('AI生成')).toBeInTheDocument()
+    expect(screen.getByText('未レビュー')).toBeInTheDocument()
   })
 
   it('各選択肢に件数が表示される', () => {

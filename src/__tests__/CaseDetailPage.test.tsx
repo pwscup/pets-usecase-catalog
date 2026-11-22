@@ -171,13 +171,13 @@ describe('CaseDetailPage', () => {
   it('review_statusバッジが表示される', () => {
     renderWithRoute('case-001')
     expect(screen.getByTestId('review-status-badge')).toBeInTheDocument()
-    expect(screen.getByText('AI生成')).toBeInTheDocument()
+    expect(screen.getByText('未レビュー')).toBeInTheDocument()
   })
 
-  it('AI生成の注意書きが表示される', () => {
+  it('未レビューの注意書きが表示される', () => {
     renderWithRoute('case-001')
     expect(screen.getByTestId('review-alert')).toBeInTheDocument()
-    expect(screen.getByText(/公開情報をもとにAIを用いて整理したものです/)).toBeInTheDocument()
+    expect(screen.getByText(/公開情報をもとにAIを用いて整理したもので、人によるレビューがまだ済んでいません/)).toBeInTheDocument()
   })
 
   it('human_reviewedの場合は注意書きが表示されない', () => {

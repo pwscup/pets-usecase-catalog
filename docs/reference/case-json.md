@@ -73,7 +73,7 @@
 | `domain` | `金融`, `医療`, `公共`, `通信`, `モビリティ`, `IT`, `エネルギー`, `小売`, `製造` |
 | `usecase_category` | `組織内データ共有`, `組織間データ共有`, `外部分析者活用`, `R&D`, `データ販売`, `フィージビリティ検証`, `公的利用` |
 | `technology_category` | `synthetic_data`（合成データ）, `differential_privacy`（差分プライバシー）, `anonymization`（匿名化）, `federated_learning`（連合学習）, `secure_computation`（秘密計算）, `distributed_analytics`（分散データ分析） |
-| `review_status` | `ai_generated`（AI生成）, `under_review`（レビュー中）, `human_reviewed`（レビュー済）, `flagged`（要確認） |
+| `review_status` | `ai_generated`（未レビュー）, `under_review`（レビュー中）, `human_reviewed`（レビュー済）, `flagged`（要確認） |
 
 選択肢の判断基準は `src/constants/prompts.ts` の表にあります。選択肢を足すときは[選択肢を増やす](../howto/add-option.md)。
 

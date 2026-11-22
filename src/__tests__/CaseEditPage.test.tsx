@@ -98,7 +98,7 @@ describe('CaseEditPage', () => {
     // findByTestId to allow async update
     expect(await screen.findByTestId('review-transition-banner')).toBeInTheDocument()
     expect(screen.getByTestId('review-transition-commit-message').textContent).toContain('review:')
-    expect(screen.getByTestId('review-transition-commit-message').textContent).toContain('AI生成')
+    expect(screen.getByTestId('review-transition-commit-message').textContent).toContain('未レビュー')
     expect(screen.getByTestId('review-transition-commit-message').textContent).toContain('レビュー済')
   })
 
