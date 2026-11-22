@@ -47,6 +47,8 @@ flowchart TD
    npm run test
    ```
 
+   `npm run dev` で開発サーバーを起動し、`http://localhost:5173/#/resources` で表示を確かめる
+
 6. `develop` 向けに PR を出す。本文に、確かめた範囲（目次まで・本文の該当章まで、など）を書く
 
 ## チェックリスト

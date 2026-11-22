@@ -7,6 +7,7 @@ import CaseEditPage from './pages/CaseEditPage'
 import SettingsPage from './pages/SettingsPage'
 import AboutPage from './pages/AboutPage'
 import StatsPage from './pages/StatsPage'
+import ResourcesPage from './pages/ResourcesPage'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/cases/:id" element={<CaseDetailPage />} />
           <Route path="/cases/:id/edit" element={<CaseEditPage />} />
           <Route path="/stats" element={<StatsPage />} />
+          <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/about" element={<AboutPage />} />
         </Route>

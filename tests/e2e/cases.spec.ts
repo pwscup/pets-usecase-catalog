@@ -220,3 +220,39 @@ test.describe('case.json データ整合性', () => {
     expect(failures).toEqual([])
   })
 })
+
+// ------------------------------------------------------------------
+// E2E: 参考資料ページ
+// ------------------------------------------------------------------
+test.describe('参考資料ページ', () => {
+  test('ヘッダーから開け、参考資料のカードが1件以上ある', async ({ page }) => {
+    await page.goto('/')
+    await page.getByRole('link', { name: '参考資料' }).click()
+    await expect(page.getByRole('heading', { name: '参考資料', level: 1 })).toBeVisible()
+    await expect(page.locator('text=読み込み中')).toBeHidden({ timeout: 15_000 })
+    const cards = page.getByTestId('resource-card')
+    await expect(cards.first()).toBeVisible()
+    expect(await cards.count()).toBeGreaterThan(0)
+  })
+
+  test('種類で絞り込むと件数が変わり、URL に残る', async ({ page }) => {
+    await page.goto('/#/resources')
+    await expect(page.locator('text=読み込み中')).toBeHidden({ timeout: 15_000 })
+    const total = await page.getByTestId('resource-card').count()
+    await page.getByRole('button', { name: '報告書' }).click()
+    await expect(page).toHaveURL(/kind=/)
+    const filtered = await page.getByTestId('resource-card').count()
+    expect(filtered).toBeGreaterThan(0)
+    expect(filtered).toBeLessThan(total)
+  })
+
+  test('コンソールエラーが発生しない', async ({ page }) => {
+    const errors: string[] = []
+    page.on('console', (msg) => {
+      if (msg.type() === 'error') errors.push(msg.text())
+    })
+    await page.goto('/#/resources')
+    await expect(page.locator('text=読み込み中')).toBeHidden({ timeout: 15_000 })
+    expect(errors).toEqual([])
+  })
+})

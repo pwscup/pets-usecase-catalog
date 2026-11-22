@@ -20,15 +20,17 @@
 | パス | 中身 |
 |---|---|
 | `src/main.tsx` / `src/App.tsx` | 起動とルーティング（[画面と URL](url.md)） |
-| `src/pages/` | 画面。`CaseListPage`（一覧）・`CaseDetailPage`（詳細）・`CaseNewPage`（新規作成）・`CaseEditPage`（編集）・`StatsPage`（統計）・`SettingsPage`（設定）・`AboutPage`（About） |
+| `src/pages/` | 画面。`CaseListPage`（一覧）・`CaseDetailPage`（詳細）・`CaseNewPage`（新規作成）・`CaseEditPage`（編集）・`StatsPage`（統計）・`ResourcesPage`（参考資料）・`SettingsPage`（設定）・`AboutPage`（About） |
 | `src/components/case-list/` | 一覧の部品（カード・フィルタ・検索・並べ替え・集計・ページ送り） |
 | `src/components/case-detail/` | 詳細の部品（技術情報・出典・プレビューと「GitHubで提出」） |
 | `src/components/case-form/` | フォームの部品（基本項目・技術項目・出典・タグ・図・レビュー状況・AI アシスト） |
 | `src/components/figures/` | 図の表示（`DataFlowDiagram`・`RiskMatrix`・`UtilityChart`・振り分けの `FigureRenderer`） |
+| `src/components/resources/` | 参考資料のカード |
 | `src/components/layout/` | ヘッダー・フッター・レイアウト |
 | `src/context/CaseContext.tsx` | 事例データを読み込み、画面全体に渡す |
 | `src/hooks/useFilter.ts` | 検索・フィルタ・並べ替え・ページ送り。URL と同期する |
 | `src/lib/data-loader.ts` | `index.json` と各 `case.json` を取ってくる |
+| `src/lib/resource-loader.ts` | 参考資料の読み込み（スキーマに合わないものは読み飛ばす）・絞り込み・並べ替え・URL との変換 |
 | `src/lib/import-case.ts` | 「AIの出力をインポート」で貼った JSON を読み取る |
 | `src/lib/export-import.ts` | 設定画面のエクスポート（JSON のダウンロード） |
 | `src/lib/summary.ts` | 集計・統計の計算 |
