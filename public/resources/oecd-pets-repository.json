@@ -1,0 +1,30 @@
+{
+  "id": "oecd-pets-repository",
+  "title": "OECD Global Repository for Privacy Enhancing Technologies",
+  "title_ja": "OECD プライバシー強化技術グローバルリポジトリ",
+  "publisher": "OECD",
+  "publisher_type": "国際機関",
+  "country": "国際",
+  "kind": "事例集",
+  "technology_category": [],
+  "language": [
+    "en"
+  ],
+  "published_at": "2026-10",
+  "url": "https://www.oecd.org/en/toolkits/oecd-global-repository-for-privacy-enhancing-technologies.html",
+  "links": [
+    {
+      "label": "RSS（全件を取るときは pageSize=100 を付ける）",
+      "url": "https://api.oecd.org/webcms/search/rss?siteName=oecd&interfaceLanguage=en&hiddenFacets=siteName%3Aoecd-global-repository-for-privacy-enhancing-technologies&pageSize=100"
+    }
+  ],
+  "description": "各国の政府・規制当局などが公表した PETs の活用事例と、関連する文書（当局のガイドや報告書）を集めたリポジトリ。2026年10月の公開時点で、事例11件と文書12件が掲載されている。",
+  "recommended_for": "各国で実際に使われた PETs の事例と、規制当局のガイダンスをまとめて見渡したい人",
+  "related_case_tag": "OECD PETs Repository",
+  "import_status": "一部取り込み",
+  "import_note": "#232。事例11件のうち10件を取り込み（未作成1件は一次資料が特定できず）。文書12件のうち、本リストに一部を掲載",
+  "review_status": "ai_generated",
+  "note": "ページ本体はボット対策で開けず未確認。件数と各項目の概要は OECD が配信する RSS で確認した",
+  "created_at": "2026-11-22T06:00:00.000Z",
+  "updated_at": "2026-11-22T06:00:00.000Z"
+}

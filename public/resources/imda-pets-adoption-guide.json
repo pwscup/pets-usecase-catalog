@@ -1,0 +1,22 @@
+{
+  "id": "imda-pets-adoption-guide",
+  "title": "Privacy Enhancing Technologies Adoption Guide (Draft for Industry Consult)",
+  "title_ja": "シンガポール IMDA PETs 導入ガイド（意見募集の草案）",
+  "publisher": "シンガポール 情報通信メディア開発庁（IMDA）",
+  "publisher_type": "政府・規制当局",
+  "country": "シンガポール",
+  "kind": "ガイド・ガイダンス",
+  "technology_category": [],
+  "language": [
+    "en"
+  ],
+  "published_at": "2026-01",
+  "url": "https://www.imda.gov.sg/-/media/imda/files/programme/pet-sandbox/pets-adoption-guide.pdf",
+  "links": [],
+  "description": "PETs の導入を検討する組織向けのガイドの草案（業界への意見募集版）。PETs の利点、発見と導入に役立つ資料、7種類の技術（差分プライバシー・準同型暗号・合成データ・連合学習・秘密計算・TEE・ゼロ知識証明）の解説と、導入前・導入中・導入後のチェックリストからなる。",
+  "recommended_for": "PETs の導入を判断する立場の人。技術の一覧と、導入の各段階で確かめることを一度に押さえたい人",
+  "review_status": "ai_generated",
+  "note": "PDF 本文（目次と構成）を確認。表紙に「DRAFT FOR INDUSTRY CONSULT」とある草案。発行月は PDF の作成日（2026年1月）による",
+  "created_at": "2026-11-22T06:00:00.000Z",
+  "updated_at": "2026-11-22T06:00:00.000Z"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "un-pet-guide-official-statistics",
+  "title": "United Nations Guide on Privacy-Enhancing Technologies for Official Statistics",
+  "title_ja": "国連 公的統計のためのプライバシー強化技術ガイド",
+  "publisher": "国連 ビッグデータ・データサイエンス専門家委員会（UN-CEBD）",
+  "publisher_type": "国際機関",
+  "country": "国際",
+  "kind": "ガイド・ガイダンス",
+  "technology_category": [],
+  "language": [
+    "en"
+  ],
+  "published_at": "2023",
+  "url": "https://unstats.un.org/bigdata/task-teams/privacy/guide/2023_UN%20PET%20Guide.pdf",
+  "links": [
+    {
+      "label": "ガイドの紹介ページ",
+      "url": "https://unstats.un.org/bigdata/task-teams/privacy/guide/"
+    }
+  ],
+  "description": "統計局が PETs を使うための手法と考え方をまとめたガイド。手法の章では秘密計算・準同型暗号・差分プライバシー・合成データ・分散学習・ゼロ知識証明・TEE を扱い、ケーススタディの章では18事例を、目的・データ・使った技術・実施段階の表で整理している。",
+  "recommended_for": "PETs の手法を一通り押さえたうえで、公的統計での使われ方を事例で確かめたい人",
+  "review_status": "ai_generated",
+  "note": "PDF 本文（目次・第3章の要約表と各事例）を確認",
+  "created_at": "2026-11-22T06:00:00.000Z",
+  "updated_at": "2026-11-22T06:00:00.000Z"
+}

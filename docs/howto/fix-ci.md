@@ -27,6 +27,7 @@ flowchart TD
 | CI のステップ | 手元で実行するコマンド |
 |---|---|
 | Validate case.json files | `npx tsx scripts/validate-cases.ts` |
+| Validate resources | `npx tsx scripts/validate-resources.ts` |
 | Type check | `npx tsc -b --noEmit` |
 | Run tests | `npx vitest run` |
 | Install Playwright browsers | `npx playwright install --with-deps chromium` |

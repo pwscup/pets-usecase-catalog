@@ -1,0 +1,24 @@
+{
+  "id": "uk-gov-pets-use-case-repository",
+  "title": "Repository of Privacy Enhancing Technologies (PETs) Use Cases",
+  "title_ja": "英国政府 PETs 活用事例リポジトリ",
+  "publisher": "英国 科学・イノベーション・技術省（DSIT）",
+  "publisher_type": "政府・規制当局",
+  "country": "英国",
+  "kind": "事例集",
+  "technology_category": [],
+  "language": [
+    "en"
+  ],
+  "published_at": "2024-11-07",
+  "url": "https://www.gov.uk/guidance/repository-of-privacy-enhancing-technologies-pets-use-cases",
+  "links": [],
+  "description": "新しい PETs を使った実世界の事例を、分野ごと（医療・福祉14件、デジタル・SNS研究10件、金融・保険8件、統計・教育・交通6件、その他8件）にまとめたリポジトリ。公開情報と DSIT に提供された情報に基づき、掲載は推奨を意味しないとしている。",
+  "recommended_for": "分野ごとに、どんな PETs がどこまで実用されているかを確かめたい人",
+  "import_status": "取り込み済み",
+  "import_note": "旧 CDEI の PETs Adoption Guide のリポジトリから46件を取り込み済み（PR #80）。件数は一致するが、本リポジトリの事例と同じものかは未確認",
+  "review_status": "ai_generated",
+  "note": "ページ本体（概要と分野ごとの件数）を確認。各分野のページは未確認",
+  "created_at": "2026-11-22T06:00:00.000Z",
+  "updated_at": "2026-11-22T06:00:00.000Z"
+}

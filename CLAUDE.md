@@ -20,19 +20,21 @@
 
 1. **ブランチ**：`main` に直接コミットしない。`develop` から作業ブランチを切り、PR は `develop` 向け。`develop` → `main` のマージで本番に出る → [`docs/howto/release.md`](docs/howto/release.md)
 2. **事例データ**：1事例 = `public/cases/<id>/case.json`。`sources` は最低1件。文献から読み取れない項目は「調査中」と書き、推測で埋めない → [`docs/reference/case-json.md`](docs/reference/case-json.md)
+   - 参考資料（読んだほうがいいもの）は1件 = `public/resources/<id>.json` → [`docs/reference/resources-json.md`](docs/reference/resources-json.md)
 3. **出典で確認できる範囲だけ書く**：一次資料を優先する。二次情報（検索結果の要約・解説記事）を一次資料のように扱わない。読めなかった出典は `note` にそう書く → [`docs/explanation/principles.md`](docs/explanation/principles.md)
 4. **レビュー状態**：AI が作った事例は `review_status: "ai_generated"`。`human_reviewed` に上げるのは人が出典と照合したときだけ → [`docs/howto/review-case.md`](docs/howto/review-case.md)
 5. **画面**：本文の文言は出典に基づく。技術名をタイトルに入れない。summary は課題、value_proposition は解決と成果
 6. **ドキュメントも一緒に直す**：仕様を変えたら同じ PR で `docs/` を直す。食い違ったらコードが正
 7. **原本は Markdown**：本文は `docs/*.md` にだけ書く。`docs/index.html` と `docs/slides.html` は表示するだけで本文を持たない
 8. **判断と失敗は記録する**：`docs/explanation/history.md` の先頭に足す
-9. **確認してから PR**：`npx tsx scripts/validate-cases.ts`・`npm run test`・`npm run build` を通す
+9. **確認してから PR**：`npx tsx scripts/validate-cases.ts`・`npx tsx scripts/validate-resources.ts`・`npm run test`・`npm run build` を通す
 
 ## よく使うコマンド
 
 ```
 npm run dev          # 開発サーバー（http://localhost:5173）
 npx tsx scripts/validate-cases.ts  # case.json の検査（npm run validate は tsx 未導入で動かない）
+npx tsx scripts/validate-resources.ts  # 参考資料の検査
 npm run test         # 単体テスト
 npm run build        # 本番ビルド（型チェック込み）
 npm run test:e2e     # E2E テスト

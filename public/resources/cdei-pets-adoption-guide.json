@@ -1,0 +1,30 @@
+{
+  "id": "cdei-pets-adoption-guide",
+  "title": "PETs Adoption Guide",
+  "title_ja": "PETs 導入ガイド（旧 CDEI）",
+  "publisher": "英国 Centre for Data Ethics and Innovation（CDEI）",
+  "publisher_type": "政府・規制当局",
+  "country": "英国",
+  "kind": "ガイド・ガイダンス",
+  "technology_category": [],
+  "language": [
+    "en"
+  ],
+  "published_at": "2021",
+  "url": "https://cdeiuk.github.io/pets-adoption-guide/",
+  "links": [
+    {
+      "label": "事例リポジトリ",
+      "url": "https://cdeiuk.github.io/pets-adoption-guide/repository/"
+    }
+  ],
+  "description": "機微なデータを共有・処理するプロジェクトで PETs の導入を検討するための、対話式のガイド。主な読者を技術アーキテクトとプロダクトオーナーとし、事例のリポジトリも備える。ページ上ではベータ版とされ、最終版は2021年中に公開予定と書かれている。",
+  "recommended_for": "自分のプロジェクトにどの PETs が合うかを、問いに答えながら絞り込みたい技術者",
+  "related_case_tag": "CDEI PETs Adoption Guide",
+  "import_status": "取り込み済み",
+  "import_note": "事例リポジトリから46件を取り込み済み（PR #80、scripts/generate-cdei-cases.py）",
+  "review_status": "ai_generated",
+  "note": "トップページを確認。最終版が公開されたかは未確認",
+  "created_at": "2026-11-22T06:00:00.000Z",
+  "updated_at": "2026-11-22T06:00:00.000Z"
+}

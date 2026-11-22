@@ -1,0 +1,29 @@
+{
+  "id": "nist-sp-800-226",
+  "title": "NIST SP 800-226: Guidelines for Evaluating Differential Privacy Guarantees",
+  "title_ja": "NIST SP 800-226 差分プライバシーの保証を評価するためのガイドライン",
+  "publisher": "米国 国立標準技術研究所（NIST）",
+  "publisher_type": "政府・規制当局",
+  "country": "米国",
+  "kind": "標準・評価指針",
+  "technology_category": [
+    "differential_privacy"
+  ],
+  "language": [
+    "en"
+  ],
+  "published_at": "2025-03-06",
+  "url": "https://csrc.nist.gov/pubs/sp/800/226/final",
+  "links": [
+    {
+      "label": "DOI",
+      "url": "https://doi.org/10.6028/NIST.SP.800-226"
+    }
+  ],
+  "description": "差分プライバシーを使った製品や公開データについて、その保証が何を守り何を守らないかを評価するためのガイドライン。2023年12月の草案を経て、2025年3月に最終版が公開された。",
+  "recommended_for": "「差分プライバシー対応」とうたう製品やデータ公開の主張を、自分で評価できるようになりたい人",
+  "review_status": "ai_generated",
+  "note": "NIST の公開ページ（題名・著者・公開日）を確認",
+  "created_at": "2026-11-22T06:00:00.000Z",
+  "updated_at": "2026-11-22T06:00:00.000Z"
+}

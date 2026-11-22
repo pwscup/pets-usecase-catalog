@@ -48,6 +48,7 @@ flowchart TD
 | チュートリアル | [はじめての貢献](tutorial/first-contribution.md) | 手元で動かす → 小さな変更 → PR → 確認 → 本番 |
 | ハウツー | [事例を1件追加する](howto/add-case.md) | 文献から case.json を作り、PR にする |
 | ハウツー | [事例集からまとめて取り込む](howto/import-from-repository.md) | OECD・UN などの事例集を照合して取り込む |
+| ハウツー | [参考資料を1件追加する](howto/add-resource.md) | 事例集・ガイド・報告書などを「読んだほうがいいもの」に足す |
 | ハウツー | [既存の事例を補完する](howto/enrich-case.md) | 追加の文献で情報を足す・出典を足す |
 | ハウツー | [事例をレビューする](howto/review-case.md) | `ai_generated` を `human_reviewed` に上げる |
 | ハウツー | [選択肢を増やす](howto/add-option.md) | 分野・ユースケース分類・技術カテゴリを足す |
@@ -57,6 +58,7 @@ flowchart TD
 | リファレンス | [ファイルとフォルダ](reference/files.md) | どこに何があるか |
 | リファレンス | [コマンド](reference/commands.md) | npm スクリプトと Claude Code スキル |
 | リファレンス | [case.json の形式](reference/case-json.md) | 全項目・選択肢・図の形式 |
+| リファレンス | [参考資料の形式](reference/resources-json.md) | 参考資料の全項目・選択肢・検査 |
 | リファレンス | [画面と URL](reference/url.md) | 画面の URL とクエリパラメータ |
 | リファレンス | [環境と自動処理](reference/environments.md) | 公開先・CI・権限・困ったとき |
 | 解説 | [全体の構成](explanation/architecture.md) | データの流れと画面の仕組み |

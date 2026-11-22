@@ -1,0 +1,24 @@
+{
+  "id": "imda-pet-sandbox",
+  "title": "Privacy Enhancing Technology Sandboxes",
+  "title_ja": "シンガポール IMDA PET サンドボックス",
+  "publisher": "シンガポール 情報通信メディア開発庁（IMDA）",
+  "publisher_type": "政府・規制当局",
+  "country": "シンガポール",
+  "kind": "事例集",
+  "technology_category": [],
+  "language": [
+    "en"
+  ],
+  "published_at": null,
+  "url": "https://www.imda.gov.sg/how-we-can-help/data-innovation/privacy-enhancing-technology-sandboxes",
+  "links": [],
+  "description": "企業が PETs の提供事業者と組んで PoC を行い、規制当局（PDPC）の見解も得られるシンガポールのサンドボックス制度。参加企業ごとのケーススタディ（PDF）を公開しており、事業背景・技術の構成・法規制上の論点・結果がまとまっている。",
+  "recommended_for": "PoC の進め方と、規制当局が PETs をどう評価したかを、具体的な企業の事例で知りたい人",
+  "import_status": "一部取り込み",
+  "import_note": "Mastercard・Ant International・シンガポール総合病院の3件を取り込み（PR #233）。SPH Media など他のケーススタディは未着手",
+  "review_status": "ai_generated",
+  "note": "制度のページは JavaScript で本文を描画するため未確認。ケーススタディ PDF（Mastercard・Ant International・SGH）は本文を確認",
+  "created_at": "2026-11-22T06:00:00.000Z",
+  "updated_at": "2026-11-22T06:00:00.000Z"
+}

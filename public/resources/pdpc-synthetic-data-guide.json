@@ -1,0 +1,24 @@
+{
+  "id": "pdpc-synthetic-data-guide",
+  "title": "Privacy Enhancing Technologies (PETs): Guide on Synthetic Data Generation",
+  "title_ja": "シンガポール PDPC 合成データ生成ガイド",
+  "publisher": "シンガポール 個人情報保護委員会（PDPC）",
+  "publisher_type": "政府・規制当局",
+  "country": "シンガポール",
+  "kind": "ガイド・ガイダンス",
+  "technology_category": [
+    "synthetic_data"
+  ],
+  "language": [
+    "en"
+  ],
+  "published_at": "2026-07-20",
+  "url": "https://www.pdpc.gov.sg/assets/5c8f0f49-d7f7-49f4-ba22-3b2f082d2c36",
+  "links": [],
+  "description": "合成データとは何か、どんな場面で役立つか、ケーススタディ、生成と利用のための推奨事項をまとめたガイド。2024年7月15日に初版、2026年7月20日に改訂。",
+  "recommended_for": "合成データを作る・使う前に、有用性と再識別リスクの考え方を当局のガイドで確かめたい人",
+  "review_status": "ai_generated",
+  "note": "改訂版 PDF の表紙と目次を確認。2024年の「Proposed」版とは別の URL",
+  "created_at": "2026-11-22T06:00:00.000Z",
+  "updated_at": "2026-11-22T06:00:00.000Z"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ico-anonymisation-guidance",
+  "title": "Anonymisation",
+  "title_ja": "英国 ICO 匿名化ガイダンス",
+  "publisher": "英国 情報コミッショナー事務局（ICO）",
+  "publisher_type": "政府・規制当局",
+  "country": "英国",
+  "kind": "ガイド・ガイダンス",
+  "technology_category": [
+    "anonymization"
+  ],
+  "language": [
+    "en"
+  ],
+  "published_at": "2025-03-28",
+  "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-sharing/anonymisation/",
+  "links": [],
+  "description": "個人データを効果的に匿名化するための考え方をまとめたガイダンス。匿名化と仮名化の違い、匿名化は常に必要か・可能か、識別のリスクを十分に低い水準まで下げるための手法などを扱う。2025年3月28日公開。ページ上では、データ（利用・アクセス）法による改正を受けて見直し中とされている。",
+  "recommended_for": "「この加工で匿名と言えるか」を判断する必要がある人",
+  "review_status": "ai_generated",
+  "note": "ガイダンスの目次と「About this guidance」のページを確認",
+  "created_at": "2026-11-22T06:00:00.000Z",
+  "updated_at": "2026-11-22T06:00:00.000Z"
+}
