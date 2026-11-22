@@ -8,7 +8,8 @@ on:
 
 jobs:
   validate-and-test:
-    runs-on: ubuntu-latest
+    # ubuntu-latest (26.04) では Playwright 1.58 が Chromium をインストールできないため固定
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
