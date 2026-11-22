@@ -241,9 +241,10 @@ test.describe('参考資料ページ', () => {
     const total = await page.getByTestId('resource-card').count()
     await page.getByRole('button', { name: '報告書' }).click()
     await expect(page).toHaveURL(/kind=/)
-    const filtered = await page.getByTestId('resource-card').count()
-    expect(filtered).toBeGreaterThan(0)
-    expect(filtered).toBeLessThan(total)
+    // 再描画を待つ：件数は1回だけ数えず、減るまで待って確かめる
+    const cards = page.getByTestId('resource-card')
+    await expect.poll(() => cards.count()).toBeLessThan(total)
+    expect(await cards.count()).toBeGreaterThan(0)
   })
 
   test('コンソールエラーが発生しない', async ({ page }) => {
