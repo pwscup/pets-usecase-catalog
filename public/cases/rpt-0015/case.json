@@ -24,7 +24,8 @@
     "60%コスト削減",
     "鹿島建設",
     "Betterdata",
-    "PETs"
+    "PETs",
+    "OECD PETs Repository"
   ],
   "sources": [
     {
@@ -32,6 +33,12 @@
       "title": "Betterdata: Kajima Corporation",
       "url": "https://www.betterdata.ai/case-study/kajima-corporation",
       "note": "Betterdataによる鹿島建設事例紹介"
+    },
+    {
+      "source_type": "web",
+      "title": "Synthetic Data Generation for Research and Analysis — OECD Global Repository for Privacy Enhancing Technologies",
+      "url": "https://www.oecd.org/en/toolkits/oecd-global-repository-for-privacy-enhancing-technologies/use-cases-and-documents/Synthetic-Data-generation-for-research-and-analysis.html",
+      "note": "OECD PETsリポジトリ（2026年10月公開）の掲載事例。URLはOECDが配信するRSSに記載のもの。本文ページはボット対策により未確認で、RSSの概要（鹿島建設がPoCで、居住者から収集したデータを合成データの生成に転用し、研究者と共有することを目指した）のみ確認した"
     }
   ],
   "figures": [
@@ -74,5 +81,5 @@
   "status": "draft",
   "occurred_at": null,
   "created_at": "2026-03-06T00:00:00+09:00",
-  "updated_at": "2026-04-22T13:25:49Z"
+  "updated_at": "2026-11-21T15:05:00.000Z"
 }

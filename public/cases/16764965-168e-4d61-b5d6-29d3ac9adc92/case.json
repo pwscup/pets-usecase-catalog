@@ -19,7 +19,8 @@
   "tags": [
     "Product",
     "CDEI PETs Adoption Guide",
-    "Multi-party Computation"
+    "Multi-party Computation",
+    "OECD PETs Repository"
   ],
   "sources": [
     {
@@ -39,6 +40,12 @@
       "title": "IEEE Conference Paper",
       "url": "https://ieeexplore.ieee.org/abstract/document/7839796",
       "note": "Boston UniversityとBWWCによる、MPCを用いた男女賃金格差分析の学術論文（IEEE）"
+    },
+    {
+      "source_type": "web",
+      "title": "Measuring Salary Disparity Using Secure Multi-Party Computation — OECD Global Repository for Privacy Enhancing Technologies",
+      "url": "https://www.oecd.org/en/toolkits/oecd-global-repository-for-privacy-enhancing-technologies/use-cases-and-documents/Measuring-salary-disparity-using-secure-multi-party-computation.html",
+      "note": "OECD PETsリポジトリ（2026年10月公開）の掲載事例。URLはOECDが配信するRSSに記載のもの。本文ページはボット対策により未確認で、RSSの概要（ボストン女性労働力協議会とボストン大学が秘密計算を用いて、個人や雇用主のデータを開示せずに、大ボストン圏の雇用主におけるジェンダー・人種間の賃金格差を測定している）のみ確認した"
     }
   ],
   "figures": [
@@ -81,5 +88,5 @@
   "occurred_at": "2021-07",
   "status": "seed",
   "created_at": "2026-03-21T07:12:31Z",
-  "updated_at": "2026-04-17T00:00:00Z"
+  "updated_at": "2026-11-21T15:05:00.000Z"
 }

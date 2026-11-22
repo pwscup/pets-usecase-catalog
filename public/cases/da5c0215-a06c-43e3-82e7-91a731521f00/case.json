@@ -19,7 +19,8 @@
   "tags": [
     "Product",
     "CDEI PETs Adoption Guide",
-    "Trusted Execution Environment"
+    "Trusted Execution Environment",
+    "OECD PETs Repository"
   ],
   "sources": [
     {
@@ -39,6 +40,12 @@
       "title": "Cybernetica blog",
       "url": "https://cyber.ee/resources/news/cybernetica-and-positium-help-to-analyse-sensitive-data-in-indonesia/",
       "note": ""
+    },
+    {
+      "source_type": "web",
+      "title": "Confidential Sharing of Datasets between Two Mobile Network Operators — OECD Global Repository for Privacy Enhancing Technologies",
+      "url": "https://www.oecd.org/en/toolkits/oecd-global-repository-for-privacy-enhancing-technologies/use-cases-and-documents/Confidentially-sharing-of-datasets-between-two-mobile-network-operators.html",
+      "note": "OECD PETsリポジトリ（2026年10月公開）の掲載事例。URLはOECDが配信するRSSに記載のもの。本文ページはボット対策により未確認で、RSSの概要（インドネシアが信頼実行環境を用いたプライバシー保護型分析で、2つの携帯通信事業者に加入者単位の機微なデータを共有させずに、越境観光統計を改善した）のみ確認した"
     }
   ],
   "figures": [
@@ -81,5 +88,5 @@
   "occurred_at": "2023-06",
   "status": "seed",
   "created_at": "2026-03-21T07:12:31Z",
-  "updated_at": "2026-03-21T07:12:31Z"
+  "updated_at": "2026-11-21T15:05:00.000Z"
 }

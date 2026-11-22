@@ -19,7 +19,8 @@
   "tags": [
     "Pilot",
     "CDEI PETs Adoption Guide",
-    "Trusted Execution Environment"
+    "Trusted Execution Environment",
+    "OECD PETs Repository"
   ],
   "sources": [
     {
@@ -39,6 +40,12 @@
       "title": "GitHub source code",
       "url": "https://github.com/signalapp/ContactDiscoveryService/",
       "note": ""
+    },
+    {
+      "source_type": "web",
+      "title": "Privacy-Friendly Contact Discovery — OECD Global Repository for Privacy Enhancing Technologies",
+      "url": "https://www.oecd.org/en/toolkits/oecd-global-repository-for-privacy-enhancing-technologies/use-cases-and-documents/Privacy-Friendly-Contact-Discovery.html",
+      "note": "OECD PETsリポジトリ（2026年10月公開）の掲載事例。URLはOECDが配信するRSSに記載のもの。本文ページはボット対策により未確認で、RSSの概要（SignalがPETsを用いて、連絡先リストの中でSignalを使っている人を調べる際に、利用者の連絡先情報をSignal自身や第三者から見えないようにしている）のみ確認した"
     }
   ],
   "figures": [
@@ -81,5 +88,5 @@
   "occurred_at": "2021-07",
   "status": "seed",
   "created_at": "2026-03-21T07:12:31Z",
-  "updated_at": "2026-03-21T07:12:31Z"
+  "updated_at": "2026-11-21T15:05:00.000Z"
 }

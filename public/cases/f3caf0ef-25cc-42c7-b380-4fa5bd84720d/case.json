@@ -1,0 +1,120 @@
+{
+  "title": "米国教育省・ジョージタウン大学MDI：省内2部局が学生データを互いに開示せず、学生支援金の統計を算出",
+  "region": "国外",
+  "domain": "公共",
+  "domain_sub": "教育統計",
+  "organization": "US Department of Education (National Center for Education Statistics) / Georgetown University Massive Data Institute / Galois, Inc.",
+  "usecase_category": [
+    "組織内データ共有",
+    "公的利用",
+    "フィージビリティ検証"
+  ],
+  "technology_category": [
+    "secure_computation"
+  ],
+  "review_status": "ai_generated",
+  "summary": "米国教育省の国立教育統計センター（NCES）が実施する全米高等教育学生支援調査（NPSAS）では、学生の在籍情報と標本ウェイトを持つNCES側と、ローン残高や給付型奨学金の額を持つ全米学生ローンデータシステム（NSLDS）側のデータを突き合わせて統計を作成している。発表資料の図では、従来の手順として、NCESの在籍情報・標本ウェイトとNSLDSのローン残高・給付額がNPSASの統計作成のために突き合わされていた。同資料は一般論として、データ共有を守る既存の手段には限界があると述べている。非識別化は費用がかかり正しく行われることが少なく、有用性を損なうこともある。安全なデータセンターでの分析はスケールせず、契約による統制は内部・外部の脅威に弱い。",
+  "value_proposition": "ジョージタウン大学Massive Data Institute（MDI）が、技術提供者のGalois, Inc.、米国教育省と協力し、秘密計算（MPC）を用いて、省内の別々の部局が持つ機微な教育データを連結し、高等教育の学生支援金に関する問いに答えるパイロットを実施した。NCESとNSLDSは互いのデータを暗号化したまま秘匿積集合（PSI）と計算を行い、従来と同じ統計（31の学生区分ごとの、照合できたレコードのローンとペル給付奨学金の加重平均）だけを復号して得た。Galoisの発表は初期実験の結果を現実的な設定での実証と位置づけ、結果は正確で、実際のフルスケールのデータでも計算・通信コストは効率的、データ規模に対して最悪でも線形にスケールし、現実的な設定で2台のクラウドインスタンスを約5時間使う程度の費用で済み、暗号の専門知識がなくても適用できたとされている。",
+  "privacy_enhancement_method": "秘密計算（Secure Multi-Party Computation）による秘匿積集合（PSI）と集計。NCESは在籍情報と標本ウェイトを、NSLDSはローン残高と給付額を、それぞれ暗号化したまま入力し、照合と加重平均の計算を暗号化された状態で行い、算出された統計のみを復号してNPSAS担当グループが受け取る。各部局は相手のデータについて何も知らないとされる。照合に用いた識別子の種類や暗号方式の詳細は調査中。",
+  "safety_assurance_method": "調査中（発表資料では「各機関は互いのデータについて何も知らない」とされるが、具体的な安全性評価や法的整理の記載は確認できていない。MDIのウェブサイトでは、本パイロットに関するポリシー面と技術面の報告書が公開されているが、外部の文書共有サービス上にあり本文は未確認）",
+  "utility_evaluation_method": "資料は、従来の手順と同じ統計（31の学生区分ごとのローンとペル給付奨学金の加重平均）をPSIとMPCで算出し、正確な結果が得られたと要約している。正確性の検証方法（従来の結果との照合の有無、誤差の指標）は資料に記載がなく調査中。データ規模に対する実行時間と通信コストを測定し、最悪でも線形の性能であったと報告されている。費用は、現実的な設定で2台のクラウドインスタンスを約5時間使用した程度とされる。",
+  "occurred_at": null,
+  "tags": [
+    "秘匿積集合",
+    "教育統計",
+    "部局間データ連携",
+    "OECD PETs Repository"
+  ],
+  "sources": [
+    {
+      "source_type": "pdf",
+      "title": "Inter-Organization Sharing of Sensitive Data for Statistics via Secure Multi-party Computation（UN Global Platform, Big Data Expo 2020 発表資料）",
+      "url": "https://unstats.un.org/bigdata/blog/2021/expo2020/sessions/2-3/presentations/4_David_ARCHER_Inter-Organization%20Sharing%20of%20Sensitive%20Data.pdf",
+      "note": "David W. Archer（Galois）、Amy O'Hara（ジョージタウン大学MDI）ほかによる発表資料。既存手段の限界、NCESとNSLDSの従来の流れとPSIによる代替案、算出した統計（31区分の加重平均）、性能（最悪でも線形、2台のクラウドインスタンスで約5時間）、まとめ（正確、暗号の専門知識不要など）を参照。Sloan財団の支援への謝辞あり。発表は「Our Initial Experiments」とある初期実験の段階のもの。資料に開催日の記載はなく、パイロットの実施時期は不明のためoccurred_atはnullとした"
+    },
+    {
+      "source_type": "web",
+      "title": "PETs Use Cases（Georgetown University Massive Data Institute）",
+      "url": "https://mdi.georgetown.edu/pets/use-cases/",
+      "note": "MDIの事例一覧ページ。「U.S. Department of Education Use Case — ED: Sharing Sensitive Data Across Organizational Boundaries」として、Galoisと米国教育省と協力しMPCで省内の別部局の教育データを連結し、高等教育の学生支援金に関する問いに答えるパイロットを行ったとの記述を参照。ポリシー面・技術面の報告書へのリンクはgeorgetown.box.com上にあり未確認"
+    },
+    {
+      "source_type": "web",
+      "title": "Analysing Student Financial Aid Data Using SMPC — OECD Global Repository for Privacy Enhancing Technologies",
+      "url": "https://www.oecd.org/en/toolkits/oecd-global-repository-for-privacy-enhancing-technologies/use-cases-and-documents/Analysing-Student-Financial-Aid-Data-Using-SMPC.html",
+      "note": "OECD PETsリポジトリ（2026年10月公開）の掲載事例。URLはOECDが配信するRSSに記載のもの。本文ページはボット対策により未確認。RSSの概要（米国教育省内の2つの主体が、学生の個人データを交換せずに必要な集計統計を算出）のみ確認した"
+    }
+  ],
+  "figures": [
+    {
+      "type": "data_flow",
+      "title": "米国教育省 学生支援金統計のPETs活用フロー",
+      "data": {
+        "nodes": [
+          {
+            "id": "s1",
+            "label": "NCESの在籍情報・標本ウェイト",
+            "category": "source"
+          },
+          {
+            "id": "s2",
+            "label": "NSLDSのローン残高・給付額",
+            "category": "source"
+          },
+          {
+            "id": "s3",
+            "label": "従来はNCESとNSLDSのデータを突き合わせて統計を作成",
+            "category": "constraint"
+          },
+          {
+            "id": "p1",
+            "label": "暗号化したまま秘匿積集合（PSI）と加重平均を計算",
+            "category": "process"
+          },
+          {
+            "id": "a1",
+            "label": "NPSAS担当が統計のみを復号して取得",
+            "category": "application"
+          },
+          {
+            "id": "a2",
+            "label": "従来と同じ統計を正確に再現、2台のクラウドで約5時間",
+            "category": "outcome"
+          }
+        ],
+        "edges": [
+          {
+            "from": "s1",
+            "to": "p1",
+            "label": "暗号化して入力"
+          },
+          {
+            "from": "s2",
+            "to": "p1",
+            "label": "暗号化して入力"
+          },
+          {
+            "from": "s3",
+            "to": "p1",
+            "label": "互いのデータを見せない"
+          },
+          {
+            "from": "p1",
+            "to": "a1",
+            "label": "31区分の加重平均"
+          },
+          {
+            "from": "a1",
+            "to": "a2",
+            "label": "パイロットの評価"
+          }
+        ]
+      },
+      "note": ""
+    }
+  ],
+  "id": "f3caf0ef-25cc-42c7-b380-4fa5bd84720d",
+  "status": "user",
+  "created_at": "2026-11-21T13:34:05.000Z",
+  "updated_at": "2026-11-21T13:34:05.000Z"
+}

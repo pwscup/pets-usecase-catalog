@@ -1,0 +1,119 @@
+{
+  "title": "シンガポール総合病院・A*STAR：病理画像のAI推論をクラウドで行い、クラウド事業者にも患者データを見せない仕組みを検証",
+  "region": "国外",
+  "domain": "医療",
+  "domain_sub": "デジタル病理",
+  "organization": "Singapore General Hospital (SGH) / A*STAR IAIC",
+  "usecase_category": [
+    "組織間データ共有",
+    "フィージビリティ検証"
+  ],
+  "technology_category": [
+    "secure_computation"
+  ],
+  "review_status": "ai_generated",
+  "summary": "病理診断で用いる全スライド画像（WSI）は1枚あたり1〜5GBに達することがあり、ニューラルネットワークによる画像解析には大きな計算資源が必要になる。クラウドを使えば性能とコストを柔軟に調整できるが、医療画像には患者の機微な情報が含まれるため、クラウドへの共有はプライバシーとセキュリティのリスクを伴う。関連するA*STAR I2RとSGHの研究者によるポスターによれば、一般に病院では解析を隔離されたエアギャップ端末に限ることが多く、技師が画像を外部媒体で運び、パッチ分割（約7分）と深層学習による推論（約20分）を順番に処理するため、処理能力が1日50件という日常診断の目標を大きく下回るとされる。",
+  "value_proposition": "シンガポールIMDAのPETサンドボックスで、SGHがA*STAR IAICの信頼実行環境（TEE）ソリューション「PENGUIN」を用い、クラウド上のTEE内でAI推論を行うPoCを実施した。院内のTEE Encryptorで暗号化した画像パッチをクラウドのTEE Analyserに送り、TEE内でのみ復号して推論するため、クラウド環境が侵害されても患者データはTEEのメモリ内で暗号化されたままとされる。シンガポール個人情報保護委員会（PDPC）は、暗号化パッチを扱うA*STAR IAICとクラウド事業者は個人データを収集・利用・開示していないと評価し、TEEの導入を医療データをクラウドで安全に処理するための良い技術的保護措置と位置づけた。ただし、SGH自身にとってはパッチのクラウドへの送信は個人データの開示に当たり、PDPAの義務は引き続きSGHが負うとされている。SGHは、TEEによって推論時間は約10%増え、費用も月額約4,000シンガポールドルかかるものの、並列処理による解析能力の向上といった利点がそれを上回りうると結論づけ、院内での拡大や他部署への展開を検討している。",
+  "privacy_enhancement_method": "ハードウェアベースの信頼実行環境（TEE）による使用中データの保護。A*STAR IAICのTEEソリューション「PENGUIN（Privacy Enhanced Guided Intelligence eNvironment）」はAMDとIntelのコンフィデンシャルコンピューティング技術を用いる。院内のTEE Encryptorと、クラウド上のTEE Analyserの2つで構成される。WSIは院外に出す前に患者メタデータを除去し、スライド識別子のみを残してパッチに分割する。TEE Encryptorはリモートアテステーションでクラウド側の環境が改ざんされていないことを検証したうえで、データ鍵を生成してパッチを暗号化し、データ鍵はTEE Analyserが生成したラッピング鍵（公開鍵暗号）で暗号化して送る。TEE Analyser内で復号したパッチを推論し、診断特徴ごとの確率（CSV）と陽性判定の上位50パッチの位置（PNG）を出力して、データ鍵で暗号化して返す。結果は、SGH内部でのみ参照できるスライド識別子により患者の症例と手作業で照合される。鍵管理にはFIPS 140-2準拠の暗号アルゴリズム（OpenSSL）を用いる。",
+  "safety_assurance_method": "SGHはPDPCに、病理画像が個人データに当たるか、クラウドのTEEで処理する際のSGHの責任は何かについて実務ガイダンスを求めた。PDPCは、スライド識別子から患者を特定できるSGHにとってはパッチの送信は個人データの開示に当たる一方、暗号化パッチしか扱わず、TEE Analyserへのリモートアクセスも取り除かれるA*STAR IAICとクラウド事業者にとっては個人データに当たらないと評価した。PDPCは、再識別のリスクを下げる追加の措置として、TEEのハードウェア・ファームウェアのサプライチェーンの真正性の確認、管理・運用・監査の役割分離と特権アクセス管理、AMD SEV-SNPとAMD Key Distribution Serviceを信頼の起点とするアテステーションの報告書をSGHが独自に再検証できるようにすること、鍵の自動ローテーション、モデル重みの暗号化、TEE運用の監査証跡、サイドチャネル分析を含む定期的な侵入テストを検討すべきとした（いずれも実施済みとは記載されていない）。クラウド事業者のデータ基盤はISO 27001の認証を受けているとされる。",
+  "utility_evaluation_method": "IMDAのケーススタディでは、TEEを使わない場合と比べた推論時間の増加（約10%）と、Encryptor・Analyser各1台のTEE基盤の費用（月額約4,000シンガポールドル）を評価した。関連するA*STAR I2RとSGHの研究ポスター（IMDAのPoCと同一の実験であるとはいずれの資料にも明記されていない）では、1.5GBのWSI 5枚について、5つの2段階推論タスク（パッチ単位の分類にSwin Transformer V2、WSI単位の集約にGraph Attention Network）を5台のAMD SEV-SNPのTEE VMで実行し、5タスク全体の所要時間は17分57秒（タスク平均16分50秒）、GCP上の推論1回あたりの費用は0.214ドルと報告している。また、10台のエンクレーブを用いる構成なら1件あたり数分となり1日50件の目標を上回るとしているが、10台構成の実測値は示されていない。推論精度の評価は調査中。",
+  "occurred_at": "2026",
+  "tags": [
+    "IMDA PET Sandbox",
+    "Trusted Execution Environment",
+    "デジタル病理",
+    "OECD PETs Repository"
+  ],
+  "sources": [
+    {
+      "source_type": "pdf",
+      "title": "Secure AI Inferencing — IMDA PET Sandbox Singapore General Hospital Case Study",
+      "url": "https://www.imda.gov.sg/assets/8e95b424-7825-48c9-ba55-abb78228ed6a.pdf",
+      "note": "IMDAが公開したケーススタディ。課題背景、関係者の役割、PENGUINの構成と処理の流れ（ステップ1〜7）、PDPCの評価と追加の保護措置、結果（推論時間約10%増、月額約4,000シンガポールドル）と今後の方針を参照。PDFのメタデータ上の作成日は2026年7月で、occurred_atの根拠とした（PoCの実施時期そのものは明記なし）。資料中の「BDH」はTEE Analyserを置くクラウド環境の事業者を指すが、正式名称の記載はない"
+    },
+    {
+      "source_type": "pdf",
+      "title": "A0 Poster – PETHA-IA-PH1 for IDW25（A*STAR I2R・SGH）",
+      "url": "https://scidatacon.org/event/9/contributions/176/attachments/17/25/A0%20Poster%20-%20PETHA-IA-PH1%20for%20IDW25.pdf",
+      "note": "A*STAR Institute for Infocomm Research（I2R）とSGHの研究者によるポスター（International Data Week 2025向け。ポスターのタイトルは画像のためファイル名を記載）。IMDAのPET Sandboxへの言及はなく、謝辞ではNRF/IMDAのTrust Tech Funding InitiativeとAI Singapore 100 Experimentsが挙げられているため、関連研究として扱った。従来の運用の課題（エアギャップ端末、パッチ分割約7分・推論約20分、1日50件の目標）、AMD SEV-SNP/Intel TDXによる構成、2段階推論モデル、ベンチマーク（17分57秒、推論1回0.214ドル）を参照"
+    },
+    {
+      "source_type": "web",
+      "title": "Using TEE to Protect Medical Data during AI Inferencing — OECD Global Repository for Privacy Enhancing Technologies",
+      "url": "https://www.oecd.org/en/toolkits/oecd-global-repository-for-privacy-enhancing-technologies/use-cases-and-documents/Using-TEE-to-protect-medical-data-during-AI-inferencing.html",
+      "note": "OECD PETsリポジトリ（2026年10月公開）の掲載事例。URLはOECDが配信するRSSに記載のもの。本文ページはボット対策により未確認で、RSSの概要のみ確認した"
+    }
+  ],
+  "figures": [
+    {
+      "type": "data_flow",
+      "title": "SGH 病理画像のクラウドAI推論におけるPETs活用フロー",
+      "data": {
+        "nodes": [
+          {
+            "id": "s1",
+            "label": "病理検体の全スライド画像（WSI）",
+            "category": "source"
+          },
+          {
+            "id": "s2",
+            "label": "患者データをクラウドに出すリスク",
+            "category": "constraint"
+          },
+          {
+            "id": "p1",
+            "label": "院内でメタデータ除去・パッチ分割・暗号化（TEE Encryptor）",
+            "category": "process"
+          },
+          {
+            "id": "p2",
+            "label": "アテステーション後、クラウドのTEE内でのみ復号・推論（TEE Analyser）",
+            "category": "process"
+          },
+          {
+            "id": "a1",
+            "label": "暗号化した推論結果を院内で復号し症例と照合",
+            "category": "application"
+          },
+          {
+            "id": "a2",
+            "label": "推論時間約10%増・月額約4,000シンガポールドルで、並列処理による解析能力向上が見込まれる",
+            "category": "outcome"
+          }
+        ],
+        "edges": [
+          {
+            "from": "s1",
+            "to": "p1",
+            "label": "院内で前処理"
+          },
+          {
+            "from": "s2",
+            "to": "p2",
+            "label": "クラウド事業者にも見せない"
+          },
+          {
+            "from": "p1",
+            "to": "p2",
+            "label": "暗号化パッチと暗号化データ鍵"
+          },
+          {
+            "from": "p2",
+            "to": "a1",
+            "label": "暗号化結果を返却"
+          },
+          {
+            "from": "a1",
+            "to": "a2",
+            "label": "PoCの評価"
+          }
+        ]
+      },
+      "note": ""
+    }
+  ],
+  "id": "b1b9b12e-5cbd-40df-8d76-eae6bbba1d7c",
+  "status": "user",
+  "created_at": "2026-11-21T13:34:05.000Z",
+  "updated_at": "2026-11-21T13:34:05.000Z"
+}

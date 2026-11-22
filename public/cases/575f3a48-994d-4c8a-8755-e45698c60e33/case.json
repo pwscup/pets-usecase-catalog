@@ -1,0 +1,148 @@
+{
+  "title": "英国DSIT・NHS England・米国NCI：小児の超希少がんの英米共同研究を患者データを国外に出さずに行う仕組みをパイロットで構築し、事前手続きを約2か月に短縮",
+  "region": "国外",
+  "domain": "医療",
+  "domain_sub": "がん登録・小児がん研究",
+  "organization": "UK Department for Science, Innovation and Technology (DSIT) / NHS England National Disease Registration Service (NDRS) / US National Cancer Institute (NCI)",
+  "usecase_category": [
+    "組織間データ共有",
+    "公的利用",
+    "R&D"
+  ],
+  "technology_category": [
+    "distributed_analytics",
+    "secure_computation",
+    "differential_privacy"
+  ],
+  "review_status": "ai_generated",
+  "summary": "がんのデータは国や地域単位の疾病登録で集められる。小児がんはどの亜型も希少で、年間の発症が100万人あたり2人未満のものもあり、超希少な腫瘍型を単独で分析できるだけのデータを持つ国はないとされる。広い地域のデータを統合すれば、より頑健な分析や、臨床医と患者への正確な予後統計の提供が可能になる。しかし、規制の遵守と市民の信頼のために患者データを保護する必要があり、患者単位のデータを大規模に国外へ出すことは時間とコストがかかり、場合によっては不可能だった。国際的ながん研究では、研究を始めるまでの手続きに通常12か月以上かかっていた。",
+  "value_proposition": "英国の科学・イノベーション・技術省（DSIT）が、2022〜23年の英米PETs賞金コンテストの経験を基にパイロットを実施し、NHS EnglandのNDRSと米国国立がん研究所（NCI）が、患者データをNHSの管理下に置いたまま（NCI側のデータも各拠点のファイアウォール内に留めたまま）小児の超希少がんを共同研究できるようにした。技術提供者Dualityのプラットフォームを用いて「レコードではなくコードを動かす」構成とし、分析者は一元化された画面からノーコードで集計クエリを実行できた。PETsの設計段階から情報ガバナンスを組み込み、ICOやNHS Englandのガバナンス担当と早期に協議したことで、最初の提案からデータ保護影響評価（DPIA）の承認と両登録の保護措置の合意までを約2か月で終え、通常12か月以上かかる手続きを大幅に短縮したとされる。NDRSの初期分析では、英国のみのデータに比べて抑制されるクエリが減り、一部の統計では標準偏差がおよそ半分になったとされる。統合データを用いた実際の分析はNDRSとNCIが進めており、結果は後日公表される予定である。",
+  "privacy_enhancement_method": "3種類のPETsと情報ガバナンスの手法を組み合わせた。①連合クエリ：承認済みのスクリプトをNDRSとNCIそれぞれのファイアウォールの内側で同時に実行し、拠点単位の集計値のみを返す。クエリは件数、平均、クロス集計、ヒストグラム、生存分析のプリセット（人口データで層別化）など。②信頼実行環境（TEE）：両拠点の集計値を安全なエンクレーブ内で復号・合算し、互いに相手の生の数値を見られないようにする。両拠点でリモートアテステーションを行う。③差分プライバシーとセル秘匿：合算後の各セルにラプラスノイズを加えてε = 1の差分プライバシーを満たし、5未満の結果は表示しない（資料により「5以下」との記載もある）。これらのパラメータは、ダミーデータでの手作業の検証と米国国立標準技術研究所（NIST）の専門家の助言を踏まえて決めた。",
+  "safety_assurance_method": "DPIAの各要素に合わせてアーキテクチャを設計した。目的と法的根拠は公益のための集団の健康研究に限り、直接的なマーケティングや商業的な再利用は行わない。各疾病登録は自らのレコードのデータ管理者であり続け、パイロットではDSITが調整する共同管理機能がPETsサービスを監督する。国境を越えるのは暗号化された値と集計値のみである。各PETは、連合クエリ＝データ最小化と目的の限定、TEE＝相手方の中間集計を見られない密閉された処理環境、差分プライバシー＝効果的な匿名化、というように、規制当局や臨床医に馴染みのある管理策に対応づけて説明した。クエリ結果は匿名であり英国GDPRの適用外となるため、個人データの国外移転には当たらず、移転リスク評価や国際データ移転契約は不要だったとされる。ただし各登録の内部では患者単位のデータを扱うため、簡潔なDPIAは作成した。ε値と5未満の秘匿ルールを公開し、パイプラインは合成データで先に構築して、技術的保証・DPIAの作成・倫理面の議論を並行して進めた。正式な規制サンドボックスではないが、ICOの技術専門家や法務・情報ガバナンス担当者と随時確認を行った。パイロット自体の脅威評価やレッドチーミングの実施について、参照した資料に記載はない（調査中）。",
+  "utility_evaluation_method": "NDRSの初期分析で、英国のみのデータを使う場合と比較し、①同じ秘匿ルールの下で抑制されずに返ってくるクエリが増えたこと、②サンプルサイズの増加により一部の統計で標準偏差がおよそ半分に下がったこと、を報告している。分析者が普段単一の全国データに対して行うのと同種のクエリを、ノーコードで実行できたことも成果に挙げている。統合データによる実際の研究結果は調査中。",
+  "occurred_at": "2025",
+  "tags": [
+    "小児がん",
+    "連合分析",
+    "英米PETs協力",
+    "OECD PETs Repository"
+  ],
+  "sources": [
+    {
+      "source_type": "web",
+      "title": "Using Privacy-Enhancing Technologies to Enable International Cancer Research Collaboration（GDS blog, 2025年10月9日）",
+      "url": "https://gds.blog.gov.uk/2025/10/09/using-privacy-enhancing-technologies-to-enable-international-data-sharing/",
+      "note": "英国政府デジタルサービス（GDS）のブログ。パイロットの背景（超希少な小児がん、100万人あたり2人未満）、Dualityのプラットフォーム、連合クエリ・TEE・差分プライバシー（ε = 1）と5未満の秘匿、ノーコードでのクエリ実行、手続きの短縮（1年超→約2か月）を参照。パイロットは「過去1年」に実施されたとあり、occurred_atの根拠とした"
+    },
+    {
+      "source_type": "web",
+      "title": "Governance lessons from the UK-US PETs pilot for cancer research（Data in government blog, 2026年1月15日）",
+      "url": "https://dataingovernment.blog.gov.uk/2026/01/15/governance-lessons-from-the-uk-us-pets-pilot-for-cancer-research/",
+      "note": "ICOとNHS Englandの協力を得て書かれたガバナンス面の振り返り。DPIAに沿った設計、各PETと既存の管理策の対応づけ、英国GDPR上の扱い（国外移転に当たらない）、合成データによる先行構築、12か月超→2か月の短縮、NDRSの初期分析（抑制の減少、標準偏差の半減）を参照"
+    },
+    {
+      "source_type": "web",
+      "title": "Privacy-Preserving Federated Learning – Future Collaboration and Continued Research（NIST Cybersecurity Insights blog, 2025年1月27日）",
+      "url": "https://www.nist.gov/blogs/cybersecurity-insights/privacy-preserving-federated-learning-future-collaboration-and",
+      "note": "NISTと英国DSITによるブログ。NDRSとNCIの協力の開始、米国側の支援機関（ホワイトハウス科学技術政策局、NIST、エネルギー省、国立科学財団と調整）、単独で十分なデータを持つ国がないことを参照。なお本ブログにあるプライバシー脅威評価とレッドチーミングは、NIST PETs Testbed（ゲノミクスを題材とする連合学習のモデル問題）に関するもので、本パイロットのものではない"
+    },
+    {
+      "source_type": "web",
+      "title": "Enabling Study of Rare Childhood Cancer using PETs — OECD Global Repository for Privacy Enhancing Technologies",
+      "url": "https://www.oecd.org/en/toolkits/oecd-global-repository-for-privacy-enhancing-technologies/use-cases-and-documents/Enabling-Study-of-Rare-Childhood-Cancer-using-PETs.html",
+      "note": "OECD PETsリポジトリ（2026年10月公開）の掲載事例。URLはOECDが配信するRSSに記載のもの。本文ページはボット対策により未確認で、RSSの概要（異なる法域のデータを患者単位のデータを法域外に出さずに分析するPoC）のみ確認した"
+    }
+  ],
+  "figures": [
+    {
+      "type": "data_flow",
+      "title": "英米小児がん共同研究のPETs活用フロー",
+      "data": {
+        "nodes": [
+          {
+            "id": "s1",
+            "label": "英国NDRSのがん登録データ",
+            "category": "source"
+          },
+          {
+            "id": "s2",
+            "label": "米国NCIのがん登録データ",
+            "category": "source"
+          },
+          {
+            "id": "s3",
+            "label": "患者単位のデータを国外に出せない",
+            "category": "constraint"
+          },
+          {
+            "id": "p1",
+            "label": "各拠点のファイアウォール内で承認済みクエリを実行",
+            "category": "process"
+          },
+          {
+            "id": "p2",
+            "label": "TEE内で拠点集計値を復号・合算",
+            "category": "process"
+          },
+          {
+            "id": "p3",
+            "label": "ラプラスノイズ（ε = 1）と5未満の秘匿",
+            "category": "process"
+          },
+          {
+            "id": "a1",
+            "label": "研究者がノーコードで統合集計を取得",
+            "category": "application"
+          },
+          {
+            "id": "a2",
+            "label": "事前手続きを12か月超から2か月に短縮、一部統計の標準偏差が約半分に",
+            "category": "outcome"
+          }
+        ],
+        "edges": [
+          {
+            "from": "s1",
+            "to": "p1",
+            "label": "データは国内に留まる"
+          },
+          {
+            "from": "s2",
+            "to": "p1",
+            "label": "データは国内に留まる"
+          },
+          {
+            "from": "s3",
+            "to": "p1",
+            "label": "コードを動かす"
+          },
+          {
+            "from": "p1",
+            "to": "p2",
+            "label": "暗号化した拠点集計値"
+          },
+          {
+            "from": "p2",
+            "to": "p3",
+            "label": "合算値"
+          },
+          {
+            "from": "p3",
+            "to": "a1",
+            "label": "匿名の集計結果"
+          },
+          {
+            "from": "a1",
+            "to": "a2",
+            "label": "パイロットの成果"
+          }
+        ]
+      },
+      "note": ""
+    }
+  ],
+  "id": "575f3a48-994d-4c8a-8755-e45698c60e33",
+  "status": "user",
+  "created_at": "2026-11-21T13:34:05.000Z",
+  "updated_at": "2026-11-21T13:34:05.000Z"
+}
