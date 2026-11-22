@@ -1,0 +1,24 @@
+{
+  "id": "un-pets-case-study-repository",
+  "title": "UN PETs Case Study Repository",
+  "title_ja": "国連 PETs 事例リポジトリ",
+  "publisher": "国連 ビッグデータ・データサイエンス専門家委員会（UN-CEBD）",
+  "publisher_type": "国際機関",
+  "country": "国際",
+  "kind": "事例集",
+  "technology_category": [],
+  "language": [
+    "en"
+  ],
+  "published_at": null,
+  "url": "https://unstats.un.org/wiki/display/UGTTOPPT/Case+study+repository",
+  "links": [],
+  "description": "公的統計での PETs の活用事例を集めた Wiki。国連の「PETs for Official Statistics」ガイド（2023年）の第3章にある18事例を収録し、その後に追加された事例もある（本リスト作成時点で20件）。",
+  "recommended_for": "統計局や行政機関でのPETsの使い方を、事例ごとの目的・データ・技術・実施段階で比べたい人",
+  "import_status": "一部取り込み",
+  "import_note": "#232 のコメントで18事例を照合。既収録10件、未収録8件はサブ Issue #234〜#241。ガイド刊行後の #19・#20 は未着手",
+  "review_status": "ai_generated",
+  "note": "Wiki の事例一覧と各事例のページを確認",
+  "created_at": "2026-11-22T06:00:00.000Z",
+  "updated_at": "2026-11-22T06:00:00.000Z"
+}

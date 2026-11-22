@@ -21,6 +21,9 @@ jobs:
       - name: Validate case.json files
         run: npx tsx scripts/validate-cases.ts
 
+      - name: Validate resources
+        run: npx tsx scripts/validate-resources.ts
+
       - name: Type check
         run: npx tsc -b --noEmit
 

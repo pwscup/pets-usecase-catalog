@@ -32,8 +32,8 @@ flowchart TD
 
 | ワークフロー | いつ動くか | すること |
 |---|---|---|
-| CI（`.github/workflows/ci.yml`） | `main`・`develop` 向けの PR、`main`・`develop` への push | case.json の検査 → 型チェック → 単体テスト → Playwright のブラウザを入れる → E2E テスト |
-| Deploy to GitHub Pages（`.github/workflows/deploy.yml`） | `main` への push、手動実行 | case.json の検査 → `npm run build` → `dist/` を GitHub Pages に公開 |
+| CI（`.github/workflows/ci.yml`） | `main`・`develop` 向けの PR、`main`・`develop` への push | case.json の検査 → 参考資料の検査 → 型チェック → 単体テスト → Playwright のブラウザを入れる → E2E テスト |
+| Deploy to GitHub Pages（`.github/workflows/deploy.yml`） | `main` への push、手動実行 | case.json の検査 → 参考資料の検査 → `npm run build` → `dist/` を GitHub Pages に公開 |
 
 - CI のランナーは `ubuntu-24.04` に固定しています（Ubuntu 26.04 では Playwright 1.58 がブラウザを入れられないため。PR #242）
 - 定期実行（決まった時刻に動く処理）はありません

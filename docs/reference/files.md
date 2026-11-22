@@ -33,26 +33,32 @@
 | `src/lib/export-import.ts` | 設定画面のエクスポート（JSON のダウンロード） |
 | `src/lib/summary.ts` | 集計・統計の計算 |
 | `src/schemas/case.schema.ts` | case.json の形（Zod）。フォームの検査に使う |
+| `src/schemas/resource.schema.ts` | 参考資料の形（Zod）。検査スクリプトで使う |
 | `src/types/case.ts` | case.json の型（TypeScript） |
 | `src/constants/categories.ts` | 選択肢（地域・分野・ユースケース分類・技術カテゴリ・レビュー状態・図のノード） |
 | `src/constants/styles.ts` | 選択肢ごとの色 |
 | `src/constants/prompts.ts` | AI アシストのプロンプト（新規作成用・補完用）の原本 |
+| `src/constants/resources.ts` | 参考資料の選択肢（発行元の種類・資料の種類・取り込み状況） |
 | `src/__tests__/` | 単体テスト（Vitest） |
 
-## データ（`public/cases/`）
+## データ（`public/cases/`・`public/resources/`）
 
 | パス | 中身 |
 |---|---|
 | `public/cases/<id>/case.json` | 1事例のデータ（[case.json の形式](case-json.md)） |
 | `public/cases/index.json` | 事例 ID の一覧。ビルド時と開発サーバーで自動で作られる。`.gitignore` 済みでコミットしない |
+| `public/resources/<id>.json` | 参考資料1件（[参考資料の形式](resources-json.md)） |
+| `public/resources/index.json` | 参考資料 ID の一覧。自動で作られる。コミットしない |
 
 ## スクリプトとプラグイン
 
 | パス | 中身 |
 |---|---|
 | `scripts/validate-cases.ts` | 全 case.json の検査（[case.json の形式](case-json.md)の「検査の内容」） |
+| `scripts/validate-resources.ts` | 全参考資料の検査（[参考資料の形式](resources-json.md)の「検査の内容」） |
 | `scripts/generate-cdei-cases.py` | 英国 CDEI の PETs ガイドから事例を作ったときのスクリプト（一度きりの取り込み用。PR #80） |
-| `plugins/generate-case-index.ts` | `index.json` を作る Vite プラグイン |
+| `plugins/generate-case-index.ts` | `public/cases/index.json` を作る Vite プラグイン |
+| `plugins/generate-resource-index.ts` | `public/resources/index.json` を作る Vite プラグイン |
 | `plugins/__tests__/` | プラグインのテスト |
 | `tests/e2e/cases.spec.ts` | E2E テスト（Playwright） |
 

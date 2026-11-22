@@ -1,0 +1,21 @@
+{
+  "id": "ppc-pets-legal-survey-2023",
+  "title": "欧米主要国におけるプライバシー強化技術（PETs）の利用に関する法制度に関する調査報告書",
+  "publisher": "個人情報保護委員会",
+  "publisher_type": "政府・規制当局",
+  "country": "日本",
+  "kind": "報告書",
+  "technology_category": [],
+  "language": [
+    "ja"
+  ],
+  "published_at": "2023-03-31",
+  "url": "https://www.ppc.go.jp/files/pdf/R503_pets_houseido_report.pdf",
+  "links": [],
+  "description": "EU・英国・米国・カナダについて、PETs の利用とデータ保護法制との関係を調べた報告書（渥美坂井法律事務所・外国法共同事業による調査）。各国・地域のデータ保護機関（EDPS・ICO・FTC・OPC）への質問票とヒアリングも行っている。",
+  "recommended_for": "海外で PETs が法制度の上でどう位置づけられているかを、日本語でまとめて読みたい人",
+  "review_status": "ai_generated",
+  "note": "PDF の目次と調査体制の章を確認",
+  "created_at": "2026-11-22T06:00:00.000Z",
+  "updated_at": "2026-11-22T06:00:00.000Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "imy-sandbox-federated-learning-healthcare",
+  "title": "First Regulatory Sandbox Pilot: Federated machine learning between two healthcare providers (English Summary)",
+  "title_ja": "スウェーデン IMY 規制サンドボックス：医療機関2者間の連合学習（英語の要約）",
+  "publisher": "スウェーデン プライバシー保護庁（IMY）",
+  "publisher_type": "政府・規制当局",
+  "country": "スウェーデン",
+  "kind": "報告書",
+  "technology_category": [
+    "federated_learning"
+  ],
+  "language": [
+    "en",
+    "sv"
+  ],
+  "published_at": "2023-03-15",
+  "url": "https://www.imy.se/globalassets/dokument/ovrigt/first-regulatory-sandbox-pilot---english-summary.pdf",
+  "links": [
+    {
+      "label": "報告書本体（スウェーデン語）",
+      "url": "https://www.imy.se/link/3388d144cfe44b6c97f77d837d0f548e.aspx"
+    }
+  ],
+  "description": "IMY の最初の規制サンドボックスの要約。Region Halland と Sahlgrenska 大学病院が、心不全患者の30日以内の再入院を予測するモデルを連合学習で共同学習する計画について、AI Sweden とともに3つの法的論点（各病院での学習の法的根拠、病院間で個人データの開示に当たるかなど）を検討した。",
+  "recommended_for": "連合学習で「データを出していない」と言えるか（モデルから個人データが漏れる可能性）を、規制当局の検討で確かめたい人",
+  "review_status": "ai_generated",
+  "note": "英語の要約（3ページ）を確認。本体のスウェーデン語の報告書は未確認",
+  "created_at": "2026-11-22T06:00:00.000Z",
+  "updated_at": "2026-11-22T06:00:00.000Z"
+}

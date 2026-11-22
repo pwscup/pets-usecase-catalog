@@ -22,6 +22,7 @@
 | コマンド | すること |
 |---|---|
 | `npx tsx scripts/validate-cases.ts` | case.json の検査（CI と同じ） |
+| `npx tsx scripts/validate-resources.ts` | 参考資料の検査（CI と同じ） |
 | `npx tsc -b --noEmit` | 型チェックだけ |
 | `npx playwright install --with-deps chromium` | E2E 用のブラウザを入れる |
 | `python3 -c "import uuid; print(uuid.uuid4())"` | 新しい事例 ID を作る |
@@ -31,6 +32,7 @@
 
 ```bash
 npx tsx scripts/validate-cases.ts
+npx tsx scripts/validate-resources.ts
 npm run test
 npm run build
 ```

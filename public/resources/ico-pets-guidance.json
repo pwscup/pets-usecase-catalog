@@ -1,0 +1,22 @@
+{
+  "id": "ico-pets-guidance",
+  "title": "Privacy-enhancing technologies (PETs)",
+  "title_ja": "英国 ICO PETs ガイダンス",
+  "publisher": "英国 情報コミッショナー事務局（ICO）",
+  "publisher_type": "政府・規制当局",
+  "country": "英国",
+  "kind": "ガイド・ガイダンス",
+  "technology_category": [],
+  "language": [
+    "en"
+  ],
+  "published_at": "2023-06-19",
+  "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-sharing/privacy-enhancing-technologies/",
+  "links": [],
+  "description": "金融・医療・研究・行政などで大規模な個人データを扱う組織と、データ保護責任者向けの PETs のガイダンス。2023年6月に新設され、2026年9月にはゼロ知識証明の説明が更新された。ページ上では、データ（利用・アクセス）法による改正を受けて見直し中とされている。",
+  "recommended_for": "PETs を使うと個人データ保護の義務がどう変わるか（変わらないか）を、英国の規制当局の言葉で確かめたい人",
+  "review_status": "ai_generated",
+  "note": "ページ本体（更新履歴と対象読者）を確認",
+  "created_at": "2026-11-22T06:00:00.000Z",
+  "updated_at": "2026-11-22T06:00:00.000Z"
+}
