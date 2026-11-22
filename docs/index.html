@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>開発者ドキュメント</title>
+<!--
+  このページは docs/*.md を読み込んで表示するだけです。本文はここに書かないでください。
+  ドキュメントを足したら、下の DOCS に1行足します（docs/howto/write-docs.md）。
+-->
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #f5f6f8;
+    --fg: #1d2330;
+    --fg-soft: #5b6472;
+    --border: #dde1e7;
+    --accent: #2457c5;
+    --accent-soft: #e8eefb;
+    --code-bg: #f1f3f6;
+    --warn-bg: #fff7e0;
+    --warn-border: #e7c35a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14171c;
+      --bg-soft: #1b1f26;
+      --fg: #e4e7ec;
+      --fg-soft: #a3abb8;
+      --border: #2e343e;
+      --accent: #7fa6ff;
+      --accent-soft: #1f2a44;
+      --code-bg: #20252d;
+      --warn-bg: #2d2714;
+      --warn-border: #8a7330;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14171c;
+    --bg-soft: #1b1f26;
+    --fg: #e4e7ec;
+    --fg-soft: #a3abb8;
+    --border: #2e343e;
+    --accent: #7fa6ff;
+    --accent-soft: #1f2a44;
+    --code-bg: #20252d;
+    --warn-bg: #2d2714;
+    --warn-border: #8a7330;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    line-height: 1.75;
+    font-size: 16px;
+  }
+  .layout { display: flex; min-height: 100vh; }
+  nav {
+    width: 260px;
+    flex-shrink: 0;
+    background: var(--bg-soft);
+    border-right: 1px solid var(--border);
+    padding: 20px 16px 40px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  nav .site-title { font-weight: 700; font-size: 15px; margin: 0 0 4px; }
+  nav .site-title a { color: var(--fg); text-decoration: none; }
+  nav .site-sub { font-size: 12px; color: var(--fg-soft); margin: 0 0 16px; }
+  nav .group { margin: 16px 0 4px; font-size: 12px; font-weight: 700; color: var(--fg-soft); letter-spacing: .04em; }
+  nav ul { list-style: none; margin: 0; padding: 0; }
+  nav li a {
+    display: block;
+    padding: 4px 8px;
+    border-radius: 6px;
+    color: var(--fg);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  nav li a:hover { background: var(--accent-soft); }
+  nav li a[aria-current="page"] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+  nav .slides-link { display: inline-block; margin-top: 20px; font-size: 13px; color: var(--accent); }
+  main { flex: 1; min-width: 0; padding: 32px 40px 80px; }
+  article { max-width: 860px; margin: 0 auto; }
+  article h1 { font-size: 28px; line-height: 1.4; margin: 0 0 20px; }
+  article h2 { font-size: 21px; line-height: 1.45; margin: 40px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  article h3 { font-size: 17px; margin: 28px 0 8px; }
+  article a { color: var(--accent); }
+  article code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: .88em;
+    background: var(--code-bg);
+    padding: .1em .35em;
+    border-radius: 4px;
+    overflow-wrap: anywhere;
+  }
+  article pre {
+    background: var(--code-bg);
+    padding: 14px 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    line-height: 1.55;
+  }
+  article pre code { background: none; padding: 0; font-size: 14px; overflow-wrap: normal; }
+  article blockquote {
+    margin: 16px 0;
+    padding: 8px 16px;
+    background: var(--warn-bg);
+    border-left: 4px solid var(--warn-border);
+    border-radius: 4px;
+  }
+  article blockquote p { margin: 4px 0; }
+  .table-wrap { overflow-x: auto; margin: 16px 0; }
+  article table { border-collapse: collapse; min-width: 560px; width: 100%; font-size: 14.5px; }
+  article th, article td { border: 1px solid var(--border); padding: 7px 10px; text-align: left; vertical-align: top; }
+  article th { background: var(--bg-soft); }
+  article .mermaid { margin: 20px 0; text-align: center; overflow-x: auto; }
+  article .mermaid svg { max-width: 100%; height: auto; }
+  .notice {
+    max-width: 860px;
+    margin: 0 auto 16px;
+    padding: 8px 12px;
+    font-size: 13px;
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    border-radius: 6px;
+  }
+  .raw { white-space: pre-wrap; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 14px; }
+  @media (max-width: 800px) {
+    .layout { display: block; }
+    nav {
+      width: auto;
+      height: auto;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    nav .site-sub, nav .group { display: none; }
+    nav .site-title { margin: 0; flex-shrink: 0; }
+    nav #toc { display: flex; gap: 4px; flex-shrink: 0; }
+    nav ul { display: flex; gap: 4px; flex-shrink: 0; }
+    nav li a { white-space: nowrap; }
+    nav .slides-link { margin-top: 0; flex-shrink: 0; }
+    main { padding: 20px 16px 60px; }
+    article h1 { font-size: 23px; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+  <nav id="nav" aria-label="ドキュメントの目次">
+    <p class="site-title"><a href="#README">開発者ドキュメント</a></p>
+    <p class="site-sub">PETs活用事例カタログ</p>
+    <div id="toc"></div>
+    <a class="slides-link" href="slides.html">スライドで見る →</a>
+  </nav>
+  <main>
+    <div id="notice" class="notice" hidden></div>
+    <article id="content" aria-live="polite">読み込み中…</article>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script>
+  // 目次。ドキュメントを足したらここに1行足す（group は 案内・チュートリアル・ハウツー・リファレンス・解説）
+  const DOCS = [
+    { path: 'README.md', title: 'はじめに（入口）', group: '案内' },
+    { path: 'glossary.md', title: '用語集', group: '案内' },
+    { path: 'slides.md', title: 'スライド（原本）', group: '案内' },
+    { path: 'tutorial/first-contribution.md', title: 'はじめての貢献', group: 'チュートリアル' },
+    { path: 'howto/add-case.md', title: '事例を1件追加する', group: 'ハウツー' },
+    { path: 'howto/import-from-repository.md', title: '事例集からまとめて取り込む', group: 'ハウツー' },
+    { path: 'howto/enrich-case.md', title: '既存の事例を補完する', group: 'ハウツー' },
+    { path: 'howto/review-case.md', title: '事例をレビューする', group: 'ハウツー' },
+    { path: 'howto/add-option.md', title: '選択肢を増やす', group: 'ハウツー' },
+    { path: 'howto/release.md', title: '本番に出す', group: 'ハウツー' },
+    { path: 'howto/fix-ci.md', title: 'CI が落ちたとき', group: 'ハウツー' },
+    { path: 'howto/write-docs.md', title: 'ドキュメントを書く', group: 'ハウツー' },
+    { path: 'reference/files.md', title: 'ファイルとフォルダ', group: 'リファレンス' },
+    { path: 'reference/commands.md', title: 'コマンド', group: 'リファレンス' },
+    { path: 'reference/case-json.md', title: 'case.json の形式', group: 'リファレンス' },
+    { path: 'reference/url.md', title: '画面と URL', group: 'リファレンス' },
+    { path: 'reference/environments.md', title: '環境と自動処理', group: 'リファレンス' },
+    { path: 'explanation/architecture.md', title: '全体の構成', group: '解説' },
+    { path: 'explanation/review-lifecycle.md', title: '事例の作り方とレビューの仕組み', group: '解説' },
+    { path: 'explanation/principles.md', title: '設計の原則', group: '解説' },
+    { path: 'explanation/history.md', title: 'これまでの判断と失敗', group: '解説' },
+  ];
+  const GROUPS = ['案内', 'チュートリアル', 'ハウツー', 'リファレンス', '解説'];
+  const GITHUB_BLOB = 'https://github.com/pwscup/pets-usecase-catalog/blob/develop/';
+
+  const hasMarked = typeof window.marked !== 'undefined';
+  const hasMermaid = typeof window.mermaid !== 'undefined';
+
+  // 目次を作る
+  function buildToc() {
+    const toc = document.getElementById('toc');
+    for (const g of GROUPS) {
+      const items = DOCS.filter((d) => d.group === g);
+      if (!items.length) continue;
+      const label = document.createElement('p');
+      label.className = 'group';
+      label.textContent = g;
+      toc.appendChild(label);
+      const ul = document.createElement('ul');
+      for (const d of items) {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + d.path.replace(/\.md$/, '');
+        a.textContent = d.title;
+        a.dataset.path = d.path;
+        li.appendChild(a);
+        ul.appendChild(li);
+      }
+      toc.appendChild(ul);
+    }
+  }
+
+  // アドレス（#howto/add-case または #glossary::pets）から、ファイルと見出しを取り出す
+  function parseHash() {
+    const raw = decodeURIComponent(location.hash.replace(/^#/, ''));
+    const [page, anchor] = raw.split('::');
+    const path = (page || 'README') + '.md';
+    return { path, anchor: anchor || '' };
+  }
+
+  // パスを正規化する（a/b/../c → a/c）。docs/ の外に出たら null の代わりに '../' を残す
+  function normalize(parts) {
+    const out = [];
+    for (const p of parts) {
+      if (p === '' || p === '.') continue;
+      if (p === '..') {
+        if (out.length && out[out.length - 1] !== '..') out.pop();
+        else out.push('..');
+      } else out.push(p);
+    }
+    return out.join('/');
+  }
+
+  function resolveFrom(currentPath, href) {
+    const dir = currentPath.split('/').slice(0, -1);
+    return normalize(dir.concat(href.split('/')));
+  }
+
+  // 本文中のリンクを振り分ける
+  function rewriteLinks(article, currentPath) {
+    for (const a of article.querySelectorAll('a[href]')) {
+      const href = a.getAttribute('href');
+      if (/^(https?:|mailto:)/.test(href)) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        continue;
+      }
+      if (href.startsWith('#')) {
+        // 同じページ内の見出し
+        const page = currentPath.replace(/\.md$/, '');
+        a.href = '#' + page + '::' + href.slice(1);
+        continue;
+      }
+      const [target, frag] = href.split('#');
+      const resolved = resolveFrom(currentPath, target);
+      const insideDocs = !resolved.startsWith('..');
+      if (insideDocs && resolved.endsWith('.md')) {
+        a.href = '#' + resolved.replace(/\.md$/, '') + (frag ? '::' + frag : '');
+      } else {
+        // docs/ の外のファイル、または .md 以外 → GitHub のファイル表示
+        const repoPath = normalize(['docs'].concat(resolved.split('/')));
+        a.href = GITHUB_BLOB + repoPath + (frag ? '#' + frag : '');
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+      }
+    }
+  }
+
+  function wrapTables(article) {
+    for (const t of article.querySelectorAll('table')) {
+      const w = document.createElement('div');
+      w.className = 'table-wrap';
+      t.parentNode.insertBefore(w, t);
+      w.appendChild(t);
+    }
+  }
+
+  function isDark() {
+    const t = document.documentElement.dataset.theme;
+    if (t === 'dark') return true;
+    if (t === 'light') return false;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  async function renderMermaid(article) {
+    const blocks = article.querySelectorAll('pre > code.language-mermaid');
+    if (!blocks.length) return;
+    if (!hasMermaid) {
+      showNotice('図の表示ライブラリ（mermaid）を読み込めなかったため、図は原文のまま表示しています。');
+      return;
+    }
+    const nodes = [];
+    for (const code of blocks) {
+      const div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = code.textContent;
+      code.parentNode.replaceWith(div);
+      nodes.push(div);
+    }
+    try {
+      window.mermaid.initialize({ startOnLoad: false, securityLevel: 'strict', theme: isDark() ? 'dark' : 'default', flowchart: { htmlLabels: true } });
+      await window.mermaid.run({ nodes });
+    } catch (e) {
+      console.warn('mermaid の描画に失敗しました', e);
+    }
+  }
+
+  function showNotice(msg) {
+    const n = document.getElementById('notice');
+    n.textContent = msg;
+    n.hidden = false;
+  }
+
+  function markCurrent(path) {
+    for (const a of document.querySelectorAll('#toc a')) {
+      if (a.dataset.path === path) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    }
+  }
+
+  async function show() {
+    const { path, anchor } = parseHash();
+    const article = document.getElementById('content');
+    const notice = document.getElementById('notice');
+    notice.hidden = true;
+    markCurrent(path);
+    const doc = DOCS.find((d) => d.path === path);
+    document.title = (doc ? doc.title + ' | ' : '') + '開発者ドキュメント';
+
+    let md;
+    try {
+      const res = await fetch(path, { cache: 'no-cache' });
+      if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
+      md = await res.text();
+    } catch (e) {
+      article.textContent = '';
+      const h = document.createElement('h1');
+      h.textContent = '読み込めませんでした';
+      const p = document.createElement('p');
+      p.textContent = path + ' を読み込めませんでした（' + e.message + '）。ファイルを直接開いている場合は、リポジトリの直下で「python3 -m http.server 8000」を実行し、http://localhost:8000/docs/index.html から開いてください。';
+      article.append(h, p);
+      return;
+    }
+
+    if (!hasMarked) {
+      showNotice('Markdown の表示ライブラリ（marked）を読み込めなかったため、原文をそのまま表示しています。');
+      article.textContent = '';
+      const pre = document.createElement('div');
+      pre.className = 'raw';
+      pre.textContent = md;
+      article.appendChild(pre);
+      return;
+    }
+
+    article.innerHTML = window.marked.parse(md, { gfm: true });
+    rewriteLinks(article, path);
+    wrapTables(article);
+    await renderMermaid(article);
+
+    if (anchor) {
+      const el = document.getElementById(anchor);
+      if (el) el.scrollIntoView();
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }
+
+  buildToc();
+  window.addEventListener('hashchange', show);
+  show();
+</script>
+</body>
+</html>

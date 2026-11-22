@@ -70,12 +70,12 @@ export default function ReviewStatusField({ originalStatus }: { originalStatus?:
           <p className="text-gray-500">
             詳細な手順は{' '}
             <a
-              href="https://github.com/pwscup/syntheticdata-usecase-catalog/blob/develop/docs/REVIEW_WORKFLOW.md"
+              href="https://github.com/pwscup/pets-usecase-catalog/blob/develop/docs/howto/review-case.md"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:underline"
             >
-              REVIEW_WORKFLOW.md
+              事例をレビューする（docs/howto/review-case.md）
             </a>
             {' '}を参照してください。
           </p>

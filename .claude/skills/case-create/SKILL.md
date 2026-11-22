@@ -35,7 +35,7 @@ $ARGUMENTS で指定された URL を WebFetch で取得する。テキストが
 
 スキーマは `src/schemas/case.schema.ts` に定義されている。スキーマに適合する JSON を生成する。
 
-事例 ID は既存の `public/cases/` 配下の ID を確認し、連番で次の ID を採番する（例: 既存が `001`〜`045` なら `046`）。
+事例 ID は UUID（v4）で採番する（`python3 -c "import uuid; print(uuid.uuid4())"`）。連番は並行して作ったときに衝突するため使わない（`docs/explanation/principles.md`）。
 
 ### 4. ファイルの保存
 
@@ -45,9 +45,9 @@ mkdir -p public/cases/<id>
 
 生成した JSON を `public/cases/<id>/case.json` に保存する。
 
-### 5. index.json の更新
+### 5. index.json は更新しない
 
-`public/cases/index.json` に新しい事例 ID を追加する。
+`public/cases/index.json` はビルド時・開発サーバー起動時に自動生成され、コミットしない（`plugins/generate-case-index.ts`）。手で編集しない。
 
 ### 6. バリデーション
 

@@ -189,7 +189,7 @@ $ARGUMENTS がパスなら直接読む。事例IDなら `public/cases/{ID}/case.
 
 昇格する場合は同時に `updated_at` を現在時刻（ISO8601, UTC）に更新する必要がある旨を明記する。
 
-運用手順の詳細は `docs/REVIEW_WORKFLOW.md` を参照。
+運用手順の詳細は `docs/howto/review-case.md` を参照。
 
 ## 今回のレビューで頻出した典型的な問題パターン
 
