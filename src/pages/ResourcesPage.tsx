@@ -11,7 +11,7 @@ import {
   type ResourceFilter,
 } from '../lib/resource-loader'
 import { RESOURCE_KIND_OPTIONS } from '../constants/resources'
-import { TECHNOLOGY_CATEGORY_LABELS, TECHNOLOGY_CATEGORY_OPTIONS } from '../constants/categories'
+import { REVIEW_STATUS_LABELS, TECHNOLOGY_CATEGORY_LABELS, TECHNOLOGY_CATEGORY_OPTIONS } from '../constants/categories'
 import ResourceCard from '../components/resources/ResourceCard'
 
 function Chip({ active, onClick, children }: { active: boolean; onClick: () => void; children: ReactNode }) {
@@ -61,7 +61,7 @@ export default function ResourcesPage() {
         </p>
         {hasAiGenerated && (
           <p className="text-xs text-yellow-800 bg-yellow-50 border border-yellow-200 rounded px-3 py-2" data-testid="resources-ai-notice">
-            「AI生成」の付いた資料の説明文は、AI が資料をもとに作成したもので、人による確認が済んでいません。内容は必ず資料本体で確かめてください。
+            「{REVIEW_STATUS_LABELS.ai_generated}」の付いた資料の説明文は、AI が資料をもとに作成したもので、人による確認が済んでいません。内容は必ず資料本体で確かめてください。
           </p>
         )}
       </div>
