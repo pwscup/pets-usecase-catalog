@@ -48,6 +48,7 @@ sequenceDiagram
 - `index.json` は、ビルドのたびに `public/cases/` のフォルダを数えて作り直します。手で書くと、追加し忘れや消し忘れが起きるためです（[これまでの判断と失敗](history.md)）
 - 読み込みは `src/lib/data-loader.ts`。`title` か `id` が無い事例は読み飛ばします。`technology_category` が無ければ `["synthetic_data"]`、`review_status` が無ければ `ai_generated` を入れます。このカタログが合成データだけを扱っていた頃のデータを、そのまま読むためです
 - 読み込んだ事例は `src/context/CaseContext.tsx` が画面全体に渡します
+- 参考資料（`public/resources/`）も同じ流れで、`index.json` から1件ずつ取ります（`src/lib/resource-loader.ts`）。事例と違い、読み込み時に Zod スキーマで検査し、合わないものは表示しません。参考資料の画面でしか使わないので、全体には渡さず画面の中で読み込みます
 
 ## 画面の仕組み
 

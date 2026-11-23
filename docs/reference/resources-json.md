@@ -31,6 +31,16 @@
 
 定義にない項目は、打ち間違いとして検査で弾かれます。
 
+## 画面での使われ方
+
+参考資料は `#/resources`（[画面と URL](url.md)）に表示されます。
+
+| 画面に出す | 画面に出さない |
+|---|---|
+| `title`（資料本体へのリンク）・`title_ja`・`publisher`・`country`・`published_at`・`language`・`kind`・`technology_category`・`description`・`recommended_for`・`links`・`review_status`（バッジ） | `import_status`・`import_note`（貢献者向け）・`publisher_type`・`note`・`created_at`・`updated_at` |
+
+`related_case_tag` があると、カードに「この事例集から取り込んだ事例を見る」（一覧をそのタグで検索するリンク）が出ます。スキーマに合わない資料は、画面では読み飛ばします。
+
 ## 選択肢
 
 | 項目 | 選択肢 |
