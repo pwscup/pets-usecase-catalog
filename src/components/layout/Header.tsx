@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom'
 export default function Header() {
   return (
     <header className="bg-blue-600 text-white shadow-md">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <Link to="/" className="text-xl font-bold hover:opacity-90">
           プライバシー強化技術 活用事例カタログ
         </Link>
-        <nav className="flex gap-4">
+        <nav className="flex flex-wrap gap-x-4 gap-y-1 text-sm sm:text-base">
           <Link to="/" className="hover:underline">一覧</Link>
           <Link to="/stats" className="hover:underline">統計</Link>
+          <Link to="/resources" className="hover:underline">参考資料</Link>
           <Link to="/cases/new" className="hover:underline">新規作成</Link>
           <Link to="/settings" className="hover:underline">設定</Link>
           <Link to="/about" className="hover:underline">About</Link>
