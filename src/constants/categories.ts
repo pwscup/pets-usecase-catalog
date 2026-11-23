@@ -66,7 +66,7 @@ export const REVIEW_STATUS_OPTIONS = [
 ] as const
 
 export const REVIEW_STATUS_LABELS: Record<string, string> = {
-  ai_generated: 'AI生成',
+  ai_generated: '未レビュー',
   human_reviewed: 'レビュー済',
   flagged: '要確認',
   under_review: 'レビュー中',

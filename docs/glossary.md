@@ -14,7 +14,7 @@
 | <a id="source"></a>出典（sources） | 事例の根拠になる文献。最低1件必要 |
 | <a id="primary-source"></a>一次資料 | 事例の当事者や公的機関が出した資料（報告書・論文・公式発表）。検索結果の要約や解説記事は**二次情報** |
 | <a id="investigating"></a>調査中 | 文献から読み取れない項目に書く値。空欄にしない |
-| <a id="review-status"></a>review_status | 事例の確認状況。`ai_generated`（AI が作った）・`under_review`・`human_reviewed`（人が確認した）・`flagged`（要確認） |
+| <a id="review-status"></a>review_status | 事例や参考資料の確認状況。`ai_generated`（AI が作り、人の目がまだ入っていない。画面では「未レビュー」）・`under_review`・`human_reviewed`（人が確認した）・`flagged`（要確認） |
 | <a id="data-flow"></a>data_flow 図 | 事例の流れを source → constraint → process → application → outcome の順に並べた図 |
 | <a id="resource"></a>参考資料 | 「読んだほうがいいもの」。事例集・当局のガイド・報告書・標準など。1件 = `public/resources/<id>.json`。形式は[参考資料の形式](reference/resources-json.md) |
 | <a id="repository"></a>事例集 | 事例をまとめて紹介している外部の資料（OECD PETs リポジトリ、UN の PETs ガイド、英国 CDEI のガイドなど） |

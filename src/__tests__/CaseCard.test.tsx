@@ -86,7 +86,7 @@ describe('CaseCard', () => {
 
   it('review_statusバッジが表示される', () => {
     renderCard({ ...mockCase, review_status: 'ai_generated' })
-    expect(screen.getByText('AI生成')).toBeInTheDocument()
+    expect(screen.getByText('未レビュー')).toBeInTheDocument()
   })
 
   it('technology_categoryバッジが表示される', () => {
